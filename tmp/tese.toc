@@ -11,19 +11,19 @@
 \contentsline {section}{\numberline {2.2}Devices Consumption}{14}
 \contentsline {section}{\numberline {2.3}Measurement Tools}{14}
 \contentsline {chapter}{\numberline {3}Methodology}{15}
-\contentsline {section}{\numberline {3.1}Dati Targa????}{15}
-\contentsline {section}{\numberline {3.2}SiSoftware SANDRA}{15}
-\contentsline {subsection}{\numberline {3.2.1}What is}{15}
-\contentsline {section}{\numberline {3.3}Other Tools}{16}
-\contentsline {subsection}{\numberline {3.3.1}Tool1}{16}
-\contentsline {subsection}{\numberline {3.3.2}Tool2}{16}
-\contentsline {subsection}{\numberline {3.3.3}Tool3}{16}
-\contentsline {section}{\numberline {3.4}Measument Methodology}{16}
-\contentsline {chapter}{\numberline {4}Analysis and Results}{17}
-\contentsline {section}{\numberline {4.1}Analysis}{17}
-\contentsline {section}{\numberline {4.2}Results}{17}
-\contentsline {chapter}{Conclusions}{18}
-\contentsline {section}{Perspectives and Future Developments}{18}
-\contentsline {chapter}{Appendix}{19}
-\contentsline {section}{Appendix A - }{19}
-\contentsline {section}{Appendix B - }{19}
+\contentsline {section}{\numberline {3.1}Energy Management Tools}{15}
+\contentsline {subsection}{\numberline {3.1.1}SiSoftware SANDRA}{15}
+\contentsline {subsection}{\numberline {3.1.2}Other Tools}{16}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Energy Measurement Instrument}{16}
+\contentsline {subsubsection}{\numberline {3.1.2.2}WebSPHINX - A Personal, Customized Web Crawler}{16}
+\contentsline {subsubsection}{\numberline {3.1.2.3}CPU-Z}{17}
+\contentsline {subsubsection}{\numberline {3.1.2.4}PlateSpin - Recon}{17}
+\contentsline {section}{\numberline {3.2}Measurement Methodology}{17}
+\contentsline {chapter}{\numberline {4}Analysis and Results}{18}
+\contentsline {section}{\numberline {4.1}Analysis}{18}
+\contentsline {section}{\numberline {4.2}Results}{18}
+\contentsline {chapter}{Conclusions}{19}
+\contentsline {section}{Perspectives and Future Developments}{19}
+\contentsline {chapter}{Appendix}{20}
+\contentsline {section}{Appendix A - List of SiSoftware Sandra Modules}{20}
+\contentsline {section}{Appendix B - }{22}

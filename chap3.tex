@@ -11,33 +11,45 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Methodology} \label{chap3:methodology}
-    The methodology
+    The methodology utilized in this thesis work was defined by a number of steps in order to reach the best comparison of the components
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Que porra � essa de Targa??? %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Dati Targa????} \label{sec3:}
-
-\section{SiSoftware SANDRA} \label{sec3:sandra}
-    SANDRA was the main software utilized to benchmark the data in this thesis work. It was chosen to be, composing the ones 
+\section{Energy Management Tools} \label{sec3:energy_management_tools}
+\subsection{SiSoftware SANDRA} \label{subsec3:sandra}
+    SANDRA was the main software utilized to benchmark the data in this thesis work. It contains a huge database of components to make sure the benchmarks provided have the best results and accurate comparisons.
     
-\subsection{What is} \label{subsec3:whatis_sandra}
-
-	\textbf{SiSoftware Sandra} (the \textbf{S}ystem \textbf{AN}alyser, \textbf{D}iagnostic and \textbf{R}eporting \textbf{A}ssistant) is an information \& diagnostic utility. It provides most of the information (including undocumented) one need to know about their hardware, software and other devices whether hardware or software.
+    SiSoftware Sandra\footnote{The \textbf{S}ystem \textbf{AN}alyser, \textbf{D}iagnostic and \textbf{R}eporting \textbf{A}ssistant} is an information \& diagnostic utility. It provides most of the information (including undocumented) one need to know about their hardware, software and other devices whether hardware or software.
     
-	The software goes beyond the point of other Windows Utilities, by giving the user, the possibility of benchmarking and comparing at both high and low level the computer devices, for example, the CPU, chipset, video adapter, ports, printers, sound card, memory, network, AGP, PCI, PCI-X, PCIe (PCI Express), database, USB, 1394/Firewire, etc.
+    The software goes beyond the point of other Windows Utilities, by giving the user, the possibility of benchmarking and comparing at both high and low level the computer devices. Moreover, it is a tool for monitoring the performance on systems and even benchmarking many parts of the computer, this includes, CPU\footnote{Central Processing Unit}, memory, hard disks, CD/DVD ROM, network, PSU\footnote{Power Supply Unit}, etc. For that reason, it is considered one of the most complete benchmarking tools available.
     
-	SANDRA makes use of these different modules, which users can take advantage of:
+    Besides the benchmarking, Sandra also provides access to information about the Hardware, including the Motherboard, processor, disks, printers, etc; and Software, such as, key softwares (web browsers, e-mail program, etc.), OS information, processes, memory usage and more.
+    
+    The detailed list of modules utilized by SiSoftware Sandra can be found in \ref{appA:sandra_modules}.
+    
+    Furthermore, the Sandra has a great functionality that is a catalogue of pricing, which, in addition to the power consumption and other important characteristics, the best combination (which means the most green) of devices can be chosen to the server.
+    
+\subsection{Other Tools} \label{subsec3:other_tools}
+    In order to make sure the best option was chosen it was used otehr tools than Sandra, with the reason of complementing the features and results provided. 
+    
+\subsubsection{Energy Measurement Instrument} \label{subsubsec3:measurement_instrument}
+    \begin{figure}[!htb]
+        \centering
+            \includegraphics[scale=0.6]{/media/windows/Users/rifiorelli/Documents/documents/Polimi/Tesina/Writting/Tese/graphics/energy_measurement_instrument}
+            \caption{Energy Measurement Instrument}
+        \label{fig:energy_measurement_instrument}
+    \end{figure}
 
-\begin{itemize}
-	\item 
-\end{itemize}
+\subsubsection{WebSPHINX - A Personal, Customized Web Crawler} \label{subsubsec3:websphinx}
+    WebSPHINX\footnote{Website-Specific Processors for HTML Information Extraction} is a Java class library used for web crawling. It provides a way to browse and process web pages automatically.
+    
+    This piece of software was used to establish the pricing, linking it with the MPN\footnote{Manufacturer's Part Number}, and, afterwards, composing the database explained in \ref{sec4:analysis}. 
 
-\section{Other Tools} \label{sec3:other_tools}
+\subsubsection{CPU-Z} \label{subsubsec3:cpu-z}
+    CPU-Z detects information about the CPU, RAM Memory, motherboard, chipset and more. That program was used to complete the database with missing information about the components.
 
-\subsection{Tool1} \label{}
-\subsection{Tool2} \label{}
-\subsection{Tool3} \label{}
+\subsubsection{PlateSpin - Recon} \label{subsubsec3:power_recon}
+    This software did not compose the ones used for doing this thesis. Yet, it is important to notice this, because it is almost the same of Sandra, but it provides a more incisive work on Data Centers in general. It provides workload profiling, analysis and planning of complex server consolidation, disaster recovery, capacity planning, asset management and green data center initiatives. It also provides forecasting for optimizing the data center by collecting hardware, software and services inventory for all server workloads. Furthermore, it results an statistics work for the server workloads running on data center and how their resources are being used.
+    
+    For the reason that it was needed to compare the components, in order to draw a picture of the most suitable components to be used. It was chosen Sandra, which has a great database of components 
 
-\section{Measument Methodology} \label{sec3:measurement_methodology}
+\section{Measurement Methodology} \label{sec3:measurement_methodology}
 

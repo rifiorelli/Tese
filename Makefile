@@ -1,12 +1,10 @@
-# $Id: Makefile,v 1.1 2003/04/10 23:12:59 gweber Exp $
-
 all: tese.ps tese.pdf
 
 tese.dvi : tese.tex
-	latex tese
+	pdflatex tese
 	bibtex tese
-	latex tese
-	latex tese
+	pdflatex tese
+	pdflatex tese
 	
 tese.ps: tese.dvi
 	dvips -t a4 -o tese.ps tese
