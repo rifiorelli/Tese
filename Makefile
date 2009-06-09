@@ -14,4 +14,4 @@ tese.pdf: tese.dvi
 	pdflatex tese
 
 clean:
-	rm -f *.aux *.log *.blg *.bbl *.dvi *.ps *.pdf *.toc *.lot *.lof
+	rm -f *.aux *.log *.blg *.bbl *.dvi *.ps *.toc *.lot *.lof *~
