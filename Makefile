@@ -1,10 +1,11 @@
 all: tese.ps tese.pdf
 
 tese.dvi : tese.tex
-	pdflatex tese
+	latex tese
 	bibtex tese
-	pdflatex tese
-	pdflatex tese
+	latex tese
+	latex tese
+	
 	
 tese.ps: tese.dvi
 	dvips -t a4 -o tese.ps tese
