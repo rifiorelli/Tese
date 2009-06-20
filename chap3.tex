@@ -12,20 +12,70 @@
 
 \chapter{Methodology} \label{chap3:methodology}
 
-Write a review point of the problem and the solution I want to achieve\ldots
+    Write a review point of the problem and the solution we want to achieve\ldots. Describe the general and specific objective \ldots
+    
+    \begin{description}
+        \item[Phase 0: Thesis -] In this part the work subject was defined, along with its hypothesis and goals.
+        \item[Phase 1: Examination -] This was the first step taken to begin the research, in which, many components were analyzed and cataloged to later use;
+        \item[Phase 2: Analysis of Benchmarking Softwares -] A number of existing softwares were analyzed and those that met the requirements and specifications previously made were chosen. A list of these other softwares can be found in Appendix~\ref{app:list_other_energy_management_tools};
+        \item[Phase 3: Catalog -] The tools provided information about computer components that were used to create a component database.
+        \item[Phase 4: Build Database -] 
+        \item[Phase 5: Analysis -] 
+        \item[Phase 6: -] 
+    \end{description}
+
 
 \section{Overview} \label{sec3:overview}
-    This research was conducted in order to determine how much energy a computer's components, for instance, CPU, Memory and Hard Drives spend and, also, how much it would affect the cost of the Data Center in a whole. Above that, the advantages and disadvantages as well as the reliability of these measures and benchmarks played also an important role in the objectives of this thesis work. With regard to the topic in hand, the analysis was carried on with the help of Softwares, which will be explained in the following sections and analytical measures using an energy measurement device to counterbalance and compare the benchmarking measures obtained from these softwares. Concretely, more than 1000 components were analyzed and categorized in a huge database, which the schema can be seen on Figure~\ref{fig:database_schema}. Firstly, it was used the Sandra's database~\ref{sec3:sandra} to collect the components and separate them by categories, with their benchmarks and all data. Secondly, it was used WebSPHINX~\ref{sec3:websphinx} for the collection of components and linkage of MPN\footnote{Manufacturer Part Number} and the respective component. Thirdly, it was used an analytical method using a energy measurement device~\ref{sec3:energy_measurement_instrument} for the comparison and validation of the results given by the other benchmarks. 
+    % Acho q seria tb interessante dizer que o banco de dados de componentes vai ser usado como base pra se aplicar uma metodologia de aquisiçao de hardware q ainda vai ser desenvolvida
+    This research was conducted in order to determine how much energy a computer's components, for instance, CPU\footnote{Central Processing Unit}, Memory and Hard Drives spend and also how much it would affect the cost of acquisition of new workstations as a whole. Above that, the advantages and disadvantages as well as the reliability of these measures and benchmarks played also an important role in the requirements of this thesis work. With regard to the topic in hand, the analysis was carried out with the help of specialized softwares, which will be described in the following sections and also analytical measures using an energy measurement device to counterbalance and compare the benchmarking measures obtained from these softwares. Concretely, more than 1000 components were analyzed and categorized in a database, whose schema can be further analyzed on Figure~\ref{fig:database_schema}. Firstly, it was used the Sandra's database~\ref{sec3:sandra} to collect the components and separate them by categories, along with their benchmark related data. Secondly, WebSPHINX~\ref{sec3:websphinx} was used to create a collection of components and their respective MPNs. Thirdly, an energy measurement device~\ref{sec3:energy_measurement_instrument} was used for the comparison and validation of the results given by the other benchmarks and acquisition of new data. 
 
     Finally, these data were all linked in a database for later comparison and choice. 
 
-\section{Research Design} \label{sec3:research_design}
-    % TODO
-
+\section{Research Design} \label{sec3:research_design} 
+    The experimental method of research was used in this study. Figure~\ref{fig:experimental_method_approach} draws the steps of the method used. To define the experimental type of research, Bryman \cite{bryman89} stated that ``the experimental design (\ldots) allows the causal hypothesis that underpins the question to be examined'', which means that this method is a systematic and scientific approach to research in which the researcher manipulates one or more variables, controlling and measuring any changes in other variables. The emphasis given is on the results and analysis of the benchmarks provided and theirs measures. It allows to verify the thesis in which this work is based on, by making use of empirical methods changing the benchmark used and the purpose of it.
+    \begin{figure}[!htb]
+        \centering
+            \includegraphics[scale=0.5]{graphics/experimental_method_approach}
+            \caption{The Experimental Design Process}
+            \label{fig:experimental_method_approach}
+    \end{figure}
+    
+    %XXX 
+    /********* Os proximos paragraphs foram criados para direcionar o pensamento e deve ser mantidos como comentario, ou retirados do texto é preciso que sejam melhor desenvolvidos*******/
+    %XXX
+    \begin{description}
+    \item[Universe o Study] 
+    % (whether a tribe, or a village, or an urban areas, or a particular group, etc.) - no nosso caso, os componentes do computador e o data center
+    In this study, the empirical method was employed so as to identify which parts of the computer manage energy more efficiently with the reason of building the most green data center. 
+    
+    %XXX
+    \item[Subject of Study]
+    % (whether it focuses on the whole society, or any specific institution or a part of it).
+    The choice of analyzing each component separately was made in order to have a better control of the energy consumed and the ability to compare the different combination 
+    
+    %XXX
+    \item[Relationship Between certain variables]
+    % (Formulating a Research Design but it is not obligatory to start with a Research Design).
+    The benchmarks were executed to obtain information about the components, such as speed(MHz), energy consumed (Watts), size(GB, MB), 
+    
+    %XXX
+    \item[Set of selected methods for obtain data] 
+    % (whether participant observation, Interview, Questionnaire, or some other methods of data collection would be used).
+    In order to obtain relevant data, it was chosen two analysis' methods: empirical and benchmarking. In the empirical method, it was used an energy measurement device (section~\ref{sec3:energy_measurement_instrument}) that connected the electrical plug to the computer, and the measure was taken down in a spreadsheet. While doing this, the benchmarking tool (section~\ref{sec3:sandra}) was performed in the host computer
+    
+    
+    %XXX
+    \item[Analytical Categories]
+    % (by which the empirical data is subjected to analysis and interpretation).
+    In a later stage, all the data acquired by the measurement approaches were separated by categories and components
+    
+    \end{description}
+    
 \section{Energy Management and Benchmarking Tools} \label{sec3:energy_management_tools}
     In order to obtain relevant information about the data required for making the comparison between the components, it was needed to use some energy management and benchmarking tools. 
     
     The softwares used, were selected from many of existents softwares in the area for the following reasons:
+    There exists many softwares
 \begin{description}
 	\item[Size of Database] The database of components, in order to get a good result should be considerably big;
 	\item[Characteristics of Benchmarks] The benchmarks provided by the software should provide information about the energy consumed for each component;
@@ -39,7 +89,7 @@ Write a review point of the problem and the solution I want to achieve\ldots
     
     The acquisition of data was made analyzing the results of these benchmarks, making use of their database
 
-\subsection{SiSoftware SANDRA} \label{sec3:sandra}
+    \subsection{SiSoftware SANDRA} \label{sec3:sandra}
 
     SiSoftware Sandra\footnote{The \textbf{S}ystem \textbf{AN}alyser, \textbf{D}iagnostic and \textbf{R}eporting \textbf{A}ssistant} is an information and diagnostic utility. It provides most of the information (including undocumented) one need to know about their hardware, software and other devices whether hardware or software.
 SANDRA was the main software utilized to benchmark the data in this thesis work. It contains a huge database of components to make sure the benchmarks provided have the best results and accurate comparisons.
@@ -50,7 +100,7 @@ SANDRA was the main software utilized to benchmark the data in this thesis work.
     
     Furthermore, the Sandra has a great functionality that is a catalog of pricing, which, in addition to the power consumption and other important characteristics, the best combination (which means the most green) of devices can be chosen to the server.
     
-\subsection{Energy Measurement Instrument} \label{sec3:energy_measurement_instrument}
+    \subsection{Energy Measurement Instrument} \label{sec3:energy_measurement_instrument}
 
     \begin{figure}[!htb]
         \centering
@@ -62,18 +112,15 @@ The device, which can be seen on Figure~\ref{fig:energy_measurement_instrument},
 
 After the result of the benchmark was obtained from the SiSoftware Sandra, this equipment that was connected to the computer read how much energy it was consumed and it was inserted in the database.
     % TODO
-\subsection{WebSPHINX - A Personal, Customized Web Crawler} \label{sec3:websphinx}
+    \subsection{WebSPHINX - A Personal, Customized Web Crawler} \label{sec3:websphinx}
     WebSPHINX\footnote{Website-Specific Processors for HTML Information Extraction} is a Java class library used for web crawling. It provides a way to browse and process web pages automatically.
     
     This piece of software was used to establish the pricing, linking it with the MPN\footnote{Manufacturer's Part Number}, and, afterwards, composing the database explained in \ref{sec4:analysis}. 
     % TODO
-\subsection{CPU-Z} \label{sec3:cpu-z}
-    CPU-Z detects information about the CPU, RAM Memory, motherboard, chipset and more. That program was used to complete the database with missing information about the components.
-    % TODO
-\subsection{PlateSpin - Recon} \label{sec3:power_recon}
-    This software did not compose the ones used for doing this thesis. Yet, it is important to notice this, because it is almost the same of Sandra, but it provides a more incisive work on Data Centers in general. It provides workload profiling, analysis and planning of complex server consolidation, disaster recovery, capacity planning, asset management and green data center initiatives. It also provides forecasting for optimizing the data center by collecting hardware, software and services inventory for all server workloads. Furthermore, it results an statistics work for the server workloads running on data center and how their resources are being used.
     
-    For the reason that it was needed to compare the components, in order to draw a picture of the most suitable components to be used. It was chosen Sandra, which has a great database of components.
+    \subsection{CPU-Z} \label{sec3:cpu-z}
+    CPU-Z detects information about the CPU, RAM Memory, motherboard, chip-set and more. That program was used to complete the database with missing information about the components.
+    % TODO
 
 \section{Data Processing and Analysis} \label{sec3:data_processing_analysis}
     % TODO
