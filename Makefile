@@ -8,7 +8,6 @@ tese.dvi : tese.tex
 	latex tese
 	latex tese
 	dvipdf tese.dvi
-	rm -f *.aux *.log *.blg *.bbl *.ps *.toc *.lot *.lof *.out
 	
 tese.ps: tese.dvi
 	dvips -t a4 -o tese.ps tese
