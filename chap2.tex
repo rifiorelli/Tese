@@ -25,25 +25,6 @@
     For each of those categories there are several types of information that are relevant to the evaluation of the current situation of power consumption. For each category there will be a corresponding description along with a number of possible interventions, either purely conceptual or available in the market.In some cases a numerical analysis will also be provided. This information will allow the creation of a methodology to identify critical consumption issues where an investment in green ICT would bring the greater savings.
     
     It is possible to compare how much energy is spent by three types of components, Computers on Table~\ref{tab:energy_used_computer}, Monitors on Table~\ref{tab:energy_used_monitor} and an Apple on Table~\ref{tab:energy_used_apple_20}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}.
-    \begin{table}[h!tb]
-        \centering
-        \begin{tabular}{|c|c|}
-        \hline
-        \multicolumn{ 2}{|c|}{{\bf Computers}} \tn
-        \hline
-        Desktop Computer & 60-250 watts \tn
-        \hline
-        On screen Saver$^a$ & 60-250 watts \tn
-        \hline
-        Sleep / Standby & 1-6 watts \tn
-        \hline
-        Laptop & 15-45 watts \tn
-        \hline
-        \end{tabular}\linebreak
-        $^a$ no difference
-        \captionof{table}{Energy used by a standard computer} 
-        \label{tab:energy_used_computer}
-    \end{table}
     
     \begin{table}[h!tb]
         \centering
@@ -76,7 +57,7 @@
     
     \subsection{Machine Configuration}\label{sec2:machine_configuration}
         This category represents the components used in a certain machine configuration. The component's performance and power consumption can be obtained from several sources, such as the manufacturer specifications, benchmarks and also direct measurements in the case of power consumption.
-        The following are the dimensions which influence the final consumption of a machine.
+        The following are the dimensions that influence the final power consumption of a machine.
             \paragraph*{Single-core / Multi-core processors}%TODO
             \paragraph*{CPU Type}%TODO
             \paragraph*{Type and dimension of RAM memory}%TODO
@@ -113,15 +94,32 @@
     \end{table}
 
             \paragraph*{Hard drives (number and type)}%TODO
-            \paragraph*{Auto-sleep, remote sleep and screen saver} Enabling the energy saving settings on PCs and peripherals is an important measure due to the fat that a computer in idle mode uses 20 to 50 times the power of a computer in standby mode
-\footnote{\url{http://www.cosn.org/Initiatives/GreenComputing/EnergyUse/tabid/4515/Default.aspx}}.
-There are several tools in the market to manage and schedule the computers shutdown or standby in a network.
 
     \subsection{Policies / Tools / Labels} \label{sec2:policies_tools_labels}
-        The amount of saved energy depends also on technology acquisition and managerial policies. There are a number of specialized tools that may be used in order to help enforcing these policies. Examples of policies that regard equipment acquisition are: acquisition of new computers or components labeled as green by the manufacturer, purchase of dual or multi-core processors or even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example is to turn off workstations or servers if they are going to be unused for a long time.
+        The amount of saved energy depends also on policies that regard technology acquisition and IT management, which may be enforced by a variety of specialized tools. Examples of policies that regard equipment acquisition are: the acquisition of new computers or components labeled as green by the manufacturer, purchase of computers with multi-core processors and even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example of the latter is to turn off workstations or servers if they are going to be unused for a long time. This kind of measure is particularly efficient as a computer in idle mode uses 20 to 50 times the power of a computer in standby mode
+\footnote{\url{http://www.cosn.org/Initiatives/GreenComputing/EnergyUse/tabid/4515/Default.aspx}}.
         
+    \begin{table}[h!tb]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{ 2}{|c|}{{\bf Computers}} \tn
+        \hline
+        Desktop Computer & 60-250 watts \tn
+        \hline
+        On screen Saver$^a$ & 60-250 watts \tn
+        \hline
+        Sleep / Standby & 1-6 watts \tn
+        \hline
+        Laptop & 15-45 watts \tn
+        \hline
+        \end{tabular}\linebreak
+        $^a$ no difference
+        \captionof{table}{Energy used by a standard computer} 
+        \label{tab:energy_used_computer}
+    \end{table}
 
-        The use of tools that automate these methods. Their main features are the possibility to let computers in a network in standby mode or even to turn them off after a long period of no utilization. In addition, the shared usage of networked pieces of hardware can be an effective way to achieve energy savings. Networked systems allow several nearby users to share a single printer, which generally generates savings in both equipment cost and energy if compared with each computer having a dedicated printer. Above that, choosing multifunction devices (MFD) that encapsulates in one machine the functionality of many others. In addition to saving space and materials, these multifunctionals save energy if compared to several different machines working in parallel. The Table~\ref{tab:energy_recommendation_efficient_printer}\footnote{\url{http://www1.eere.energy.gov/femp/procurement/eep_printer.html}} describes the characteristics that am energy-efficient networked printer should have, in relation to the number of pages per minute it prints. 
+        The tools that automate these methods have as their main feature the possibility to let computers in a network in standby mode or even to turn them off after a long period of no utilization. In addition, the shared usage of networked pieces of hardware can be an effective way to achieve energy savings. Networked systems allow several nearby users to share a single printer, which generally generates savings in both equipment cost and energy if compared with each computer having a dedicated printer. Above that, choosing multifunction devices (MFD) that encapsulates in one machine the functionality of many others. In addition to saving space and materials, these multifunctionals save energy if compared to several different machines working in parallel. The Table~\ref{tab:energy_recommendation_efficient_printer}\footnote{\url{http://www1.eere.energy.gov/femp/procurement/eep_printer.html}} describes the power consumption in standby mode that an energy-efficient networked printer should have in relation to the printer type and to the number of pages it prints per minute. 
         
         \begin{table}[h!tb]
         \centering
@@ -151,7 +149,7 @@ There are several tools in the market to manage and schedule the computers shutd
             \label{tab:energy_recommendation_efficient_printer}
         \end{table}
         
-        Besides these facts, it is also a choice to buy only eco-labeled products. Eco-label is a category given to products, which comply some of the energy efficiency specifications provided by the owner companies of these labels. The most famous of these labels is the ENERGY STAR$^{\textcircled {\scriptsize R}}$, which is a voluntary energy efficiency program sponsored by the U.S. Environmental Protection Agency. For example, An ENERGY STAR$^{\textcircled {\scriptsize R}}$ qualified computer is possible to use up to 70\% less electricity than computers without enabled power management features.
+        One last kind of policy is to favor the acquisition of eco-labeled products. An eco-label is given to products that comply with some energy efficiency specifications. The most famous of these labels is the ENERGY STAR$^{\textcircled {\scriptsize R}}$, which is an energy efficiency program sponsored by the U.S. Environmental Protection Agency. For example, An ENERGY STAR$^{\textcircled {\scriptsize R}}$ qualified computer is possible to use up to 70\% less electricity than computers without enabled power management features.
             
         \subsection{Thin Clients Architectures} \label{sec2:thin_clients}
             According to \emph{Wikipedia}, in 2009, ``a thin client is a client computer or client software in client-server architecture networks which depends primarily on the central server for processing activities, and mainly focuses on conveying input and output between the user and the remote server''. This is very well connected to both ideas of cloud computing and Green ICT and it is possible to subdivide in three categories for comparison against standard PC architecture: Performance, Power Consumption and Hardware Savings and they are going to be exploited in the following subsections.
