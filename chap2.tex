@@ -22,9 +22,9 @@
         \item Data Center Infrastructure.
     \end{itemize}
     
-    For each of those categories there are several types of information that are relevant to the evaluation of the intervention and their consequent energy savings. For each one a list of possible interventions will be made, and after that analyzed if they are either purely conceptual or available in the market. Moreover, it is important to know exactly where the power is going and where the energy is being wasted. In hands with that information, it is possible to redirect it to the places with more necessity and ameliorate the computers with more idle time, by applying one of the above categories before. Therefore, it is feasible to draw a more realistic figure of what is going on with the energy consumed in the place.
+    For each of those categories there are several types of information that are relevant to the evaluation of the current situation of power consumption. For each category there will be a corresponding description along with a number of possible interventions, either purely conceptual or available in the market.In some cases a numerical analysis will also be provided. This information will allow the creation of a methodology to identify critical consumption issues where an investment in green ICT would bring the greater savings.
     
-    It is possible to compare how much energy is spent by three types of components, Computers on Table~\ref{tab:energy_used_computer}, Monitors on Table~\ref{tab:energy_used_monitor} and an Apple on Table~\ref{tab:energy_used_apple_20}.
+    It is possible to compare how much energy is spent by three types of components, Computers on Table~\ref{tab:energy_used_computer}, Monitors on Table~\ref{tab:energy_used_monitor} and an Apple on Table~\ref{tab:energy_used_apple_20}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}.
     \begin{table}[h!tb]
         \centering
         \begin{tabular}{|c|c|}
@@ -44,34 +44,7 @@
         \captionof{table}{Energy used by a standard computer} 
         \label{tab:energy_used_computer}
     \end{table}
-    \begin{table}[h!tb]
-        \centering
-        \begin{tabular}{|c|c|}
-        \hline
-        \multicolumn{ 2}{|c|}{{\bf Monitors}} \tn
-        \hline
-        Typical 17" CRT &   80 watts \tn
-        \hline
-        Typical 17" LCD &   35 watts \tn
-        \hline
-        Apple MS 17" CRT$^a$ &   63 watts \tn
-        \hline
-        Apple MS 17" CRT$^b$ &   54 watts \tn
-        \hline
-        Screen saver$^c$ & same as above \tn
-        \hline
-        Sleeping monitor$^d$ & 0-15 watts \tn
-        \hline
-        Monitor turned off at switch & 0-10 watts \tn
-        \hline
-        \end{tabular}  \linebreak
-        $^a$ mostly white (blank IE window) \linebreak
-        $^b$ mostly black (black Windows desktop with just a few icons)\linebreak
-        $^c$ any image on screen\linebreak
-        $^d$ dark screen
-        \captionof{table}{Energy used by Monitors} 
-        \label{tab:energy_used_monitor}
-    \end{table}
+    
     \begin{table}[h!tb]
         \centering
         \begin{tabular}{|c|c|}
@@ -101,28 +74,54 @@
     % TODO
     %/***********Seria legal se fosse feita uma conclusao para cada categoria*************/
     
-    \subsection{Workstation Configuration}\label{sec2:workstation_configuration}
-        This category represents the components used in a certain machine configuration. All the information about each component performance and power consumption can be obtained from several sources, such as the manufacturer specifications, benchmarks or direct measurements in the case of energy consumption
-        Listed below are the necessary information to evaluate interventions and their energy savings:
+    \subsection{Machine Configuration}\label{sec2:machine_configuration}
+        This category represents the components used in a certain machine configuration. The component's performance and power consumption can be obtained from several sources, such as the manufacturer specifications, benchmarks and also direct measurements in the case of power consumption.
+        The following are the dimensions which influence the final consumption of a machine.
             \paragraph*{Single-core / Multi-core processors}%TODO
             \paragraph*{CPU Type}%TODO
             \paragraph*{Type and dimension of RAM memory}%TODO
             \paragraph*{Type and dimension of cache memory}%TODO
             \paragraph*{Chassis (power supply, fan)}%TODO
-            \paragraph*{Monitor type} It is important to say that using flat panel liquid crystal display (LCD) monitors and not conventional CRT monitors can reduce energy consumption by a third. LCD monitors also run cooler, which helps save on air conditioning costs. In addition to that, selecting the right-sized monitor to meet the needsof the user helps, because the bigger the monitor, the more energy it uses.
+            \paragraph*{Monitor type} As shown by Table~\ref{tab:energy_used_monitor}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}, flat panel liquid crystal display (LCD) monitors power consumption equals to half the power of conventional CRT monitors. LCD monitors also dissipate less heat, which helps to reduce air conditioning costs. Another interesting point is that either LCD or CRT monitors consume the same amount of energy with or without screensavers. As LCD monitors do not consume much energy when turned off, that would be the best solution for idle computers.
+\begin{table}[h!tb]
+        \centering
+        \begin{tabular}{|c|c|}
+        \hline
+        \multicolumn{ 2}{|c|}{{\bf Monitors}} \tn
+        \hline
+        Typical 17" CRT &   80 watts \tn
+        \hline
+        Typical 17" LCD &   35 watts \tn
+        \hline
+        Apple MS 17" CRT$^a$ &   63 watts \tn
+        \hline
+        Apple MS 17" CRT$^b$ &   54 watts \tn
+        \hline
+        Screen saver$^c$ & same as above \tn
+        \hline
+        Sleeping monitor$^d$ & 0-15 watts \tn
+        \hline
+        Monitor turned off at switch & 0-10 watts \tn
+        \hline
+        \end{tabular}  \linebreak
+        $^a$ mostly white (blank IE window) \linebreak
+        $^b$ mostly black (black Windows desktop with just a few icons)\linebreak
+        $^c$ any image on screen\linebreak
+        $^d$ dark screen
+        \captionof{table}{Energy used by Monitors} 
+\label{tab:energy_used_monitor}
+    \end{table}
+
             \paragraph*{Hard drives (number and type)}%TODO
-            \paragraph*{Auto-sleep, remote sleep and screen saver} Enabling the energy saving settings on PCs and peripherals is also valuable act, due to the fat that a computer in idle mode uses 20 to 50 times the power of a computer in standby mode. For example, when the computer is in standby mode the computer uses 0 to 6 watts. Reducing the time delay in which the computer will enter in the power saving mode is also a good thing to be done. Another thing to be done, is to disable the screen saver. Studies shown that a monitor in screen saving mode uses significantly more energy than in standby mode.
-            \paragraph*{Efficiency benchmarks fat/thin}%TODO
-            \paragraph*{Performance benchmarks}%TODO
-            \paragraph*{Overall and single components power consumption benchmarks, in several load conditions (idle, SO, main applications)}%TODO
-            \paragraph*{Trade off between performance and consumption}%TODO
+            \paragraph*{Auto-sleep, remote sleep and screen saver} Enabling the energy saving settings on PCs and peripherals is an important measure due to the fat that a computer in idle mode uses 20 to 50 times the power of a computer in standby mode
+\footnote{\url{http://www.cosn.org/Initiatives/GreenComputing/EnergyUse/tabid/4515/Default.aspx}}.
+There are several tools in the market to manage and schedule the computers shutdown or standby in a network.
 
     \subsection{Policies / Tools / Labels} \label{sec2:policies_tools_labels}
-        The amount of saved energy depends also on technology acquisition and managerial policies. There are a number of specialized tools that may be used in order to help enforcing these policies and tools. 
-
-        These policies can be made as acquisition of new computers or components labeled as green by the manufacturer, purchase of dual or multi-core processors, or even the discourage of purchasing or use of other parts, such as dual or large monitors. Likewise, other kinds of policies are a good idea to be defined, and they concern in the use of the workstation, for instance, to turn off the computer if they are going to be unused for a long time, shutdown over nights, and others. These policies, or rules, are important either to enforce the company's position through the green idea either to keep track of the list of thing yet to be prepared in order to convert the computers and workers as green as possible.
+        The amount of saved energy depends also on technology acquisition and managerial policies. There are a number of specialized tools that may be used in order to help enforcing these policies. Examples of policies that regard equipment acquisition are: acquisition of new computers or components labeled as green by the manufacturer, purchase of dual or multi-core processors or even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example is to turn off workstations or servers if they are going to be unused for a long time.
         
-        Furthermore, the use of tools that automates these methods is always welcome in the enterprise. There are many tools, which let the computer in standby mode, or even turn off after a long period of no utilization. In addition, the use of networked pieces of hardware can be an effective way to achieve the green. Additionally, networked systems allow several nearby users to share a single (faster) printer generally save time, cost, and energy compared with each computer having a dedicated printer, it will decrease their idle time and provide for more cost-effective use of the equipment. Above that, choosing multifunction devices (MFD) that do the work that used to require several machines. In addition to saving space and materials, these All-in-Ones save energy compared to several products working in parallel. Select printers or multifunction products that offer two-sided printing to reduce paper and energy usage. The Table~\ref{tab:energy_recommendation_efficient_printer}\footnote{\url{http://www1.eere.energy.gov/femp/procurement/eep_printer.html}} describes the characteristics that am energy-efficient networked printer should have, in relation to the number of pages per minute it prints. 
+
+        The use of tools that automate these methods. Their main features are the possibility to let computers in a network in standby mode or even to turn them off after a long period of no utilization. In addition, the shared usage of networked pieces of hardware can be an effective way to achieve energy savings. Networked systems allow several nearby users to share a single printer, which generally generates savings in both equipment cost and energy if compared with each computer having a dedicated printer. Above that, choosing multifunction devices (MFD) that encapsulates in one machine the functionality of many others. In addition to saving space and materials, these multifunctionals save energy if compared to several different machines working in parallel. The Table~\ref{tab:energy_recommendation_efficient_printer}\footnote{\url{http://www1.eere.energy.gov/femp/procurement/eep_printer.html}} describes the characteristics that am energy-efficient networked printer should have, in relation to the number of pages per minute it prints. 
         
         \begin{table}[h!tb]
         \centering
