@@ -20,11 +20,7 @@
 	    CPU     &   Central Processing Unit                 \tnhl
 	    DDR     &   Double-Data Rate                        \tnhl
         HVAC    &                                           \tnhl
-<<<<<<< HEAD:abreviations.tex
 	    HDD     &   Hard-disk Drive                         \tnhl
-=======
-	    HDD     &   Harddisk Drive                          \tnhl
->>>>>>> 674725dbd801f262b8a29da244fe4e2a53b82802:abreviations.tex
 	    ICT     &   Information and Communcation Technology \tnhl
 	    LTO     &   Linear Tape-Open                        \tnhl
 		MFD     &   Multi Function Devices                  \tnhl
