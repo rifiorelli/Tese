@@ -14,15 +14,15 @@
     \section{Green ICT or Green Computing} \label{sec2:green_ict}
         Green ICT is the exploitation of a combination of techniques and approaches in ICT related resources in order to obtain more energy efficient use of computer related resources. In other words, Green ICT is a new term originated from ``Green Computing'', it is the research and development of projects, making use of Information and Communication Technology and related applications or softwares in order to monitor the energy spent by the computers, printers and all other computing equipment. Applying this approach, it is possible to make a responsible use of computers and related resources. It is a new paradigm that has the objective in the environment. In order to achieve this objective, it is necessary to understand and have the ability to analyze the information about the ICT components among workstations, servers, network, cooling and many others. The analysis of the information provided by the measures of the components is made through a set of tools, which will be explained in the chapter~\ref{chap3:methodology}. 
         
-        The step by step to apply a green strategy is to analyze where in the data center is wasting more energy (``Assessment''), and only then act with correction and prevention interventions (``Action Plan''). For instance, when buying a new component, analyze how much energy it spends and opt for the ones that consumes less energy, also, use of thin clients as a substitute of the PC applications. Moreover, one has to re-analyze the data center and correct the energy wasting, considering more environmental friendly options such as virtualization, power management and proper habits.
+        The step by step to apply a green strategy is to analyze where in the data center is wasting more energy (``Assessment''), and only then act with correction and prevention interventions (``Action Plan''). For instance, when buying a new component, analyze how much energy it spends and opt for the ones that consumes less energy, also, use of thin clients as a substitute of the PC applications. Moreover, one has to re-analyze the data center and correct the energy wasting, considering more environmental friendly options such as virtualization, power management and proper habits. Regarding the energy consumption, it is a critical issue for IT organizations now a days, either the objective is the reduction of costs, environmental issues or keeping the data center running. In the United States alone, data centers consumed \$4.5 billion worth of electricity in 2006. Industry analyst Gartner~\cite{GartnetKumar07} estimates that over the next 5 years, most enterprise will spend as much energy as they spend on hardware infrastructure, power and air conditioning.
         
         Furthermore, It is also important to consider that there are some indirect objectives concerning green computing. Such objectives includes reduction of costs, reduction of carbon footprint and disposal of hazard elements to the environment. The reduction of costs is provided by the fact that if the energy consumed by the components is reduced, the payment in the electricity bill is directly reduced, also, when by applying the well management of the resources, the costs related to cooling, the space required for the data center and the efficiency of the computer components are all indirectly reduced. Probably, an study on the effect on ROI would show the benefits on cost.
     
         In the next section there is the explanation of all the approaches and categories for applying a green solution.
     
     \section{Computer Energy Management Categories} \label{sec2:energy_categories}
-    % TODO
-    In terms of hardware and equipment, the main measures to be taken towards a Green ICT environment can be grouped in the following categories:%XXX
+
+    In terms of hardware and equipment, the main measures to be taken towards a Green ICT environment can be grouped in the following categories:
     \begin{itemize}
         \item Workstation Configuration;
         \item Policies / Tools / Labels;
@@ -35,41 +35,13 @@
     
     For each of those categories there are several types of information that are relevant to the evaluation of the current situation of power consumption. For each category there will be a corresponding description along with a number of possible interventions, either purely conceptual or available in the market.In some cases a numerical analysis will also be provided. This information will allow the creation of a methodology to identify critical consumption issues where an investment in green ICT would bring the greater savings.
     
-    It is possible to compare how much energy is spent by three types of components, Computers on Table~\ref{tab:energy_used_computer}, Monitors on Table~\ref{tab:energy_used_monitor} and an Apple on Table~\ref{tab:energy_used_apple_20}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}.
-    
-    \begin{table}[h!tb]
-        \centering
-        \begin{tabular}{|c|c|}
-        \hline
-        \multicolumn{ 2}{|c|}{{\bf Apple iMac G5 with built in 20" LCD screen}} \tn
-        \hline
-              Idle &   97 watts \tn
-        \hline
-        Monitor dimmed &   84 watts \tn
-        \hline
-        Monitor sleep &   62 watts \tn
-        \hline
-        Copying files &  110 watts \tn
-        \hline
-        Watching a DVD &  110 watts \tn
-        \hline
-        Opening a lot of pictures &  120 watts \tn
-        \hline
-        Computer sleep &  3.5 watts \tn
-        \hline
-        \end{tabular}  
-        \captionof{table}{Energy used by Apple iMac G5 with built in 20" LCD screen} 
-        \label{tab:energy_used_apple_20}
-    \end{table}
-    
     \subsection{Machine Configuration}\label{sec2:machine_configuration}
         This category represents the components used in a certain machine configuration. The component's performance and power consumption can be obtained from several sources, such as the manufacturer specifications, benchmarks and also direct measurements in the case of power consumption.
         The following are the dimensions that influence the final power consumption of a machine.
-            \paragraph*{Single-core / Multi-core processors}%TODO
-            \paragraph*{CPU Type}%TODO
+            \paragraph*{Single-core / Multi-core processors} Processors in general affect the overall power consumption of the computer by means of the workload that is required by it. For example, if the computer is in idle (without any processes running) the energy consumed is less than if the computer stays in full workload, but the idle state does not mean anything to the efficiency, because it is needed a high workload (about 70\%) to have the best workload/power consumption ratio.
             \paragraph*{Type and dimension of RAM memory}%TODO
             \paragraph*{Type and dimension of cache memory}%TODO
-            \paragraph*{Chassis (power supply, fan)}%TODO
+            \paragraph*{Chassis (power supply, fan)} 
             \paragraph*{Monitor type} As shown by Table~\ref{tab:energy_used_monitor}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}, flat panel liquid crystal display (LCD) monitors power consumption equals to half the power of conventional CRT monitors. LCD monitors also dissipate less heat, which helps to reduce air conditioning costs. Another interesting point is that either LCD or CRT monitors consume the same amount of energy with or without screensavers. As LCD monitors do not consume much energy when turned off, that would be the best solution for idle computers.
 \begin{table}[h!tb]
         \centering
@@ -158,17 +130,17 @@
         
         One last kind of policy is to favor the acquisition of eco-labeled products. An eco-label is given to products that comply with some energy efficiency specifications. The most famous of these labels is the ENERGY STAR$^{\textcircled {\scriptsize R}}$, which is an energy efficiency program sponsored by the U.S. Environmental Protection Agency. For example, An ENERGY STAR$^{\textcircled {\scriptsize R}}$ qualified computer is possible to use up to 70\% less electricity than computers without enabled power management features.
             
-        \subsection{Thin Clients Architectures} \label{sec2:thin_clients}
-            According to \emph{Wikipedia}, in 2009, ``a thin client is a client computer or client software in client-server architecture networks which depends primarily on the central server for processing activities, and mainly focuses on conveying input and output between the user and the remote server''. This is very well connected to both ideas of cloud computing and Green ICT and it is possible to subdivide in three categories for comparison against standard PC architecture: Performance, Power Consumption and Hardware Savings and they are going to be exploited in the following subsections.
+        \subsection{Thin Client Architectures} \label{sec2:thin_clients}
+            According to \emph{Wikipedia}, in 2009, ``a thin client is a client computer or client software in client-server architecture networks which depends primarily on the central server for processing activities, and mainly focuses on conveying input and output between the user and the remote server''. This is very well connected to both ideas of cloud computing and Green ICT and it is possible to subdivide in three categories for comparison against standard the PC architecture: Performance, Power Consumption and Hardware Savings and they are going to be exploited in the following subsections.
             
             \subsubsection*{PC vs. Thin Client: Performance}
-                In order to analyze and give a base for a comparison of the performance between standard PCs and two types of thin clients, a set of tests were executed, on networks varying the number of active clients, each running the same typical office applications tasks. The following client platforms participated in this study:
+                In order to analyze and give a comparison base of the performance between standard PCs and two types of thin clients, a set of tests were executed. The variable that was the number of active clients on a network, each running the same typical office applications tasks. The following client platforms were considered in this study:
                 \begin{itemize}
                     \item PC: OptiPlex 210L PCs, basic managed PC desktops running Windows XP Professional;
                     \item Sun thin client: Sun Ray 2 running Sun Ray proprietary software;
                     \item Wyse thin client: Wyse Winterm 5150SE, Linux-based thin clients running Wyse Linux V6.
                 \end{itemize}
-                Each network used a standard file server, an HP ProLiant DL360 3.4MHz with and Intel Xeon processor and Microsoft Server 2003 Enterprise Edition. For test reasons, all files were manipulated by the PC were stored at the server. The tests are listed below:
+                Each network used a standard file server, an HP ProLiant DL360 3.4MHz with and Intel Xeon processor and Microsoft Server 2003 Enterprise Edition. For test reasons, all the files that were manipulated by the PC were stored at the server. The tests are listed below:
                 \begin{itemize}
                     \item Calculating subtotal in Microsoft Office Excel 2003 (Figure~\ref{fig:graphic_excel_test} and Table~\ref{tab:table_excel_test})
                     \item Compressing a PDF within Adobe Acrobat 7.0 Standard (Figure~\ref{fig:graphic_pdf_test} and Table~\ref{tab:table_pdf_test})
@@ -279,7 +251,7 @@
                     \item Thin client cost: US\$250.00 x PC cost: US\$750.00;
                     \item PC needs to be upgraded every 3 years and thin clients need to be replaced every 6 years.
                 \end{itemize}
-                Therefore, in a 6-year period US\$1500.00 will be spent on a PC against \$250.00 that will be spent on a thin client.
+                Therefore, in a 6-year period US\$1500.00 will be spent on a PC against US\$250.00 that will be spent on a thin client.
 
             \paragraph*{Extra server hardware costs}
                 Considering that:
@@ -292,7 +264,7 @@
         \subsection{Servers and Virtualization} \label{sec2:servers_virtualization}
                         
             \subsubsection*{Rack vs. Blade}
-                According to Goldworm\cite{barbAnne07}, Blade servers are a package of ``ultra-high density components including servers, storage, and communications interfaces in a pre-wired chassis with shared components such as power, cooling, and networking. In contrast to the conventional \emph{horizontal} positioning within a rack (rack mounted servers), blades are typically (though not always) installed \emph{vertically} in a blade chassis, like books in a bookshelf''. This disposition of the servers provide a high density of the components and thus performance, for example, 60 blade servers can fit in the same physical space as 42 rack-mounted servers. Another improvement reached with this type of server is the integration of a remote system management, differently form the ordinary (rack or standalone), where it is an add-on. An example of this type of server can be seen on Figure~\ref{fig:example_blade_server}. Moreover, Blade servers\footnote{\url{http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?tp=&arnumber=1362591&isnumber=29851}} are computer servers designed to minimize the use of physical space. A blade enclosure, which can hold from 8 to 24 \cite{Rehn08} blade servers, provides common services such as power supply, cooling and networking thus eliminating redundancies in each individual blade server. More than 250 blade servers can be easily accommodated in a single rack. On the other hand approximately 42 servers can be accommodated to a standard rack when it comes to the other lower end servers available in the market. Whereas, rack-mounted servers are those arrange in industrial rack. A single rack is capable of holding 10 to 20 servers. Therefore, this type of servers come with rails or slides to ease inserting and removing of the components\cite{Bailey09}.
+                According to Goldworm\cite{barbAnne07}, Blade servers are a package of ``ultra-high density components including servers, storage, and communications interfaces in a pre-wired chassis with shared components such as power, cooling, and networking. In contrast to the conventional \emph{horizontal} positioning within a rack (rack mounted servers), blades servers are typically (though not always) installed \emph{vertically} in a blade chassis, like books in a bookshelf''. This disposition of the blade servers along with their reduced dimension provide a high server density and thus of performance. For example, 60 blade servers such as the one depicted in Figure~\ref{fig:example_blade_server} can fit in the same physical space as 42 rack-mounted servers. A blade enclosure, which can hold from 8 to 24 \cite{Rehn08} blade servers, provides common services such as power supply, cooling and networking thus eliminating redundancies in each individual blade server. A standard rack can accommodate more than 250 blade servers against approximately 42 standard servers.
             \begin{figure}[h!tb]
                 \centering
                 \subfloat[IBM LS20]{
@@ -351,29 +323,29 @@
                 \captionof{table}{Power consumption for several servers, excluding cooling and redundancy}%XXX colocar referencia
                 \label{tab:power_consumption_several_servers}
             \end{table}
-            Thus, a possible conclusion to this comparison is that with Blade servers the gain with space, performance and, more importantly, power consumption is much smaller than with Rack-mounted devices.
+
             \begin{itemize}
-                \item Space saving and efficiency - packaging more computer power in a significantly smaller area;
+                \item Space saving and efficiency - packing more computer power in a significantly smaller area;
                 \item Consolidation of servers to improve and centralize management as well as utilization;
                 \item Return on investment (ROI) and improved total cost of ownership (TOC) through increased hardware utilization and reduced operating expenses;
                 \item More energy efficient, due to existence of centralized power supply, cooling and networking.
             \end{itemize}
-            According to the figures, the choice of using a blade server provides roughly 5\% power saving over a similar rack-mount configuration. The main benefit brought by the use of blade servers, however, is the processing density, as a rack filled with blade servers may carry up to 50\% more servers than one with rackable servers. Other benefits are that blade servers are easier to service and reduce the number of power cables needed from as many as 80\% \cite{Hendenson07}. 
+            According to the figures, the choice of using a blade server provides roughly 5\% power saving over a similar rack-mount configuration. The main benefit brought by the use of blade servers, however, is the processing density, as a rack filled with blade servers may carry up to 50\% more servers than one with rackable servers. Other benefits are that blade servers are easier to service and reduce the number of power cables needed from as much as 80\% \cite{Hendenson07}. 
             
-            However, the high power density might prove to be a problem to server farms in terms of overheating.%XXX falar disso na parte de cooling...
+            In conclusion, blade servers do not provide much in terms of power saving but it greatly reduces the amount of space used in datacenters. However, the high power density might prove to be a problem to server farms in terms of overheating. Solutions to this problem are described in the section of Data Center Infrastructure.
             
             \subsubsection*{Virtualization}
-                The overall goal of virtualization is to create a logical abstraction of physical assets. It allows to multiple ``virtual'' servers to run on one physical server, thereby consolidating many physical servers onto one. \emph{Wikipedia}, in 2009, defines virtualization as the following: ``Virtualization is the process of presenting a logical grouping or subset of computing resources so that they can be accessed in ways that give benefits over the original configuration. This new virtual \emph{view} of the resources is not restricted by the implementation, geographic location or the physical configuration of underlying resources. Commonly virtualized resources include computing power and data storage''. Moreover, virtualization improves efficiency and availability of resources and applications in the organization. According to \emph{Vmware}, it is possible to save 50-70\% overall IT costs. Overall benefits from virtualization includes: reduction of costs, free up IT resources, provide better infrastructure optimization and utilization, increase availability and improve desktop management.
+                The overall goal of virtualization is to create a logical abstraction of physical assets. It allows multiple ``virtual'' servers to run on one physical server, thereby consolidating many physical servers into one. \emph{Wikipedia}, in 2009, defines virtualization as the following: ``Virtualization is the process of presenting a logical grouping or subset of computing resources so that they can be accessed in ways that give benefits over the original configuration. This new virtual \emph{view} of the resources is not restricted by the implementation, geographic location or the physical configuration of underlying resources.''. Virtualization can improve efficiency and availability of resources and applications in the organization and according to \emph{Vmware}, the choice of virtualized servers over the standard nonvirtualized configuration makes possible to save 50-70\% overall IT costs. Apart from the reduction of costs, virtualization may free up IT resources, provide better infrastructure optimization and utilization, increase availability and improve desktop management.
                 
-                Regarding the energy consumption, it is a critical issue for IT organizations now a days, either the objective is the reduction of costs, environmental issues or keeping the data center running. In the United States alone, data centers consumed \$4.5 billion worth of electricity in 2006. Industry analyst Gartner \cite{GartnetKumar07} estimates that over the next 5 years, most enterprise will spend as much energy as they spend on hardware infrastructure, power and air conditioning. Besides that, virtualization has made positive improvements to the environment issue. Gartner \cite{GartnetStamford07} estimates that 1.2 million workloads run in virtual machines, which represents an aggregate power savings of about 8.5 billion kWh - more electricity than is consumed annually in all of New England for heating, ventilation and cooling. While this is a good start, there are plenty of opportunities for saving even more energy and money. Analyst firm IDC \cite{IDCDoc07} states that the un-utilized server capacity equates to approximately:
+                Besides that, virtualization has made positive improvements to the environment issue. Gartner \cite{GartnetStamford07} estimates that 1.2 million workloads run in virtual machines, which represents an annual aggregate power savings of about 8.5 billion kWh - more electricity than is consumed annually in all of New England for heating, ventilation and cooling. While this is a good start, there are plenty of opportunities for saving even more energy and money. Analyst firm IDC \cite{IDCDoc07} states that the un-utilized server capacity equates to approximately:
                 \begin{itemize}
-                    \item \$140 billion
-                    \item 3 years supply of hardware
-                    \item More than 20 million servers 
+                    \item in term of equipment and energy costs : US\$140 billion annually
+                    \item in terms of hardware costs : 3 years supply of hardware
+                    \item in terms of computing power : more than 20 million servers 
                 \end{itemize}
-                At 4 tons of carbon dioxide (CO$_{2}$) annually per server, these un-utilized servers produce a total of more than 80 million tons of CO$_{2}$ per year. This is more than is emitted from the country of Thailand and more than half of all countries in South America. In conclusion to all of these exploited data, all of these data shows that virtualization is a good improvement to the data center, saving not only space provided to the servers, but also saving energy by reducing the idle time of the server by augmenting the workload and the up-time. It is also important to state that, by providing a virtualized solution, the number and variety of applications running can be increased.
-
-                There are two kinds of virtualization that may be used in a data center: storage and computing virtualization. Storage-area networks (SAN) may be implemented to present several different physical storage racks as a single virtual storage pool \cite{Antonopoulos05}. On the other hand, computing virtualization It can be implemented in two ways. The first case is when single physical server can offer multiple virtual servers, each with its own OS. Another option is to consolidate multiple physical servers into a cluster that acts as a single server. There are cross-platform server virtualization software available which allows data center managers to cluster and partition servers.
+                At the annual production rate of 4 tons of carbon dioxide (CO$_{2}$) per server, these un-utilized servers produce a total of more than 80 million tons of CO$_{2}$ per year. This is more than is emitted from the country of Thailand and more than half of all countries in South America. From the organizational point of view these data suggests that virtualization is a good improvement to the data center, saving not only space provided to the servers but also saving energy by reducing the idle time of the servers and augmenting their workload. It is also important to state that, by providing a virtualized solution, the number and variety of available applications can be increased.
+                
+                There are two kinds of virtualization that may be used in a data center: storage and computing virtualization. Storage-area networks (SAN) may be implemented to present several different physical storage racks as a single virtual storage pool \cite{Antonopoulos05}. On the other hand, computing virtualization can be implemented in two ways. The first case is when a single physical server can offer multiple virtual servers, each with its own OS. Another option is to consolidate multiple physical servers into a cluster that acts as a single server. There are cross-platform server virtualization softwares available which allows data center managers to cluster and partition servers.
                 \begin{figure}[h!tb]
                     \centering
                     \includegraphics{graphics/installed_base_virtualized_servers}
@@ -412,14 +384,14 @@
                 \end{table}
                 
         \subsection{Data Storage} \label{sec2:data_storage}
-            Data Storage \ldots
+            There are currently three main technologies to store data: hard disks, tape drives and flash-based storage. This session will cover the first two, as they are the predominant technologies in datacenters. At the end of the session a comparison will be made between hard and tape drives.
             
             \subsubsection*{Tape Drives}
                 A tape drive is a data storage device that reads and writes data stored on a magnetic tape. Its main use is as archival storage of data stored in hard drives. It is typically used for archival storage of data stored on hard drives. 
-Tape media generally has a favorable unit cost; long archival stability and low energy consumption per MB of data stored to compensate for their slow seek times. Despite the slow seek time, tape drives can stream data to tape as quickly as hard drives. For example, modern LTO drives can reach continuous data transfer rates of up to 80MB/s, which is as fast as most 10,000rpm hard disks, according to \emph{Wikipedia, 2008}. Tape drives can range in capacity from a few megabytes to hundreds of gigabytes. Data can be compressed as to maximize the capacity usage. The compression rate is of usually 2:1. A set of tables related to tape drives can be found in Appendix~\ref{app:comparison_tape_drives}
+Tape media generally has a favorable unit cost, long archival stability and low energy consumption per MB of data stored to compensate for their slow seek times. Despite the slow seek time, tape drives can stream data to tape as quickly as hard drives. For example, modern LTO drives can reach continuous data transfer rates of up to 80MB/s, which is as fast as most 10,000rpm hard disks, according to \emph{Wikipedia, 2008}. Tape drives can range in capacity from a few megabytes to hundreds of gigabytes. Data can be compressed as to maximize the capacity usage. In this case the compression rate is of usually 2:1. A set of tables related to tape drives can be found in Appendix~\ref{app:comparison_tape_drives}
             
             \subsubsection*{Disk Arrays}
-                Disk array refers to a linked group of one or more physical independent hard disk constituting a larger, high-performance system. They are usually implemented using RAID technology, which can provide component redundancy and high throughputs.
+                Disk array refers to a linked group of one or more physical independent hard disks constituting a larger, high-performance system. They are usually implemented using RAID technology, which can provide component redundancy and high throughputs.
         
             \subsubsection*{Comparison between Tape Drives and Disk Arrays}
                 Supposing a 995 TB database consisting of:
@@ -428,7 +400,7 @@ Tape media generally has a favorable unit cost; long archival stability and low 
                 	\item Backup cache (13 weeks)
                 	\item Backup archive (1 year backup)
                 \end{itemize}
-                A solution consisting exclusively of disk arrays would require four 32-drawer disk array systems of 245 TB each would be necessary. In order to ensure reliability and recoverability, a RAID5 format with two RAID5 arrays assigned to each drawer has been assumed. The total equipment cost is estimated on US\$10.57M \cite{Reine08} and according to the following table the disk array solution consumes 98KWh per TB per year.
+                A solution consisting exclusively of disk arrays would require four 32-drawer disk array systems of 245 TB each. In order to ensure reliability and recoverability, a RAID5 format with two RAID5 arrays assigned to each drawer has been assumed. The total equipment cost is estimated on US\$10.57M \cite{Reine08} and according to the following table the disk array solution consumes 98KWh per TB per year.
                 \begin{table}[h!tb]
                 \centering 
                 \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
@@ -472,7 +444,7 @@ Tape media generally has a favorable unit cost; long archival stability and low 
                     \caption{Conventional AC architecture efficiency}
                     \label{fig:conventional_ac_efficiency}
                 \end{figure}
-                In this configuration (Figure~\ref{fig:conventional_ac_efficiency})the following transformations take place:
+                In this configuration (Figure~\ref{fig:conventional_ac_efficiency}) the following transformations take place:
                 \begin{itemize}
 	                \item PDU steps down the voltage from 480VAC to 208VAC;
                     \item Power Supply Unit (PSU) converts 208VAC to 380VDC;
@@ -516,7 +488,7 @@ Tape media generally has a favorable unit cost; long archival stability and low 
                     \caption{Footprint Reduction for a 35 kW Heat Load}
                     \label{fig:footprint_reduction_for_35_heat_load}
                 \end{figure}
-                With relation to maintenance costs, Figure~\ref{fig:economic_crossover_annualized} \cite{}
+                With relation to maintenance costs,
                 \begin{figure}[h!tb]
                     \centering
                     \includegraphics[scale=0.8]{graphics/economic_crossover_annualized}
@@ -530,14 +502,5 @@ Tape media generally has a favorable unit cost; long archival stability and low 
                     \captionof{table}{Life Cycle Costs of Water-cooled and Air-cooled Solutions}
                     \label{tab:life_cycle_costs_water_cooled_air_cooled}
                 \end{figure}
-                The annual costs for water cooling and air cooling (including charges, maintenance, equipment) do not differ by a large amount. The main benefit from water cooling is the footprint reduction which can increase the server density in a datacenter%TODO
-
-\pagebreak%XXX coloquei um pagebreak aqui, tirar depois.
-    
-\section{Devices Consumption} \label{sec2:devices_consumption} 
-% TODO
-    
-\section{Measurement Tools} \label{sec2:tools}
-% TODO
-
+                the annual cost for water cooling and air cooling (including charges, maintenance, equipment) do not differ by a large amount as seen in  Table \ref{tab:life_cycle_costs_water_cooled_air_cooled} and Figure \ref{fig:economic_crossover_annualized}. In this way, the main benefit brought by water cooling is the footprint reduction which can increase the server density in a data center.
 
