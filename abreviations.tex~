@@ -1,0 +1,46 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Master Thesis - Computer Engineering
+%% Copyright 2009 Ricardo Alexandre Fiorelli, Erick Poletto
+%% This document is distributed by the terms of the license
+%% included in the file LICENCE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Abreviations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Glossary of Abrevitations}
+
+
+% Abreviações dos termos usados no trabalho
+
+\begin{center}
+	\begin{tabular}{|l|l|} \hline
+	    x       &   x                                       \tnhl
+	    CPU     &   Central Processing Unit                 \tnhl
+	    DDR     &   Double-Data Rate                        \tnhl
+        HVAC    &                                           \tnhl
+<<<<<<< HEAD:abreviations.tex
+	    HDD     &   Hard-disk Drive                         \tnhl
+=======
+	    HDD     &   Harddisk Drive                          \tnhl
+>>>>>>> 674725dbd801f262b8a29da244fe4e2a53b82802:abreviations.tex
+	    ICT     &   Information and Communcation Technology \tnhl
+	    LTO     &   Linear Tape-Open                        \tnhl
+		MFD     &   Multi Function Devices                  \tnhl
+    	MPN     &   Manufacturer Part Number                \tnhl
+    	OS      &   Operational System                      \tnhl
+    	PC      &   Personal Computer                       \tnhl
+    	PDU     &                                           \tnhl
+    	PSU     &   Power Supply Unit                       \tnhl
+    	RAID    &                                           \tnhl
+		ROI     &   Return on Investment                    \tnhl
+		SaaS    &   Software as a Service                   \tnhl
+		SAN     &   Storage-Area Networks                   \tnhl
+		TOC     &   Total Cost of Ownership                 \tnhl
+		VM      &   Virtual Machine                         \tnhl
+		x       &   x                                       \tnhl
+	\end{tabular}
+	\label{tab:glossary_of_abbreviations}
+\end{center}
+% TODO
