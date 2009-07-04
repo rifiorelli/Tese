@@ -12,27 +12,27 @@
 
 \chapter{Methodology} \label{chap3:methodology}
 
-    Write a review point of the problem and the solution we want to achieve\ldots. Describe the general and specific objective \ldots
-    
+	This chapter will describe the steps taken to the end of constructing the components database and of validating the data contained in it.
+These can be shortly described as follows:
     \begin{description}
-        \item[Phase 0: Thesis -] In this part the work subject was defined, along with its hypothesis and goals.
-        \item[Phase 1: Examination -] This was the first step taken to begin the research, in which, many components were analyzed and cataloged to later use;
-        \item[Phase 2: Analysis of Benchmarking Softwares -] A number of existing softwares were analyzed and those that met the requirements and specifications previously made were chosen. A list of these other softwares can be found in Appendix~\ref{app:list_other_energy_management_tools};
-        \item[Phase 3: Catalog -] The tools provided information about computer components that were used to create a component database.
-        \item[Phase 4: Build Database -] 
-        \item[Phase 5: Analysis -] 
-        \item[Phase 6: -] 
+        \item[Phase 0: Project definition -] As this work is part of a project aimed to create a methodology to implement a green ICT strategy, this first phase consisted of the definition of the logical components of this project and of how the current work would collaborate to it.
+        \item[Phase 1: Analysis of Benchmarking Softwares -] A number of existing softwares were analyzed and those that have proven to be more adequate were selected. A list of the analyzed softwares can be found in Appendix~\ref{app:list_other_energy_management_tools}.
+        \item[Phase 2: Catalog -] The tools were used to obtain information about computer components that were later used to create a component database.
+        \item[Phase 3: Database design and construction -] The database schema was designed and data began to be inserted into the relations.
+        \item[Phase 4: Analysis -] The validity of the stored data was tested with the help of direct measurements.
     \end{description}
 
 
 \section{Overview} \label{sec3:overview}
-    % Acho q seria tb interessante dizer que o banco de dados de componentes vai ser usado como base pra se aplicar uma metodologia de aquisiçao de hardware q ainda vai ser desenvolvida
-    This research was conducted in order to determine how much energy a computer's components, for instance, CPU\footnote{Central Processing Unit}, Memory and Hard Drives spend and also how much it would affect the cost of acquisition of new workstations as a whole. Above that, the advantages and disadvantages as well as the reliability of these measures and benchmarks played also an important role in the requirements of this thesis work. With regard to the topic in hand, the analysis was carried out with the help of specialized softwares, which will be described in the following sections and also analytical measures using an energy measurement device to counterbalance and compare the benchmarking measures obtained from these softwares. Concretely, more than 1000 components were analyzed and categorized in a database, whose schema can be further analyzed on Figure~\ref{fig:database_schema}. Firstly, it was used the Sandra's database~\ref{sec3:sandra} to collect the components and separate them by categories, along with their benchmark related data. Secondly, WebSPHINX~\ref{sec3:websphinx} was used to create a collection of components and their respective MPNs. Thirdly, an energy measurement device~\ref{sec3:energy_measurement_instrument} was used for the comparison and validation of the results given by the other benchmarks and acquisition of new data. 
+    The main and broader objective of the research that is being conducted is to develop a methodology to implement a green ICT strategy. Namely, the methodology would provide a set of tools to guide the hardware acquisition process in an organization either in terms of workstations or of datacenter equipment.
+    The present work will contribute to this research by providing a component database with information related to hardware components, which will be used as one of the inputs of the methodology.
+    This work was conducted in order to determine how much energy a computer's components, for instance, CPU\footnote{Central Processing Unit}, Memory and Hard Drives spend and also how much they would affect the cost of acquisition of new workstations as a whole. This is calculable with information such as component performance, consumption and price. The analysis was carried out with the help of specialized softwares that will be described in the following sections and also with analytical measures made with an energy measurement device. In the end the benchmarking measures obtained from these softwares were compared with both the measures obtained from the device and with information provided by the component datasheets. More than 1000 components were categorized in a database, whose schema can be found in Figure~\ref{fig:database_schema}. Firstly, the SiSoft Sandra's database~\ref{sec3:sandra} was used to collect the components and separate them by categories, along with their benchmark related data. Secondly, WebSPHINX~\ref{sec3:websphinx} was used to create a collection of components and their respective MPNs. In the end, an energy measurement device~\ref{sec3:energy_measurement_instrument} was used for the comparison and validation of the results given by the other benchmarks and acquisition of new data. 
 
-    Finally, these data were all linked in a database for later comparison and choice. 
+    Finally, these data were all linked in a database for later comparison. 
 
 \section{Research Design} \label{sec3:research_design} 
-    The experimental method of research was used in this study. Figure~\ref{fig:experimental_method_approach} draws the steps of the method used. To define the experimental type of research, Bryman \cite{bryman89} stated that ``the experimental design (\ldots) allows the causal hypothesis that underpins the question to be examined'', which means that this method is a systematic and scientific approach to research in which the researcher manipulates one or more variables, controlling and measuring any changes in other variables. The emphasis given is on the results and analysis of the benchmarks provided and theirs measures. It allows to verify the thesis in which this work is based on, by making use of empirical methods changing the benchmark used and the purpose of it.
+Tirar essa section???    
+The experimental method of research was used in this study. Figure~\ref{fig:experimental_method_approach} draws the steps of the method used. To define the experimental type of research, Bryman \cite{bryman89} stated that ``the experimental design (\ldots) allows the causal hypothesis that underpins the question to be examined'', which means that this method is a systematic and scientific approach to research in which the researcher manipulates one or more variables, controlling and measuring any changes in other variables. The emphasis given is on the results and analysis of the benchmarks provided and theirs measures. It allows to verify the thesis in which this work is based on, by making use of empirical methods changing the benchmark used and the purpose of it.
     \begin{figure}[!htb]
         \centering
             \includegraphics[scale=0.5]{graphics/experimental_method_approach}
@@ -41,7 +41,7 @@
     \end{figure}
     
     %XXX 
-    %XXX/********* Os proximos paragraphs foram criados para direcionar o pensamento e deve ser mantidos como comentario, ou retirados do texto é preciso que sejam melhor desenvolvidos*******/
+    /********* Os proximos paragraphs foram criados para direcionar o pensamento e deve ser mantidos como comentario, ou retirados do texto é preciso que sejam melhor desenvolvidos*******/
     %XXX
     \begin{description}
     \item[Universe o Study] 
@@ -72,29 +72,25 @@
     \end{description}
     
 \section{Energy Management and Benchmarking Tools} \label{sec3:energy_management_tools}
-    In order to obtain relevant information about the data required for making the comparison between the components, it was needed to use some energy management and benchmarking tools. 
+    In order to obtain relevant information about the data required for making the comparison between the components, some energy management and benchmarking tools were used.
     
-    The softwares used, were selected from many of existents softwares in the area for the following reasons:
-    There exists many softwares
+    The softwares that used were selected over the other available ones for their superior evaluation on the following criteria:
 \begin{description}
-	\item[Size of Database] The database of components, in order to get a good result should be considerably big;
+	\item[Size of Database] The database of components used by the software, in order to get a good result, should be considerably large;
 	\item[Characteristics of Benchmarks] The benchmarks provided by the software should provide information about the energy consumed for each component;
-	\item[Number of Benchmarks] The software should have a good database of benchmarks;
-	\item[Quality of Benchmarks] Although, the number of benchmarks should be sufficiently, the quality, precision and relevancy were, also, important in the decision method;
-	\item[Ease of Use] In the sense that, the software should provide an ambient of work that is intuitively and comfortable;
-	\item[something1] explain ;% TODO
-	\item[something2] explain ;% TODO
-	\item[something3] explain ;% TODO
+	\item[Number of Benchmarks] The software should have a good variety of benchmarks;
+	\item[Quality of Benchmarks] Although the number of benchmarks should be sufficient in number, the quality, precision and relevancy were also important in the decision method;
+	\item[Ease of Use] In the sense that the software should provide an ambient of work that is intuitive and comfortable;
 \end{description}
     
-    The acquisition of data was made analyzing the results of these benchmarks, making use of their database
+    The acquisition of data was made analyzing the results of these benchmarks, making use of their database and system measurement capabilities.
 
     \subsection{SiSoftware SANDRA} \label{sec3:sandra}
 
-    SiSoftware Sandra\footnote{The \textbf{S}ystem \textbf{AN}alyser, \textbf{D}iagnostic and \textbf{R}eporting \textbf{A}ssistant} is an information and diagnostic utility. It provides most of the information (including undocumented) one need to know about their hardware, software and other devices whether hardware or software.
-SANDRA was the main software utilized to benchmark the data in this thesis work. It contains a huge database of components to make sure the benchmarks provided have the best results and accurate comparisons.
+    SiSoftware Sandra\footnote{The \textbf{S}ystem \textbf{AN}alyser, \textbf{D}iagnostic and \textbf{R}eporting \textbf{A}ssistant} is an information and diagnostic utility. It provides most of the information one need to know about their hardware, software and other devices whether hardware or software.
+SANDRA was the main software utilized to benchmark the data in this thesis work. It contains a vast database of components associated with both benchmark results and manufacturer specifications.
     
-    The software goes beyond the point of other Windows Utilities, by giving the user, the possibility of benchmarking and comparing at both high and low level the computer devices. Moreover, it is a tool for monitoring the performance on systems and even benchmarking many parts of the computer, this includes, CPU, memory, hard disks, CD/DVD ROM, network, PSU, etc. For that reason, it is considered one of the most complete benchmarking tools available. Besides the benchmarking, Sandra also provides access to information about the Hardware, including the Motherboard, processor, disks, printers, etc; and Software, such as, key softwares (web browsers, e-mail program, etc.), OS information, processes, memory usage and more.
+    The software goes beyond the point of other Windows Utilities, by giving the user, the possibility of benchmarking and comparing at both high and low level the computer devices. Moreover, it is a tool for monitoring the performance on systems and even benchmarking many parts of the computer, this includes, CPU\footnote{Central Processing Unit}, memory, hard disks, CD/DVD ROM, network, PSU\footnote{Power Supply Unit}, etc. For that reason, it is considered one of the most complete benchmarking tools available. Besides the benchmarking, Sandra also provides access to information about the Hardware, including the Motherboard, processor, disks, printers, etc; and Software, such as, key softwares (web browsers, e-mail program, etc.), OS information, processes, memory usage and more.
     
     The detailed list of modules utilized by SiSoftware Sandra can be found in Appendix~\ref{app:sandra_modules}.
     

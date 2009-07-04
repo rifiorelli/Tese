@@ -38,31 +38,48 @@
     \subsection{Machine Configuration}\label{sec2:machine_configuration}
         This category represents the components used in a certain machine configuration. The component's performance and power consumption can be obtained from several sources, such as the manufacturer specifications, benchmarks and also direct measurements in the case of power consumption.
         The following are the dimensions that influence the final power consumption of a machine.
-            \paragraph*{Single-core / Multi-core processors} Processors in general affect the overall power consumption of the computer by means of the workload that is required by it. For example, if the computer is in idle (without any processes running) the energy consumed is less than if the computer stays in full workload, but the idle state does not mean anything to the efficiency, because it is needed a high workload (about 70\%) to have the best workload/power consumption ratio.
-            \paragraph*{Type and dimension of RAM memory}%TODO
-            \paragraph*{Type and dimension of cache memory}%TODO
-            \paragraph*{Chassis (power supply, fan)} 
-            \paragraph*{Monitor type} As shown by Table~\ref{tab:energy_used_monitor}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}, flat panel liquid crystal display (LCD) monitors power consumption equals to half the power of conventional CRT monitors. LCD monitors also dissipate less heat, which helps to reduce air conditioning costs. Another interesting point is that either LCD or CRT monitors consume the same amount of energy with or without screensavers. As LCD monitors do not consume much energy when turned off, that would be the best solution for idle computers.
+            \paragraph*{Single-core / Multi-core Processors} Processors in general affect the overall power consumption of the computer by means of the workload that is required by it. For example, if the computer is in idle (without any processes running) the energy consumed is less than if the computer stays in full workload, but the idle state does not mean anything to the efficiency, because it is needed a high workload (about 70\%) to have the best workload/power consumption ratio.
+            %Tirei o cache pelo simples fato de que nao afeta na overall consumption
+            %\paragraph*{Cache Memory} %TODO Type and dimension of 
+            \paragraph*{RAM Memory} There are several types and dimensions of memories that should be analyzed, for instance the difference in operation in 2.5V in DDR SDRAM, when compared 3.3V in SDRAM significantly reduce the power consumption. When compating DDR and DDR2, The Table~\ref{tab:power_consumption_ram}\nocite{Cooke:2009:Online} compares the difference in power consumption of DDR and DDR2 under various circumstances and it shows that the power consumed by RAM, even on maximum workload (+4.5W), does not have much effect on the overall computer consumption (~220W).%XXX melhorar essa parte
+\begin{table}[h!tb]
+\centering \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{RAM Type } & \textbf{Size } & \textbf{Load } & \textbf{+12V1 } & \textbf{+5V } & \textbf{+3.3V } & \textbf{Rise from Baseline } \tnhl
+\multicolumn{ 1}{|c|}{\textbf{PC3200 DDR }} & \multicolumn{ 1}{c|}{512 MB } & Idle  & 0.5A  & 0.6A  & 3.0A  & n/a  \tn \cline{ 3- 7}
+\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & No Change  & +0.7A  & +2.3W  \tn \cline{ 2- 7}
+\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{1 GB} & Idle  & No Change  & No Change  & +0.6A  & +2.0W  \tn \cline{ 3- 7}
+\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & No Change  & +1.0A  & +3.3W  \tnhl
+\multicolumn{ 1}{|c|}{\textbf{533 MHz DDR2 }} & \multicolumn{ 1}{c|}{512 MB } & Idle  & 0.5A  & 3.6A  & 0.5A  & n/a  \tn \cline{ 3- 7}
+\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & +0.4A  & No Change  & +2.0W  \tn \cline{ 2- 7}
+\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{1 GB} & Idle  & No Change  & No Change  & No Change  & No Change  \tn \cline{ 3- 7}
+\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & +0.9A  & No Change  & +4.5W \tnhl
+\end{tabular}}
+\caption{Power Consumption: RAM}
+\label{tab:power_consumption_ram}
+\end{table}
+            \paragraph*{Hard Drives and Mass Memory} Power consumption in this case is affected mainly by design of the hard drive's spindle motor and the number and size of the spindle platters and, also,other components such as the actuator and controller board. Also, solid-state and flash drives reduce significantly the power consumed by the component, Figure~\ref{fig:power_consumption_harddrive} shows this difference.%XXX melhorar essa parte
+            \begin{figure}[h!tb]
+                    \centering
+                    \includegraphics[scale=0.6]{graphics/power_consumption_harddrive}
+                    \caption{Power Consumption for Hard-drives}
+                    \label{fig:power_consumption_harddrive}
+                \end{figure}
+            \paragraph*{Chassis} Concerning power supply, fans or other PC components not belonging to the main parts, it is necessary to require quality other than price. Heating and cooling are really where the power consumption goes. Most computers only make up a fairly small percentage of your electrical bill. One should never underestimate the efficiency of the power supply, because most low quality ones are only about 45-55\% efficient, whereas it is possible to achieve more than 80\%.
+            \paragraph*{Monitor Type} As shown by Table~\ref{tab:energy_used_monitor}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}, flat panel liquid crystal display (LCD) monitors power consumption equals to half the power of conventional CRT monitors. LCD monitors also dissipate less heat, which helps to reduce air conditioning costs. Another interesting point is that either LCD or CRT monitors consume the same amount of energy with or without screensavers. As LCD monitors do not consume much energy when turned off, that would be the best solution for idle computers.
 \begin{table}[h!tb]
         \centering
         \begin{tabular}{|c|c|}
         \hline
-        \multicolumn{ 2}{|c|}{{\bf Monitors}} \tn
-        \hline
-        Typical 17" CRT &   80 watts \tn
-        \hline
-        Typical 17" LCD &   35 watts \tn
-        \hline
-        Apple MS 17" CRT$^a$ &   63 watts \tn
-        \hline
-        Apple MS 17" CRT$^b$ &   54 watts \tn
-        \hline
-        Screen saver$^c$ & same as above \tn
-        \hline
-        Sleeping monitor$^d$ & 0-15 watts \tn
-        \hline
-        Monitor turned off at switch & 0-10 watts \tn
-        \hline
+        \multicolumn{ 2}{|c|}{{\bf Monitors}} \tnhl
+        Typical 17" CRT &   80 watts \tnhl
+        Typical 17" LCD &   35 watts \tnhl
+        Apple MS 17" CRT$^a$ &   63 watts \tnhl
+        Apple MS 17" CRT$^b$ &   54 watts \tnhl
+        Screen saver$^c$ & same as above \tnhl
+        Sleeping monitor$^d$ & 0-15 watts \tnhl
+        Monitor turned off at switch & 0-10 watts \tnhl
         \end{tabular}  \linebreak
         $^a$ mostly white (blank IE window) \linebreak
         $^b$ mostly black (black Windows desktop with just a few icons)\linebreak
@@ -72,8 +89,6 @@
 \label{tab:energy_used_monitor}
     \end{table}
 
-            \paragraph*{Hard drives (number and type)}%TODO
-
     \subsection{Policies / Tools / Labels} \label{sec2:policies_tools_labels}
         The amount of saved energy depends also on policies that regard technology acquisition and IT management, which may be enforced by a variety of specialized tools. Examples of policies that regard equipment acquisition are: the acquisition of new computers or components labeled as green by the manufacturer, purchase of computers with multi-core processors and even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example of the latter is to turn off workstations or servers if they are going to be unused for a long time. This kind of measure is particularly efficient as a computer in idle mode uses 20 to 50 times the power of a computer in standby mode
 \footnote{\url{http://www.cosn.org/Initiatives/GreenComputing/EnergyUse/tabid/4515/Default.aspx}}.
@@ -82,16 +97,11 @@
         \centering
         \begin{tabular}{|c|c|}
         \hline
-        \multicolumn{ 2}{|c|}{{\bf Computers}} \tn
-        \hline
-        Desktop Computer & 60-250 watts \tn
-        \hline
-        On screen Saver$^a$ & 60-250 watts \tn
-        \hline
-        Sleep / Standby & 1-6 watts \tn
-        \hline
-        Laptop & 15-45 watts \tn
-        \hline
+        \multicolumn{ 2}{|c|}{{\bf Computers}} \tnhl
+        Desktop Computer & 60-250 watts \tnhl
+        On screen Saver$^a$ & 60-250 watts \tnhl
+        Sleep / Standby & 1-6 watts \tnhl
+        Laptop & 15-45 watts \tnhl
         \end{tabular}\linebreak
         $^a$ no difference
         \captionof{table}{Energy used by a standard computer} 
@@ -104,22 +114,14 @@
         \centering
             \begin{tabular}{|r|c|c|}
             \hline
-            \multicolumn{ 3}{|c|}{{\bf Efficiency Recommendation}} \tn
-            \hline
-            \multicolumn{ 1}{|c|}{Printer Speed} & \multicolumn{ 2}{|c|}{Recommended ``Sleep'' Mode$^a$} \tn
-            \hline
-            \multicolumn{ 1}{|c|}{} & Laser B/W + All Ink jet$^b$ & Laser Color$^c$ \tn
-            \hline
-            $\geq$10 pages/min & 10 watts or less & 35 watts or less \tn
-            \hline
-            11-20 pages/min & 20 watts or less & 45 watts or less \tn
-            \hline
-            21-30 pages/min & 30 watts or less & 70 watts or less \tn
-            \hline
-            31-44 pages/min & 40 watts or less & 70 watts or less \tn
-            \hline
-            $>$44 pages/min & 75 watts or less & 70 watts or less \tn
-            \hline
+            \multicolumn{ 3}{|c|}{{\bf Efficiency Recommendation}} \tnhl
+            \multicolumn{ 1}{|c|}{Printer Speed} & \multicolumn{ 2}{|c|}{Recommended ``Sleep'' Mode$^a$} \tnhl
+            \multicolumn{ 1}{|c|}{} & Laser B/W + All Ink jet$^b$ & Laser Color$^c$ \tnhl
+            $\geq$10 pages/min & 10 watts or less & 35 watts or less \tnhl
+            11-20 pages/min & 20 watts or less & 45 watts or less \tnhl
+            21-30 pages/min & 30 watts or less & 70 watts or less \tnhl
+            31-44 pages/min & 40 watts or less & 70 watts or less \tnhl
+            $>$44 pages/min & 75 watts or less & 70 watts or less \tnhl
             \end{tabular}\linebreak            
             $^a$ ``Sleep'' mode is a low-power standby condition, it restores automatically with a print request.\linebreak
             $^b$ Includes both black-ink and color ink jets, and printer/fax combinations.\linebreak
@@ -157,26 +159,18 @@
                     \centering
                     \begin{tabular}{|c|c|c|c|c|c|c|}
                     \hline
-                    \multicolumn{ 3}{|c|}{Performance Results} &            & \multicolumn{ 3}{|c|}{Comparative Rating} \tn
-                    \hline
-                    PC solution & \multicolumn{ 2}{|c|}{Thin-client solutions} & Number of   & PC solution & \multicolumn{ 2}{|c|}{Thin-client solutions} \tn
-                    \hline
+                    \multicolumn{ 3}{|c|}{Performance Results} &            & \multicolumn{ 3}{|c|}{Comparative Rating} \tnhl
+                    PC solution & \multicolumn{ 2}{|c|}{Thin-client solutions} & Number of   & PC solution & \multicolumn{ 2}{|c|}{Thin-client solutions} \tnhl
                           Dell &        Sun &       Wyse & concurrent &       Dell &        Sun &       Wyse \tn
 
                       OptiPlex &        Ray &    Winterm &     active &   OptiPlex &        Ray &    Winterm \tn
 
-                          210L &          2 &     5150SE &    clients &       210L &          2 &     5150SE \tn
-                    \hline
-                          12.9 &       13.2 &       13.1 &          1 &       1.00 &       0.90 &       0.98 \tn
-                    \hline
-                          12.8 &       30.2 &       29.7 &          2 &       1.01 &       0.43 &       0.43 \tn
-                    \hline
-                          12.7 &       45.5 &       41.9 &          3 &       1.02 &       0.28 &       0.31 \tn
-                    \hline
-                          12.9 &       58.3 &       57.3 &          4 &       1.00 &       0.22 &       0.23 \tn
-                    \hline
-                          12.8 &       68.1 &       67.9 &          5 &       1.01 &       0.19 &       0.19 \tn
-                    \hline
+                          210L &          2 &     5150SE &    clients &       210L &          2 &     5150SE \tnhl
+                          12.9 &       13.2 &       13.1 &          1 &       1.00 &       0.90 &       0.98 \tnhl
+                          12.8 &       30.2 &       29.7 &          2 &       1.01 &       0.43 &       0.43 \tnhl
+                          12.7 &       45.5 &       41.9 &          3 &       1.02 &       0.28 &       0.31 \tnhl
+                          12.9 &       58.3 &       57.3 &          4 &       1.00 &       0.22 &       0.23 \tnhl
+                          12.8 &       68.1 &       67.9 &          5 &       1.01 &       0.19 &       0.19 \tnhl
                     \end{tabular}  
                     \captionof{table}{Performance Results for Excel Subtotals Calculation} 
                     \label{tab:table_excel_test}
@@ -192,26 +186,18 @@
                     \centering
                     \begin{tabular}{|c|c|c|c|c|c|c|}
                     \hline
-                    \multicolumn{ 3}{|c|}{Performance Results} &            & \multicolumn{ 3}{|c|}{Comparative Rating} \tn
-                    \hline
-                    PC solution & \multicolumn{ 2}{|c|}{Thin-client solutions} & Number of   & PC solution & \multicolumn{ 2}{|c|}{Thin-client solutions} \tn
-                    \hline
+                    \multicolumn{ 3}{|c|}{Performance Results} &            & \multicolumn{ 3}{|c|}{Comparative Rating} \tnhl
+                    PC solution & \multicolumn{ 2}{|c|}{Thin-client solutions} & Number of   & PC solution & \multicolumn{ 2}{|c|}{Thin-client solutions} \tnhl
                         Dell   &        Sun &       Wyse & concurrent &     Dell   &        Sun &       Wyse \tn
 
                       OptiPlex &        Ray &    Winterm &     active &   OptiPlex &        Ray &    Winterm \tn
 
-                          210L &          2 &     5150SE &    clients &       210L &          2 &     5150SE \tn
-                    \hline
-                          16.1 &       16.0 &       15.6 &          1 &       1.00 &       1.01 &       1.03 \tn
-                    \hline
-                          16.4 &       23.8 &         24 &          2 &       0.98 &       0.68 &       0.67 \tn
-                    \hline
-                          16.5 &       33.0 &       33.1 &          3 &       0.98 &       0.49 &       0.49 \tn
-                    \hline
-                          16.6 &       43.7 &       44.3 &          4 &       0.97 &       0.37 &       0.36 \tn
-                    \hline
-                          16.7 &       54.0 &       55.1 &          5 &       0.96 &       0.30 &       0.29 \tn
-                    \hline
+                          210L &          2 &     5150SE &    clients &       210L &          2 &     5150SE \tnhl
+                          16.1 &       16.0 &       15.6 &          1 &       1.00 &       1.01 &       1.03 \tnhl
+                          16.4 &       23.8 &         24 &          2 &       0.98 &       0.68 &       0.67 \tnhl
+                          16.5 &       33.0 &       33.1 &          3 &       0.98 &       0.49 &       0.49 \tnhl
+                          16.6 &       43.7 &       44.3 &          4 &       0.97 &       0.37 &       0.36 \tnhl
+                          16.7 &       54.0 &       55.1 &          5 &       0.96 &       0.30 &       0.29 \tnhl
                     \end{tabular}  
                     \captionof{table}{Performance Results for PDF Compression Subtotals Calculation}
                     \label{tab:table_pdf_test}
@@ -223,20 +209,13 @@
                 \centering
                     \begin{tabular}{|c|c|c|}
                     \hline
-                         & {\bf Thin Client} &   {\bf PC} \tn
-                    \hline
-                    {\bf Weight} & 2.2 - 7.7 lbs & 22 - 33 lbs \tn
-                    \hline
-                    {\bf Volume} & 1.5 - 3 dm$^3$ & 30 - 35 dm$^3$ \tn
-                    \hline
-                    {\bf Packing material} & 2.2 - 4.4 lbs &   3 - 5 kg \tn
-                    \hline
-                    {\bf Power consumption\linebreak (including monitor)} & 20 - 50 watt & 300 - 400 watt \tn
-                    \hline
-                    {\bf Heat rejection} & 5 - 35 watt & 85 - 115 watt \tn
-                    \hline
-                    {\bf Noise level} & 0 dbA & 50 - 60 dbA \tn
-                    \hline
+                         & {\bf Thin Client} &   {\bf PC} \tnhl
+                    {\bf Weight} & 2.2 - 7.7 lbs & 22 - 33 lbs \tnhl
+                    {\bf Volume} & 1.5 - 3 dm$^3$ & 30 - 35 dm$^3$ \tnhl
+                    {\bf Packing material} & 2.2 - 4.4 lbs &   3 - 5 kg \tnhl
+                    {\bf Power consumption\linebreak (including monitor)} & 20 - 50 watt & 300 - 400 watt \tnhl
+                    {\bf Heat rejection} & 5 - 35 watt & 85 - 115 watt \tnhl
+                    {\bf Noise level} & 0 dbA & 50 - 60 dbA \tnhl
                     \end{tabular}  
                     \captionof{table}{PC and thin client power consumption} 
                     \label{tab:pc_thin_client_power_consumption}
@@ -302,23 +281,15 @@
                 \hline
                 \multicolumn{ 1}{|c|}{{\bf IBM server model}} & \multicolumn{ 1}{|c|}{{\bf Base Power}} & \multicolumn{ 1}{|c|}{{\bf kWh consumed}} & \multicolumn{ 1}{|c|}{{\bf Total cost }} \tn
                 \multicolumn{ 1}{|c|}{{\bf }} & \multicolumn{ 1}{|c|}{{\bf Consumption}} & \multicolumn{ 1}{|c|}{{\bf over 5 years}} & \multicolumn{ 1}{|c|}{{\bf (\$0.03/kWh)}} \tn
-                \multicolumn{ 1}{|c|}{{\bf }} & \multicolumn{ 1}{|c|}{{\bf }} & \multicolumn{ 1}{|c|}{{\bf }} & \multicolumn{ 1}{|c|}{{\bf over 5 years}} \tn
-                \hline
-                BC-H Chassis, no blades & 0.510 kWh &     22,350 &  \$670.50  \tn
-                \hline
-                BC-H HS21 blade & 0.318 kWh &     13,936 &  \$418.08  \tn
-                \hline
-                x3550 server & 0.373 kWh &     16,346 &  \$490.39  \tn
-                \hline
-                x3650 server & 0.455 kWh &     19,940 &  \$598.20  \tn
-                \hline
+                \multicolumn{ 1}{|c|}{{\bf }} & \multicolumn{ 1}{|c|}{{\bf }} & \multicolumn{ 1}{|c|}{{\bf }} & \multicolumn{ 1}{|c|}{{\bf over 5 years}} \tnhl
+                BC-H Chassis, no blades & 0.510 kWh &     22,350 &  \$670.50  \tnhl
+                BC-H HS21 blade & 0.318 kWh &     13,936 &  \$418.08  \tnhl
+                x3550 server & 0.373 kWh &     16,346 &  \$490.39  \tnhl
+                x3650 server & 0.455 kWh &     19,940 &  \$598.20  \tnhl
                 BC-H chassis with 14 & 4.962 kWh &    217,455 & \$6,523.65  \tn
-                HS21 blades &  &  &  \tn
-                \hline
-                14 x3550 servers & 5.222 kWh &    228,849 & \$6,865.46 \tn
-                \hline
-                14 x3650 servers & 6.370 kWh &    279,259 & \$8,374.80  \tn
-                \hline
+                HS21 blades &  &  &  \tnhl
+                14 x3550 servers & 5.222 kWh &    228,849 & \$6,865.46 \tnhl
+                14 x3650 servers & 6.370 kWh &    279,259 & \$8,374.80  \tnhl
                 \end{tabular}  
                 \captionof{table}{Power consumption for several servers, excluding cooling and redundancy}%XXX colocar referencia
                 \label{tab:power_consumption_several_servers}
@@ -473,7 +444,7 @@ Tape media generally has a favorable unit cost, long archival stability and low 
                 In this configuration (Figure~\ref{fig:facility_level_dc_efficiency}), the DC-AC conversion in the UPS and the AC-DC conversion in the power supply are removed. It can be noted that the 480VAC-380VDC conversion in the UPS is more efficient than the 480VAC-48VDC conversion.
             
         \subsection{Data Center Infrastructure} \label{sec2:data_center_infrastructure}
-            \subsubsection*{Water Cooling}%TODO
+            \subsubsection*{Water Cooling}
                 The reasonable limit of rack power and cooling capacity for a conventional forced-air (HVAC) cooled data center is 8 kW per rack. For power densities approaching 15 kW per rack, the layout of the computing rooms and cooling facilities must be determined using specialized software (such as HP Static Smart Cooling). For racks requiring more than 15 kW, the latest cooling techniques use water (Figure~\ref{fig:power_consumption_number_servers_rack}) \cite{HPCooling07}.
                 \begin{figure}[h!tb]
                     \centering
