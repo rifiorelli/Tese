@@ -24,28 +24,25 @@ These can be shortly described as follows:
 
 
 \section{Overview} \label{sec3:overview}
-    The main and broader objective of the research that is being conducted is to develop a methodology to implement a green ICT strategy. Namely, the methodology would provide a set of tools to guide the hardware acquisition process in an organization either in terms of workstations or of datacenter equipment.
-    The present work will contribute to this research by providing a component database with information related to hardware components, which will be used as one of the inputs of the methodology.
-    This work was conducted in order to determine how much energy a computer's components, for instance, CPU\footnote{Central Processing Unit}, Memory and Hard Drives spend and also how much they would affect the cost of acquisition of new workstations as a whole. This is calculable with information such as component performance, consumption and price. The analysis was carried out with the help of specialized softwares that will be described in the following sections and also with analytical measures made with an energy measurement device. In the end the benchmarking measures obtained from these softwares were compared with both the measures obtained from the device and with information provided by the component datasheets. More than 1000 components were categorized in a database, whose schema can be found in Figure~\ref{fig:database_schema}. Firstly, the SiSoft Sandra's database~\ref{sec3:sandra} was used to collect the components and separate them by categories, along with their benchmark related data. Secondly, WebSPHINX~\ref{sec3:websphinx} was used to create a collection of components and their respective MPNs. In the end, an energy measurement device~\ref{sec3:energy_measurement_instrument} was used for the comparison and validation of the results given by the other benchmarks and acquisition of new data. 
+    The main and broader objective of the research that is being conducted is to develop a methodology to implement a green ICT strategy. Namely, the methodology would provide a set of tools to guide the hardware acquisition process in an organization either in terms of workstations or of datacenter equipment. The present work will contribute to this research by providing a component database with information related to hardware components, which will be used as one of the inputs of the methodology. This work was conducted in order to determine how much energy a computer's components, for instance, CPU\footnote{Central Processing Unit}, Memory and Hard Drives spend and also how much they would affect the cost of acquisition of new computers as a whole. This is calculable with information such as component performance, power consumption and price. The analysis was carried out with the help of specialized softwares that will be described in the following sections and also with analytical measures made with an energy measurement device. In the end the benchmarking measures obtained from these softwares were compared with both the measures obtained from the device and with information provided by the component datasheets. With the benchmarking software, more than 1000 components were categorized in a database, whose schema can be found in Figure~\ref{fig:database_schema}. Firstly, the SiSoft Sandra's database~\ref{sec3:sandra} was used to collect the components and separate them by categories, along with their benchmark related data. Secondly, WebSPHINX~\ref{sec3:websphinx} was used to create a collection of components and their respective MPNs. In the end, an energy measurement device~\ref{sec3:energy_measurement_instrument} was used for the comparison and validation of the results given by the other benchmarks and acquisition of new data. 
 
     Finally, these data were all linked in a database for later comparison. 
 
 \section{Research Design} \label{sec3:research_design} 
-Tirar essa section???    
-The experimental method of research was used in this study. Figure~\ref{fig:experimental_method_approach} draws the steps of the method used. To define the experimental type of research, Bryman \cite{bryman89} stated that ``the experimental design (\ldots) allows the causal hypothesis that underpins the question to be examined'', which means that this method is a systematic and scientific approach to research in which the researcher manipulates one or more variables, controlling and measuring any changes in other variables. The emphasis given is on the results and analysis of the benchmarks provided and theirs measures. It allows to verify the thesis in which this work is based on, by making use of empirical methods changing the benchmark used and the purpose of it.
+The experimental method of research was used in this study. Figure~\ref{fig:experimental_method_approach} draws the steps of the method used. To define the experimental type of research, Bryman \cite{bryman89} states that ``the experimental design (\ldots) allows the causal hypothesis that underpins the question to be examined'', which means that this method is a systematic and scientific approach to research in which the researcher manipulates one or more variables, controlling and measuring any changes in other variables. The emphasis given is on the results and analysis of the benchmarks provided and theirs measures. It allows to verify the thesis in which this work is based on, by making use of empirical methods changing the benchmark used and the purpose of it.
     \begin{figure}[!htb]
         \centering
             \includegraphics[scale=0.5]{graphics/experimental_method_approach}
             \caption{The Experimental Design Process}
             \label{fig:experimental_method_approach}
     \end{figure}
-    
-    %XXX 
-    /********* Os proximos paragraphs foram criados para direcionar o pensamento e deve ser mantidos como comentario, ou retirados do texto é preciso que sejam melhor desenvolvidos*******/
+
+    %/********* Os proximos paragraphs foram criados para direcionar o pensamento e deve ser mantidos como comentario, ou retirados do texto é preciso que sejam melhor desenvolvidos*******/
     %XXX
     \begin{description}
     \item[Universe o Study] 
     % (whether a tribe, or a village, or an urban areas, or a particular group, etc.) - no nosso caso, os componentes do computador e o data center
+    A particular group of computer components were analyzed in the study. The power consumption, as the related green ict study to 
     In this study, the empirical method was employed so as to identify which parts of the computer manage energy more efficiently with the reason of building the most green data center. 
     
     %XXX
@@ -87,10 +84,9 @@ The experimental method of research was used in this study. Figure~\ref{fig:expe
 
     \subsection{SiSoftware SANDRA} \label{sec3:sandra}
 
-    SiSoftware Sandra\footnote{The \textbf{S}ystem \textbf{AN}alyser, \textbf{D}iagnostic and \textbf{R}eporting \textbf{A}ssistant} is an information and diagnostic utility. It provides most of the information one need to know about their hardware, software and other devices whether hardware or software.
-SANDRA was the main software utilized to benchmark the data in this thesis work. It contains a vast database of components associated with both benchmark results and manufacturer specifications.
+    SiSoftware Sandra\footnote{The \textbf{S}ystem \textbf{AN}alyser, \textbf{D}iagnostic and \textbf{R}eporting \textbf{A}ssistant} is an information and diagnostic utility. It provides most of the information one need to know about their hardware, software and other devices whether hardware or software. SANDRA was the main software utilized to benchmark the data in this thesis work. It contains a vast database of components associated with both benchmark results and manufacturer specifications.
     
-    The software goes beyond the point of other Windows Utilities, by giving the user, the possibility of benchmarking and comparing at both high and low level the computer devices. Moreover, it is a tool for monitoring the performance on systems and even benchmarking many parts of the computer, this includes, CPU\footnote{Central Processing Unit}, memory, hard disks, CD/DVD ROM, network, PSU\footnote{Power Supply Unit}, etc. For that reason, it is considered one of the most complete benchmarking tools available. Besides the benchmarking, Sandra also provides access to information about the Hardware, including the Motherboard, processor, disks, printers, etc; and Software, such as, key softwares (web browsers, e-mail program, etc.), OS information, processes, memory usage and more.
+    The software goes beyond the point of other Windows Utilities, by giving the user, the possibility of benchmarking and comparing at both high and low level the computer devices. Moreover, it is a tool for monitoring the performance on systems and even benchmarking many parts of the computer, this includes, CPU, memory, hard disks, CD/DVD ROM, network, PSU, etc. For that reason, it is considered one of the most complete benchmarking tools available. Besides the benchmarking, Sandra also provides access to information about the Hardware, including the Motherboard, processor, disks, printers, etc; and Software, such as, key softwares (web browsers, e-mail program, etc.), OS information, processes, memory usage and more.
     
     The detailed list of modules utilized by SiSoftware Sandra can be found in Appendix~\ref{app:sandra_modules}.
     
@@ -98,25 +94,25 @@ SANDRA was the main software utilized to benchmark the data in this thesis work.
     
     \subsection{Energy Measurement Instrument} \label{sec3:energy_measurement_instrument}
 
-    \begin{figure}[!htb]
-        \centering
-            \includegraphics[scale=0.6]{graphics/energy_measurement_instrument}
-            \caption{Energy Measurement Instrument}
-            \label{fig:energy_measurement_instrument}
-    \end{figure}
-The device, which can be seen on Figure~\ref{fig:energy_measurement_instrument}, was used for comparing and validating with the results of the benchmarks given by Sandra.
+        \begin{figure}[!htb]
+            \centering
+                \includegraphics[scale=0.6]{graphics/energy_measurement_instrument}
+                \caption{Energy Measurement Instrument}
+                \label{fig:energy_measurement_instrument}
+        \end{figure}
+    The device, which can be seen on Figure~\ref{fig:energy_measurement_instrument}, was used for comparing and validating with the results of the benchmarks given by Sandra.
 
-After the result of the benchmark was obtained from the SiSoftware Sandra, this equipment that was connected to the computer read how much energy it was consumed and it was inserted in the database.
-    % TODO
+    After the result of the benchmark was obtained from the SiSoftware Sandra, this equipment that was connected to the computer read how much energy it was consumed and it was inserted in the database.
+        % TODO
     \subsection{WebSPHINX - A Personal, Customized Web Crawler} \label{sec3:websphinx}
-    WebSPHINX\footnote{Website-Specific Processors for HTML Information Extraction} is a Java class library used for web crawling. It provides a way to browse and process web pages automatically.
-    
-    This piece of software was used to establish the pricing, linking it with the MPN\footnote{Manufacturer's Part Number}, and, afterwards, composing the database explained in \ref{sec4:analysis}. 
-    % TODO
+        WebSPHINX\footnote{Website-Specific Processors for HTML Information Extraction} is a Java class library used for web crawling. It provides a way to browse and process web pages automatically.
+        
+        This piece of software was used to establish the pricing, linking it with the MPN\footnote{Manufacturer's Part Number}, and, afterwards, composing the database explained in \ref{sec4:analysis}. 
+        % TODO
     
     \subsection{CPU-Z} \label{sec3:cpu-z}
-    CPU-Z detects information about the CPU, RAM Memory, motherboard, chip-set and more. That program was used to complete the database with missing information about the components.
-    % TODO
+        CPU-Z detects information about the CPU, RAM Memory, motherboard, chip-set and more. That program was used to complete the database with missing information about the components.
+        % TODO
 
 \section{Data Processing and Analysis} \label{sec3:data_processing_analysis}
     % TODO
