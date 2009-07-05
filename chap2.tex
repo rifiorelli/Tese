@@ -12,12 +12,12 @@
 
 \chapter{State of the Art} \label{chap2:state_of_the_art}
     \section{Green ICT or Green Computing} \label{sec2:green_ict}
-        Green ICT is the exploitation of a combination of techniques and approaches in ICT related resources in order to obtain more energy efficient use of computer related resources. In other words, Green ICT is a new term originated from ``Green Computing'', it is the research and development of projects, making use of Information and Communication Technology and related applications or softwares in order to monitor the energy spent by the computers, printers and all other computing equipment. Applying this approach, it is possible to make a responsible use of computers and related resources. It is a new paradigm that has the objective in the environment. In order to achieve this objective, it is necessary to understand and have the ability to analyze the information about the ICT components among workstations, servers, network, cooling and many others. The analysis of the information provided by the measures of the components is made through a set of tools, which will be explained in the chapter~\ref{chap3:methodology}. 
-        
-        The step by step to apply a green strategy is to analyze where in the data center is wasting more energy (``Assessment''), and only then act with correction and prevention interventions (``Action Plan''). For instance, when buying a new component, analyze how much energy it spends and opt for the ones that consumes less energy, also, use of thin clients as a substitute of the PC applications. Moreover, one has to re-analyze the data center and correct the energy wasting, considering more environmental friendly options such as virtualization, power management and proper habits. Regarding the energy consumption, it is a critical issue for IT organizations now a days, either the objective is the reduction of costs, environmental issues or keeping the data center running. In the United States alone, data centers consumed \$4.5 billion worth of electricity in 2006. Industry analyst Gartner~\cite{GartnetKumar07} estimates that over the next 5 years, most enterprise will spend as much energy as they spend on hardware infrastructure, power and air conditioning.
-        
-        Furthermore, It is also important to consider that there are some indirect objectives concerning green computing. Such objectives includes reduction of costs, reduction of carbon footprint and disposal of hazard elements to the environment. The reduction of costs is provided by the fact that if the energy consumed by the components is reduced, the payment in the electricity bill is directly reduced, also, when by applying the well management of the resources, the costs related to cooling, the space required for the data center and the efficiency of the computer components are all indirectly reduced. Probably, an study on the effect on ROI would show the benefits on cost.
-        In the next section there is the explanation of all the approaches and categories for applying a green solution.
+		Green ICT, which is a new term originated from ``Green Computing'', is the exploitation of a combination of techniques and approaches in ICT towards the end of achieving a more energy efficient use of computer related resources. In other words, it is the research and development of techniques and software that monitor the energy spent by servers, computers, printers and all information and communication equipment to the end of making a responsible use of these resources in terms of energy consumption. In order to achieve this objective, it is imperative to analyse the information about the ICT components among workstations, servers, networks, cooling and many others. The analysis of the information provided by these measures is made through a set of tools, which will be explained in the chapter~\ref{chap3:methodology}.        
+
+		The steps that have to be taken in order to apply a green strategy are first to analyse where in the data center the more energy is being wasted (``Assessment''), and then to act with correction and prevention interventions (``Action Plan''). For instance: when buying a new piece of equipment, it should be determined how much energy each of the available options spend and opt for those which consume less energy. Moreover, energy-efficient architectures such as thin clients, virtualization and power management policies should be considered in higher decisional levels. The direct benefits from green ICT strategies range from the direct reduction of electricity bills and costs related to cooling to the reduction of the space required by a datacenter.
+
+		The ICT energy consumption has become a critical issue for IT organizations nowadays, where it can provide substantial cost reductions in datacenters and compliance with environmental policies. In the United States alone, data centers consumed \$4.5 billion worth of electricity in 2006. Industry analyst Gartner~\cite{GartnetKumar07} estimates that over the next 5 years, most enterprises will spend as much energy as they spend on hardware infrastructure, power and air conditioning. Furthermore, It is also important to consider that there are some indirect objectives concerning green computing, such as reduction of carbon footprint and disposal of hazard elements to the environment.
+		In the next section there is the explanation of all the approaches and categories for applying a green solution.
     
     \section{Computer Energy Management Categories} \label{sec2:energy_categories}
 
@@ -31,7 +31,6 @@
         \item Power Architectures;
         \item Data Center Infrastructure.
     \end{itemize}
-    
     For each of those categories there are several types of information that are relevant to the evaluation of the current situation of power consumption. For each category there will be a corresponding description along with a number of possible interventions, either purely conceptual or available in the market.In some cases a numerical analysis will also be provided. This information will allow the creation of a methodology to identify critical consumption issues where an investment in green ICT would bring the greater savings.
     
     \subsection{Machine Configuration}\label{sec2:machine_configuration}
@@ -41,23 +40,23 @@
             %Tirei o cache pelo simples fato de que nao afeta na overall consumption
             %\paragraph*{Cache Memory} %TODO Type and dimension of 
             \paragraph*{RAM Memory} There are several types and dimensions of memories that should be analyzed, for instance the difference in operation in 2.5V in DDR SDRAM, when compared 3.3V in SDRAM significantly reduce the power consumption. When compating DDR and DDR2, The Table~\ref{tab:power_consumption_ram}\nocite{Cooke:2009:Online} compares the difference in power consumption of DDR and DDR2 under various circumstances and it shows that the power consumed by RAM, even on maximum workload (+4.5W), does not have much effect on the overall computer consumption (~220W).
-\begin{table}[h!tb]
-\centering \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
-\begin{tabular}{|c|c|c|c|c|c|c|}
-\hline
-\textbf{RAM Type } & \textbf{Size } & \textbf{Load } & \textbf{+12V1 } & \textbf{+5V } & \textbf{+3.3V } & \textbf{Rise from Baseline } \tnhl
-\multicolumn{ 1}{|c|}{\textbf{PC3200 DDR }} & \multicolumn{ 1}{c|}{512 MB } & Idle  & 0.5A  & 0.6A  & 3.0A  & n/a  \tn \cline{ 3- 7}
-\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & No Change  & +0.7A  & +2.3W  \tn \cline{ 2- 7}
-\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{1 GB} & Idle  & No Change  & No Change  & +0.6A  & +2.0W  \tn \cline{ 3- 7}
-\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & No Change  & +1.0A  & +3.3W  \tnhl
-\multicolumn{ 1}{|c|}{\textbf{533 MHz DDR2 }} & \multicolumn{ 1}{c|}{512 MB } & Idle  & 0.5A  & 3.6A  & 0.5A  & n/a  \tn \cline{ 3- 7}
-\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & +0.4A  & No Change  & +2.0W  \tn \cline{ 2- 7}
-\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{1 GB} & Idle  & No Change  & No Change  & No Change  & No Change  \tn \cline{ 3- 7}
-\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & +0.9A  & No Change  & +4.5W \tnhl
-\end{tabular}}
-\caption{Power Consumption: RAM}
-\label{tab:power_consumption_ram}
-\end{table}
+				\begin{table}[htbp]
+				\centering \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
+				\begin{tabular}{|c|c|c|c|c|c|c|}
+				\hline
+				\textbf{RAM Type } & \textbf{Size } & \textbf{Load } & \textbf{+12V1 } & \textbf{+5V } & \textbf{+3.3V } & \textbf{Rise from Baseline } \tnhl
+				\multicolumn{ 1}{|c|}{\textbf{PC3200 DDR }} & \multicolumn{ 1}{c|}{512 MB } & Idle  & 0.5A  & 0.6A  & 3.0A  & n/a  \tn \cline{ 3- 7}
+				\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & No Change  & +0.7A  & +2.3W  \tn \cline{ 2- 7}
+				\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{1 GB} & Idle  & No Change  & No Change  & +0.6A  & +2.0W  \tn \cline{ 3- 7}
+				\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & No Change  & +1.0A  & +3.3W  \tnhl
+				\multicolumn{ 1}{|c|}{\textbf{533 MHz DDR2 }} & \multicolumn{ 1}{c|}{512 MB } & Idle  & 0.5A  & 3.6A  & 0.5A  & n/a  \tn \cline{ 3- 7}
+				\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & +0.4A  & No Change  & +2.0W  \tn \cline{ 2- 7}
+				\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{1 GB} & Idle  & No Change  & No Change  & No Change  & No Change  \tn \cline{ 3- 7}
+				\multicolumn{ 1}{|c|}{} & \multicolumn{ 1}{c|}{} & Memtest86  & No Change  & +0.9A  & No Change  & +4.5W \tnhl
+				\end{tabular}}
+				\caption{Power Consumption: RAM}
+				\label{tab:power_consumption_ram}
+				\end{table}
             \paragraph*{Hard Drives and Mass Memory} Power consumption in this case is affected mainly by design of the hard drive's spindle motor and the number and size of the spindle platters and, also,other components such as the actuator and controller board. Also, solid-state and flash drives reduce significantly the power consumed by the component, Figure~\ref{fig:power_consumption_harddrive} shows this difference.%XXX melhorar essa parte
             \begin{figure}[h!tb]
                     \centering
@@ -89,8 +88,7 @@
     \end{table}
 
     \subsection{Policies / Tools / Labels} \label{sec2:policies_tools_labels}
-        The amount of saved energy depends also on policies that regard technology acquisition and IT management, which may be enforced by a variety of specialized tools. Examples of policies that regard equipment acquisition are: the acquisition of new computers or components labeled as green by the manufacturer, purchase of computers with multi-core processors and even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example of the latter is to turn off workstations or servers if they are going to be unused for a long time. This kind of measure is particularly efficient as a computer in idle mode uses 20 to 50 times the power of a computer in standby mode
-\footnote{\url{http://www.cosn.org/Initiatives/GreenComputing/EnergyUse/tabid/4515/Default.aspx}}.
+        The amount of saved energy depends also on policies that regard technology acquisition and IT management, which may be enforced by a variety of specialized tools. Examples of policies that regard equipment acquisition are: the acquisition of new computers or components labeled as green by the manufacturer, purchase of computers with multi-core processors and even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example of the latter is to turn off workstations or servers if they are going to be unused for a long time. This kind of measure is particularly efficient as a computer in idle mode uses 20 to 50 times the power of a computer in standby mode\footnote{\url{http://www.cosn.org/Initiatives/GreenComputing/EnergyUse/tabid/4515/Default.aspx}}.
         
     \begin{table}[h!tb]
         \centering
