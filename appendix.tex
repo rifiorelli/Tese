@@ -169,15 +169,59 @@
     This software did not compose the ones used for doing this thesis. Yet, it is important to notice this, because it is almost the same of Sandra, but it provides a more incisive work on Data Centers in general. It provides workload profiling, analysis and planning of complex server consolidation, disaster recovery, capacity planning, asset management and green data center initiatives. It also provides forecasting for optimizing the data center by collecting hardware, software and services inventory for all server workloads. Furthermore, it results an statistics work for the server workloads running on data center and how their resources are being used.
     
     \section{APC Virtualization Energy Cost Calculation}\label{app:apc_virtualization_energy_cost_calculation}
-        % TODO
+        %TODO EXPLAIN about it
         \url{http://www.techworld.com/green-it/news/index.cfm?RSS&NewsID=116650}
     
-\chapter{Database Schema} \label{app:database_schema}
-% TODO
-\begin{sidewaysfigure}[h!tb]
-    \centering
-    \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
-    \includegraphics[scale=0.5]{graphics/database_schema}}
-    \caption{Database Schema}
-    \label{fig:database_schema}
-\end{sidewaysfigure}
+\chapter{Database of Components} \label{app:database_components}
+    \section{SANDRA Benchmark Table Schema}\label{app:sandra_benchmark_table_schema}
+    
+        \begin{table}[htbp]
+            \centering
+            \begin{tabular}{|l|l|l|}
+            \hline
+            \textbf{ID} & \textbf{Number} & \textbf{Component ID} \tnhl
+            OsType & Text & Architecture type (x86 or x64) \tnhl
+            Platform & Text & Platform type
+            (Desktop/Mobile/Server) \tnhl
+            System Name & Text & CPU Model \tnhl
+            Speed (MHz) & Number & CPU Speed \tnhl
+            Power (.01W) & Number & CPU Power \tnhl
+            CPU Type & Text & CPU Family \tnhl
+            No of Core Units & Number & Number of CPU cores \tnhl
+            FSB Speed (MHz) & Number & Bus Speed Obs: set as 0 for all records \tnhl
+            Aggregate Performance (MOPS) & Number & Average between performance in  \tn
+             &  & dhrystone and whetstone benchmarks \tnhl
+            Dhrystone int ALU value (MIPS) & Number & Dhrystone performance \tnhl
+            Type of dhrystone & Text & Type of dhrystone \tn
+             &  &  benchmark (.NET) \tnhl
+            Whetstone float  & Number & Whetstone performance \tn
+            FPU value (MFLOPS) &  &  \tnhl
+            Type of whetstone & Text & Type of whetstone  \tn
+             &  & benchmark (.NET) \tnhl
+            \end{tabular}
+            \caption{RefDNetAA: .NET Arithmetic Benchmark on several CPUs}
+            \label{tab:ref_dnetaa}
+        \end{table}
+    
+    \section{Database Schema}\label{app:database schema}
+    %TODO
+    \begin{sidewaysfigure}[h!tb]
+        \centering
+        \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
+        \includegraphics[scale=0.5]{graphics/database_schema}}
+        \caption{Database Schema}
+        \label{fig:database_schema}
+    \end{sidewaysfigure}
+
+    
+
+\chapter{Measures} \label{app:measures_toolino}
+    \section{Measurement Tables}\label{app:table_toolino}
+    %TODO colocar as tabelas "completas" do excel aqui.
+    % tabelas feitas com o toolino e sandra dos comps dos amigos
+    
+    \section{Characteristics of Measured Computers} \label{app:characteristics_measured_computers}
+    %TODO
+
+
+s

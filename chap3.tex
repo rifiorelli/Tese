@@ -12,10 +12,10 @@
 
 \chapter{Methodology} \label{chap3:methodology}
 
-	This chapter will describe the steps taken to the end of constructing the components database and of validating the data contained in it.
+    This chapter will describe the steps taken to the end of constructing the components database and of validating the data contained in it.
 These can be shortly described as follows:
     \begin{description}
-        \item[Phase 0: Project definition -] As this work is part of a project aimed to create a methodology to implement a green ICT strategy, this first phase consisted of the definition of the logical components of this project and of how the current work would collaborate to it.
+        \item[Phase 0: Project definition -] As this work is part of a project aimed to create a methodology to implement a Green ICT strategy, this first phase consisted of the definition of the logical components of this project and of how the current work would collaborate to it.
         \item[Phase 1: Analysis of Benchmarking Softwares -] A number of existing softwares were analyzed and those that have proven to be more adequate were selected. A list of the analyzed softwares can be found in Appendix~\ref{app:list_other_energy_management_tools}.
         \item[Phase 2: Catalog -] The tools were used to obtain information about computer components that were later used to create a component database.
         \item[Phase 3: Database design and construction -] The database schema was designed and data began to be inserted into the relations.
@@ -53,11 +53,11 @@ These can be shortly described as follows:
     
     The softwares that used were selected over the other available ones for their superior evaluation on the following criteria:
 \begin{description}
-	\item[Size of Database] The database of components used by the software, in order to get a good result, should be considerably large;
-	\item[Characteristics of Benchmarks] The benchmarks provided by the software should provide information about the energy consumed for each component;
-	\item[Number of Benchmarks] The software should have a good variety of benchmarks;
-	\item[Quality of Benchmarks] Although the number of benchmarks should be sufficient in number, the quality, precision and relevancy were also important in the decision method;
-	\item[Ease of Use] In the sense that the software should provide an ambient of work that is intuitive and comfortable;
+    \item[Size of Database] The database of components used by the software, in order to get a good result, should be considerably large;
+    \item[Characteristics of Benchmarks] The benchmarks provided by the software should provide information about the energy consumed for each component;
+    \item[Number of Benchmarks] The software should have a good variety of benchmarks;
+    \item[Quality of Benchmarks] Although the number of benchmarks should be sufficient in number, the quality, precision and relevancy were also important in the decision method;
+    \item[Ease of Use] In the sense that the software should provide an ambient of work that is intuitive and comfortable;
 \end{description}
     
     The acquisition of data was made analyzing the results of these benchmarks, making use of their database and system measurement capabilities.
@@ -80,15 +80,13 @@ These can be shortly described as follows:
                 \caption{Energy Measurement Instrument}
                 \label{fig:energy_measurement_instrument}
         \end{figure}
-        The device, which can be seen on Figure~\ref{fig:energy_measurement_instrument}, was used for comparing and validating with the results of the benchmarks given by Sandra. After the result of the benchmark was obtained from the SiSoftware Sandra, this equipment that was connected to the computer read how much energy it was consumed and it was inserted in the database. These measurements are explained in table~\ref{tab:toolino_sandra_table} and table~\ref{tab:toolino_table}.
+        The device, which can be seen on Figure~\ref{fig:energy_measurement_instrument}, was used for comparing and validating with the results of the benchmarks given by Sandra. After the result of the benchmark was obtained from the SiSoftware Sandra, this equipment that was connected to the computer read how much energy it was consumed and it was inserted in the database.
         
-        
-    
         %XXX explicar melhor
     \subsection{WebSPHINX - A Personal, Customized Web Crawler} \label{sec3:websphinx}
         WebSPHINX\footnote{Website-Specific Processors for HTML Information Extraction} is a Java class library used for web crawling. It provides a way to browse and process web pages automatically.
         
-        This piece of software was used to establish the pricing, linking it with the MPN, and, afterwards, composing the database explained in \ref{sec4:analysis}. 
+        This piece of software was used to establish the pricing, linking it with the MPN, and, afterwards, composing the database explained in~\ref{sec4:analysis}. 
         %XXX explicar melhor
     
     \subsection{CPU-Z} \label{sec3:cpu-z}
@@ -100,34 +98,64 @@ These can be shortly described as follows:
     % se nao colocar aqui, mudar para o capitulo 4. Só não trocar o label
     
     \subsection{Measures}\label{sec3:measures}
-        For each computer in which this method of data acquitance was performed te results were inserted in the tables~\ref{tab:toolino_sandra_table} and \ref{tab:toolino_table}. The Table~\ref{tab:toolino_sandra_table} was obtained by running SANDRA benchmarks, the first column ``Processor Benchmark'', it was used the ``Processor Arithmetic'' benchmark and the energy spent by the processor is displayed in the results. Afterwards, the ``Cache \& Memory'' benchmark and, also, the results inserted in the table.
+        For each computer in which this method of data acquittance was performed the results were inserted in the tables~\ref{tab:toolino_sandra_table} and \ref{tab:toolino_table}. The Table~\ref{tab:toolino_sandra_table} was obtained by running SANDRA benchmarks, the first column ``Processor Benchmark'', it was used the ``Processor Arithmetic'' benchmark and the energy spent by the processor is displayed in the results. Afterwards, the ``Cache \& Memory'' benchmark and, also, the results inserted in the table.
         
-    Conversely, for the measurement device relevant data were acquired by the following method: first of all, the computer in idle state, with the monitor on, with no user processes running, and the 
-    
+        Conversely, for the measurement device (table~\ref{tab:toolino_table}) relevant data were acquired by the following method: first of all, the computer in idle state (monitor on, with no user processes running) and secondly, with the same operating methods, however, with the monitor off, and finally, with the processor fully stressed, i.e. while running SANDRA Benchmarks. As a limitation we had while taking measures, as it was only possible to obtain data from notebooks, that is the reason why the monitor had to measured in an on and off state.
+        
+        In order to have an example of the data acquired, only a few measures are displayed in the tables. The full version is evinced in Appendix~\ref{app:measures_toolino}.
     \begin{table}[htbp]
-    \centering
-    \begin{tabular}{|c|c|c|}        \hline
-    Computer Model & Processor Bechmark (W) & Cache \& Memory Benchmark (W) \tnhl
-    \end{tabular}
-    \caption{SANDRA Table Analysis}
-    \label{tab:toolino_sandra_table}
+        \centering 
+        \begin{tabular}{|c|c|c|}        \hline
+        Computer & Processor & Cache \& Memory \tn
+        Model & Benchmark (W) & Benchmark (W) \tnhl
+        HPdv3500el (13.3'') & 19.69 & 26.69 \tnhl
+        HPdv6580el (15.4'') & 32.01 & 40.06 \tnhl
+        Compaq-nx9420 (17.0'') & 26.93 & 36.16 \tnhl
+        Acer Aspire 4720z (15.0'') & 19.78 & 34.57 \tnhl
+        Acer Aspire 5930G (15.4'') & 25.13 & 32.13 \tnhl
+        \end{tabular}
+        \caption{SANDRA Table Analysis}
+        \label{tab:toolino_sandra_table}
     \end{table}
-    
     \begin{table}[htbp]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|}        \hline
-    Computer & Idle With & Idle with  & Estimated Monitor & Processor \tn
-    Model & Monitor On (W) & Monitor Off (W) &  Power (W) & Fully Stressed \tnhl
-    \end{tabular}
-    \caption{Energy Measurement Device Table Analysis}
-    \label{tab:toolino_table}
+        \centering \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
+        \begin{tabular}{|c|c|c|c|c|}        \hline
+        Computer & Idle with & Idle with  & Estimated Monitor & Processor \tn
+        Model & Monitor On (W) & Monitor Off (W) &  Power (W) & Fully Stressed (W) \tnhl
+        HPdv3500el (13.3'') & 28.57 & 25.19 & 3.38 & 35.64 \tnhl
+        HPdv6580el (15.4'') & 62.18 & 57.14 & 5.04 & 85.27 \tnhl
+        Compaq-nx9420 (17.0'') & 78.89 & 74.65 & 4.24 & 79.64 \tnhl
+        Acer Aspire 4720z (15.0'') & 44.57 & 39.88 & 4.69 & 67.28 \tnhl
+        Acer Aspire 5930G (15.4'') & 44.48 & 39.56 & 4.92 & 62.83 \tnhl
+        \end{tabular}}
+        \caption{Energy Measurement Device Table Analysis}
+        \label{tab:toolino_table}
     \end{table}
-
-    \subsection{Components Database}\label{sec2:components_database}
+    %XXX nao se eh cabivel explicar algo aqui ou deixamos para o proximo capitulo
+    
+    \subsection{Components Database}\label{sec3:components_database}
         % aquele gerado pelo access do SANDRA
-    
-    \subsection{Consolidated Database}\label{sec2:consolidated_database}
-        % aquele consolidado com todos os MPNs e preços e tudo o mais... 
+        The Sisoftware SANDRA has a database with the results of all benchmarks for a considerable number of components already given and that is what makes it proper for comparison. From this database, it was extracted and created a new one, which better represents the power consumption of each component related to each benchmark. The tables generated by this method is evinced in Appendix~\ref{app:sandra_benchmark_table_schema}.
         
+        The only issue related to the SANDRA database is the fact that for different benchmarks, it was used a different way to provide information about the same component. For example, a benchmark of cryptography for the processor ``Intel Core 2 Duo T8400'', the model of the processor could be referenced as ``Intel Core Duo T2300 (DC, 1.66GHz, 2MB L2)'' or even ``Intel T2300'', what makes it difficult to link them together. In order to do so, it was necessary a number of code that would be unique for every component.
         
+        In Sisoftware website there exists a list of components and related price where it is possible to compare them. This list has a web-based version and also can be accessed inside the software, which besides the price has all the information to be linked inside the software for each component that is being analyzed a the time to run the specific benchmark. A specific and useful information that exists in the website is the MPN, which, like the ISBN for books, are unique. Therefore, in order to link all the components together, it was possible to obtain this MPNs and assign them to the components and afterwards link them to the specific benchmark. An example of the table generated with WebSPHINX for processors are shown in Table~\ref{tab:example_table_websphinx}.
+                
+        \begin{table}[h!tb]
+            \centering
+            \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Processors} & \textbf{MPN} \tnhl
+            AMD Phenom II X4 940 Quad Core Processor & HDZ940XCGIBOX \tnhl
+            Intel Core 2 Duo E8400 Dual Core Processor & BX80570E8400 \tnhl
+            AMD Athlon 64 X2 Dual Core Processor & AD775ZWCGHBOX \tnhl
+            AMD Phenom II X3 720 Triple Core Processor & HDZ720WFGIBOX \tnhl
+            Intel Core 2 Q9550 Quad Core Processor & BX80569Q9550 \tnhl
+            \end{tabular}
+            \caption{Example of Table Generated by WebSPHINX}
+            \label{tab:example_table_websphinx}
+        \end{table}
+        
+        The next step of the procedure is the generation of a relevant and consolidated database, which is shown in Figure~\ref{fig:database_schema}, it contains the assembled data explained in the previous sections. 
+        %XXX explicar melhor esse database, pelo menos falar pra que serve...
         

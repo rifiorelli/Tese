@@ -40,7 +40,7 @@
             %Tirei o cache pelo simples fato de que nao afeta na overall consumption
             %\paragraph*{Cache Memory} %TODO Type and dimension of 
             \paragraph*{RAM Memory} There are several types and dimensions of memories that should be analyzed, for instance the difference in operation in 2.5V in DDR SDRAM, when compared 3.3V in SDRAM significantly reduce the power consumption. When compating DDR and DDR2, The Table~\ref{tab:power_consumption_ram}\nocite{Cooke:2009:Online} compares the difference in power consumption of DDR and DDR2 under various circumstances and it shows that the power consumed by RAM, even on maximum workload (+4.5W), does not have much effect on the overall computer consumption (~220W).
-				\begin{table}[htbp]
+				\begin{table}[h!tb]
 				\centering \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
 				\begin{tabular}{|c|c|c|c|c|c|c|}
 				\hline
@@ -66,26 +66,26 @@
                 \end{figure}
             \paragraph*{Chassis} Concerning power supply, fans or other PC components not belonging to the main parts, it is necessary to require quality other than price. Heating and cooling are really where the power consumption goes. Most computers only make up a fairly small percentage of your electrical bill. One should never underestimate the efficiency of the power supply, because most low quality ones are only about 45-55\% efficient, whereas it is possible to achieve more than 80\%.
             \paragraph*{Monitor Type} As shown by Table~\ref{tab:energy_used_monitor}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}, flat panel liquid crystal display (LCD) monitors power consumption equals to half the power of conventional CRT monitors. LCD monitors also dissipate less heat, which helps to reduce air conditioning costs. Another interesting point is that either LCD or CRT monitors consume the same amount of energy with or without screensavers. As LCD monitors do not consume much energy when turned off, that would be the best solution for idle computers.
-\begin{table}[h!tb]
-        \centering
-        \begin{tabular}{|c|c|}
-        \hline
-        \multicolumn{ 2}{|c|}{{\bf Monitors}} \tnhl
-        Typical 17" CRT &   80 watts \tnhl
-        Typical 17" LCD &   35 watts \tnhl
-        Apple MS 17" CRT$^a$ &   63 watts \tnhl
-        Apple MS 17" CRT$^b$ &   54 watts \tnhl
-        Screen saver$^c$ & same as above \tnhl
-        Sleeping monitor$^d$ & 0-15 watts \tnhl
-        Monitor turned off at switch & 0-10 watts \tnhl
-        \end{tabular}  \linebreak
-        $^a$ mostly white (blank IE window) \linebreak
-        $^b$ mostly black (black Windows desktop with just a few icons)\linebreak
-        $^c$ any image on screen\linebreak
-        $^d$ dark screen
-        \captionof{table}{Energy used by Monitors} 
-\label{tab:energy_used_monitor}
-    \end{table}
+                \begin{table}[h!tb]
+                    \centering
+                    \begin{tabular}{|c|c|}
+                    \hline
+                    \multicolumn{ 2}{|c|}{{\bf Monitors}} \tnhl
+                    Typical 17" CRT &   80 watts \tnhl
+                    Typical 17" LCD &   35 watts \tnhl
+                    Apple MS 17" CRT$^a$ &   63 watts \tnhl
+                    Apple MS 17" CRT$^b$ &   54 watts \tnhl
+                    Screen saver$^c$ & same as above \tnhl
+                    Sleeping monitor$^d$ & 0-15 watts \tnhl
+                    Monitor turned off at switch & 0-10 watts \tnhl
+                    \end{tabular}  \linebreak
+                    $^a$ mostly white (blank IE window) \linebreak
+                    $^b$ mostly black (black Windows desktop with just a few icons)\linebreak
+                    $^c$ any image on screen\linebreak
+                    $^d$ dark screen
+                    \captionof{table}{Energy used by Monitors} 
+                    \label{tab:energy_used_monitor}
+                \end{table}
 
     \subsection{Policies / Tools / Labels} \label{sec2:policies_tools_labels}
         The amount of saved energy depends also on policies that regard technology acquisition and IT management, which may be enforced by a variety of specialized tools. Examples of policies that regard equipment acquisition are: the acquisition of new computers or components labeled as green by the manufacturer, purchase of computers with multi-core processors and even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example of the latter is to turn off workstations or servers if they are going to be unused for a long time. This kind of measure is particularly efficient as a computer in idle mode uses 20 to 50 times the power of a computer in standby mode\footnote{\url{http://www.cosn.org/Initiatives/GreenComputing/EnergyUse/tabid/4515/Default.aspx}}.
@@ -368,7 +368,7 @@ Tape media generally has a favorable unit cost, long archival stability and low 
                 	\item Backup cache (13 weeks)
                 	\item Backup archive (1 year backup)
                 \end{itemize}
-                A solution consisting exclusively of disk arrays would require four 32-drawer disk array systems of 245 TB each. In order to ensure reliability and recoverability, a RAID5 format with two RAID5 arrays assigned to each drawer has been assumed. The total equipment cost is estimated on US\$10.57M \cite{Reine08} and according to the following table the disk array solution consumes 98KWh per TB per year.
+                A solution consisting exclusively of disk arrays would require four 32-drawer disk array systems of 245 TB each. In order to ensure reliability and recoverability, a RAID5 format with two RAID5 arrays assigned to each drawer has been assumed. The total equipment cost is estimated on US\$10.57M \cite{Reine08} and according to the table~\ref{tab:tape_drive_power_costs} the disk array solution consumes 98KWh per TB per year.
                 \begin{table}[h!tb]
                 \centering 
                 \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
@@ -442,14 +442,16 @@ Tape media generally has a favorable unit cost, long archival stability and low 
             
         \subsection{Data Center Infrastructure} \label{sec2:data_center_infrastructure}
             \subsubsection*{Water Cooling}
-                The reasonable limit of rack power and cooling capacity for a conventional forced-air (HVAC) cooled data center is 8 kW per rack. For power densities approaching 15 kW per rack, the layout of the computing rooms and cooling facilities must be determined using specialized software (such as HP Static Smart Cooling). For racks requiring more than 15 kW, the latest cooling techniques use water (Figure~\ref{fig:power_consumption_number_servers_rack}) \cite{HPCooling07}.
+                The reasonable limit of rack power and cooling capacity for a conventional forced-air (HVAC) cooled data center is 8 kW per rack. For power densities approaching 15 kW per rack, the layout of the computing rooms and cooling facilities must be determined using specialized software (such as HP Static Smart Cooling). For racks requiring more than 15 kW, the latest cooling techniques use water (Figure~\ref{fig:power_consumption_number_servers_rack})~\cite{HPCooling07}.
                 \begin{figure}[h!tb]
                     \centering
                     \includegraphics[scale=0.5]{graphics/power_consumption_number_servers_rack}
                     \caption{Power Consumption per Number of Servers in the Rack}
                     \label{fig:power_consumption_number_servers_rack}
                 \end{figure}
-                As shown in the following figure, the use of water cooling reduces in 50\% the equipment footprint, allowing greater server density. A 35 kW heat load dispersed among 4 racks could be concentrated in one single rack.
+                
+                As shown in the figure~\ref{fig:footprint_reduction_for_35_heat_load}, the use of water cooling reduces in 50\% the equipment footprint, allowing greater server density. A 35 kW heat load dispersed among 4 racks could be concentrated in one single rack.
+                
                 \begin{figure}[h!tb]
                     \centering
                     \includegraphics[scale=0.5]{graphics/footprint_reduction_for_35_heat_load}
@@ -470,5 +472,5 @@ Tape media generally has a favorable unit cost, long archival stability and low 
                     \captionof{table}{Life Cycle Costs of Water-cooled and Air-cooled Solutions}
                     \label{tab:life_cycle_costs_water_cooled_air_cooled}
                 \end{figure}
-                the annual cost for water cooling and air cooling (including charges, maintenance, equipment) do not differ by a large amount as seen in  Table \ref{tab:life_cycle_costs_water_cooled_air_cooled} and Figure \ref{fig:economic_crossover_annualized}. In this way, the main benefit brought by water cooling is the footprint reduction which can increase the server density in a data center.
+                The annual cost for water cooling and air cooling (including charges, maintenance, equipment) do not differ by a large amount as seen in Table~\ref{tab:life_cycle_costs_water_cooled_air_cooled} and Figure~\ref{fig:economic_crossover_annualized}. In this way, the main benefit brought by water cooling is the footprint reduction which can increase the server density in a data center.
 
