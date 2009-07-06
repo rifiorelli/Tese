@@ -18,14 +18,36 @@
 \section{Analysis} \label{sec4:analysis}
 %TODO here it is explained the database, how it was built, the database schema and etc\ldots
 %TODO
+\subsection{Component Database} \label{sec4:component_database}
+    The component database will be described in terms of its relations. For each relation it's semantic meaning will be explained along with the data it contains and the source of this data. The database schema is present in Figure~\ref{fig:database_schema}.
+
+    \begin{figure}[h!tb]
+        \centering
+        \includegraphics[scale=0.6]{graphics/database_schema}
+        \caption{Component database schema}
+        \label{fig:database_schema}
+    \end{figure}
+
+    \subsubsection*{Classification relations}
+        In order to provide an efficient classification of the components, four category relations were used, namely 1CAT, 2CAT, 3CAT and DEVICE. In this hierarchical disposition each component is classified in three levels by the relations 1CAT, 2CAT and 3CAT and then uniquely identified by the DEVICE relation. This classification follows the one present in the website analysed by the crawler\footnote{http://www.sisoftware.net/}.
+
+        \paragraph*{Relation 1CAT}
+            The first level of classification is very general as it just states the final usage of the component. As the components used in the database are computer components they will be defined as such in this first level.
+
+        \paragraph*{Relation 2CAT}
+            This relation fits the component into one of the main devices of a computer architecture. These are the following: processors, main memory, mass storage device, networking devices, CD/DVD player, mainboard, etc.
+
+        \paragraph*{Relation 3CAT}
+            The component is classified in a last level to provide contextual information about its usage. Processors, for example, are defined either as boxed or directly available in an OEM computer configuration. Memory can be used for servers, workstations or notebooks. Network devices can be LAN cards or networking equipment such as routers. Finally, mass storage devices are separated by technology, which can be hard-disk or flash-based.
+
+        \paragraph*{Relation DEVICE}
+            The last level is the identification of each component by an unique MPN number. This is the central relation in the database as the pricing, benchmark and characteristic relations are associated to specific components. The MPN information stored here was obtained with the use of the WEBSPHINX crawler over the SiSoftware shopping site\footnote{http://www.sisoftware.net/}. This device relation uses MPN as its key and associates for each component the 3 previous classifications, the component model/name and the date in which it was inserted in the database.
+            
+    \subsubsection*{Characteristic relations}
+        This set of relations associate with each component its specifications, provided by the manufacturer. As SiSoftware Sandra provides also these, the 
 
 \subsection{Overview} \label{sec4:analysis_overview}
     % explicar que a gente pegou as coisas e separou por tabelas, tentar nao ser redundate com o que teve no cap3
-
-    
-
-
-
 
 \section{Results} \label{sec4:results}
 %TODO falar que aqui a gente vai explicar os resultados de todos os métodos
