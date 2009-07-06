@@ -23,7 +23,7 @@
 
     \begin{figure}[h!tb]
         \centering
-        \includegraphics[scale=0.2]{graphics/database_schema}
+        \includegraphics[scale=0.3]{graphics/database_schema}
         \caption{Component database schema}
         \label{fig:database_schema}
     \end{figure}
@@ -62,10 +62,10 @@
             This is the main benchmark relation. It identifies a single benchmark type by giving it a name, measure unit, description and type (attribute MULTIPLE), which can be 0 for single-value or 1 for graph-based. Depending on the MULTIPLE attribute, the benchmark will either be referenced by the DEVICE\_BENCHMARK or the BENCHMARK\_POINT relations.
 
         \paragraph*{Relation DEVICE\_BENCHMARK}
-            This relation stores one single value for a benchmark. It also references both the reference benchmark and the component.
+            This relation stores one single value for a benchmark. It also references both the benchmark and the component.
             
         \paragraph*{Relation BENCHMARK\_POINT}
-            This relation stores a series of points as the output of the benchmark. It also references both the reference benchmark and the component.            
+            This relation stores a series of points as the output of the benchmark. It also references both the benchmark and the component.            
 
     \subsubsection*{Relation PRICE}
         The website used to collect the components MPN codes\footnote{http://www.sisoftware.net/} provided also pricing information about them. The suggested prices were shown together with a rating. The rating represents the number of users that suggested a price for the component and the higher it is, greater the credibility of the price information.
@@ -87,8 +87,36 @@
         \end{itemize}
     
     \subsubsection*{Measurements and result analysis}
-        The final task was to collect 
-    
+        The final task was to compare benchmarks executed in a number of machines and compare their results with measurements carried out in them.
+        
+        A standard procedure was defined and then applied to a set of computers. The parameters measured and benchmarked are described in the following paragraphs.
+
+        \paragraph*{Measurements}
+            For each computer the tool in Figure~\ref{fig:energy_measurement_instrument} was used in order to determine three parameters:
+            \begin{itemize}
+                \item The power of the computer with monitor powered on in idle mode, i.e. without running any user processes.
+                \item The power of the computer with monitor off also in idle mode.
+                \item The power of the computer with monitor on and processor fully stressed while executing a Sandra processor benchmark.
+            \end{itemize}
+            
+            The measurement results are described in Appendix~\ref{app:measures_toolino}.
+            
+        \paragraph*{Benchmarking}
+            The following Sandra benchmarks were then executed in each computer:
+            \begin{itemize}
+                \item Processor arithmetic performance benchmark, which provided the power consumption of the processor.
+                \item Cache and memory benchmark, which provided the total power consumption of set processor, chipset and memory.
+                \item Physical disk benchmark, that shows the power consumption of the computer's hard drive.
+            \end{itemize}
+            
+            The benchmark results are described in Appendix~\ref{app:measures_toolino}.
+            
+        \paragraph*{Component specifications}
+            The last set of information used in the benchmark result analysis were the specifications that were obtained from the manufacturers.
+            % dizer de quais componentes temos os dados na proxima linha
+            The specifications of the processor, bla, bla, bla for each computer model can be found in Appendix~\ref{app:measures_toolino}.
+                        
+            
 \section{Results} \label{sec4:results}
 %TODO falar que aqui a gente vai explicar os resultados de todos os métodos
 %TODO 
