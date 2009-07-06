@@ -44,8 +44,17 @@
             The last level is the identification of each component by an unique MPN number. This is the central relation in the database as the pricing, benchmark and characteristic relations are associated to specific components. The MPN information stored here was obtained with the use of the WEBSPHINX crawler over the SiSoftware shopping site\footnote{http://www.sisoftware.net/}. This device relation uses MPN as its key and associates for each component the 3 previous classifications, the component model/name and the date in which it was inserted in the database.
             
     \subsubsection*{Characteristic relations}
-        This set of relations associate with each component its specifications, provided by the manufacturer. As SiSoftware Sandra provides also these, the 
-
+        This set of relations associate with each component its specifications, provided by the manufacturer. As SiSoftware Sandra provides these, it was be preferred source for this kind of data. Other sources such as CPU-Z reports and component datasheets were used in case the information could not be found in Sandra.
+        
+        \paragraph*{Relation DEVICE_CHARACTERISTIC}
+            This determines the value of the characteristic being described. The value in char_value can be for example number of cores or clock frequency for a processor, disk rotation or average bandwidth for a hard drive or size and bandwidth for main memory. The attribute CHAR_ID is linked to the following relation in order to define the type of the characteristic.
+            
+        \paragraph*{Relation CHARACTERISTIC}
+            Each characteristic, other than a value associated in the previous relation, should be described in terms of type and measurement unit. One example may be the clock frequency which is measured in MHz. In this relation the attribute CHAR_NAME would be ``clock frequency'', the attribute CHAR_UM would be ``MHz'' and the DESCRIPTION attribute would explain the meaning of the characteristic.
+            
+        \paragraph*{Relation SOURCE}
+            For each component, the source of their characteristics could be either SiSoftware Sandra, the Web or other softwares such as CPU-Z.
+                        
 \subsection{Overview} \label{sec4:analysis_overview}
     % explicar que a gente pegou as coisas e separou por tabelas, tentar nao ser redundate com o que teve no cap3
 
