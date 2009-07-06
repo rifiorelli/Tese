@@ -38,7 +38,7 @@
 		SAN     &   Storage-Area Networks                       \tnhl
 		TOC     &   Total Cost of Ownership                     \tnhl
 		VM      &   Virtual Machine                             \tnhl
-		VPN     &   Virtual Private Networking                  \tnhl
+		VPN     &   Virtual Private Network                     \tnhl
 		x       &   x                                           \tnhl
 	\end{tabular}
 	\label{tab:glossary_of_abbreviations}
