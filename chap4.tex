@@ -19,7 +19,7 @@
 %TODO here it is explained the database, how it was built, the database schema and etc\ldots
 %TODO
 \subsection{Component Database} \label{sec4:component_database}
-    The component database will be described in terms of its relations. For each relation it's semantic meaning will be explained along with the data it contains and the source of this data. The database schema is present in Figure~\ref{fig:database_schema}.
+    The component database will be described in terms of its relations. For each relation its semantic meaning will be explained along with the data it contains and the source of this data. The database schema is present in Figure~\ref{fig:database_schema}.
 
     \begin{figure}[h!tb]
         \centering
@@ -27,7 +27,7 @@
         \caption{Component database schema}
         \label{fig:database_schema}
     \end{figure}
-
+%TODO colocar referencias a tabela excel de benchmarks e relations. inserir tabelas no apendice a partir do arquivo characteristics-benchmarks
     \subsubsection*{Classification relations}
         In order to provide an efficient classification of the components, four category relations were used, namely 1CAT, 2CAT, 3CAT and DEVICE. In this hierarchical disposition each component is classified in three levels by the relations 1CAT, 2CAT and 3CAT and then uniquely identified by the DEVICE relation. This classification follows the one present in the website analysed by the crawler\footnote{http://www.sisoftware.net/}.
 
@@ -45,8 +45,8 @@
             
     \subsubsection*{Characteristic relations}
         This set of relations associate with each component its specifications, provided by the manufacturer. As SiSoftware Sandra provides these, it was be preferred source for this kind of data. Other sources such as CPU-Z reports and component datasheets were used in case the information could not be found in Sandra.
-        
-        \paragraph*{Relation DEVICE_CHARACTERISTIC}
+%TODO referencia no apendice         
+        \paragraph*{Relation DEVICE\_CHARACTERISTIC}
             This determines the value of the characteristic being described. The value in char_value can be for example number of cores or clock frequency for a processor, disk rotation or average bandwidth for a hard drive or size and bandwidth for main memory. The attribute CHAR_ID is linked to the following relation in order to define the type of the characteristic.
             
         \paragraph*{Relation CHARACTERISTIC}
@@ -54,10 +54,41 @@
             
         \paragraph*{Relation SOURCE}
             For each component, the source of their characteristics could be either SiSoftware Sandra, the Web or other softwares such as CPU-Z.
+            
+    \subsubsection*{Benchmark relations}
+        The benchmarks were provided by SiSoft Sandra and they were of 2 types: single-value or graph-based. Single value benchmarks provide one value as output, such as power consumption and average performance. Graph-based benchmarks generate a graph by adjusting one parameter and measuring the value of another one. Examples are clock frequency per workload for a processor and bandwidth per data block site for main memory.
+%TODO referencia no apendice 
+        \paragraph*{Relation BENCHMARK}
+            This is the main benchmark relation. It identifies a single benchmark type by giving it a name, measure unit, description and type (attribute MULTIPLE), which can be 0 for single-value or 1 for graph-based. Depending on the MULTIPLE attribute, the benchmark will either be referenced by the DEVICE_BENCHMARK or the BENCHMARK_POINT relations.
+
+        \paragraph*{Relation DEVICE\_BENCHMARK}
+            This relation stores one single value for a benchmark. It also references both the reference benchmark and the component.
+            
+        \paragraph*{Relation BENCHMARK\_POINT}
+            This relation stores a series of points as the output of the benchmark. It also references both the reference benchmark and the component.            
+
+    \subsubsection*{Relation PRICE}
+        The website used to collect the components MPN codes\footnote{http://www.sisoftware.net/} provided also pricing information about them. The suggested prices were shown together a rating. The rating represents the number of users that suggested a price for the component and the higher it is, greater the credibility of the price information.
                         
 \subsection{Overview} \label{sec4:analysis_overview}
     % explicar que a gente pegou as coisas e separou por tabelas, tentar nao ser redundate com o que teve no cap3
-
+    % colocar referencia pra tabelas em XXXXXX
+    \subsubsection*{Data insertion into the component database}
+        The component database was created by extracting information from SiSoftware Sandra and contains information from component characteristics and benchmarks results. However, this information was not formerly stored as represented by Figure~\ref{fig:database_schema}, but as a set of independent relations without a central component repository. The original schema is described in Appendix~\ref{app:sandra_benchmark_table_schema}.
+    
+        As SiSoftware Sandra did not provide a centralized component database, to make the creation of the new component database possible a new relation would have to be created in order to associate each component with an unique identification number. The method used to that end is explained in section~\ref{sec3:websphinx}.
+    
+        The steps taken to populate the final component database were as follows:
+        \begin{itemize}
+            \item The Sandra database information was extracted into the relations shown in Appendix~\ref{app:sandra_benchmark_table_schema}.
+            \item The component-MPN relation was created and populated with the output of the procedure described in section~\ref{sec3:websphinx}.
+            \item Each component in the extracted Sandra database was assigned to a unique MPN
+            \item The information from the Sandra database were exported to the component database whose schema is in Figure~\ref{fig:database_schema}.
+        \end{itemize}
+    
+    \subsubsection*{}
+        supersuper
+    
 \section{Results} \label{sec4:results}
 %TODO falar que aqui a gente vai explicar os resultados de todos os métodos
 %TODO 
