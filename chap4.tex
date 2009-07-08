@@ -14,7 +14,7 @@
 %TODO explicar o que é este capitulo, pra que ele serve, realmente PROCURAR na internet o que geralmente se coloca num capitulo assim
 %TODO estudar e escrever o que aprendeu
 %
-    The objective of this chapter is to describe the designed component's database and evaluate it in comparison with measured data and data obtained from the components' manufacturer. The result of this evaluation will determine the adequacy of power consumption data provided by the database as a way to estimate the power consumption of different machine configurations.
+    The objective of this chapter is to describe the designed components' database and evaluate it in comparison with measured data and data obtained from the components' manufacturer. The result of this evaluation will determine the adequacy of power consumption data provided by the database as a way to estimate the power consumption of different machine configurations.
     
 \section{Analysis} \label{sec4:analysis}
 %TODO here it is explained the database, how it was built, the database schema and etc\ldots
@@ -66,26 +66,28 @@
             This relation stores a set of values provided as the output of the benchmark. It also references both the benchmark and the component.            
 
     \subsubsection*{Relation PRICE}
-        Inside the SANDRA's website, in the area of ``shopping'', it is possible to retrieve information about the price and also the MPN of the components. The suggested prices were shown together with a rating. The rating represents the number of users that suggested a price for the component and the higher it is, greater the credibility of the price information.
+        Inside the SANDRA's website, in the ``shopping'' area, it is possible to retrieve information about the price and also the MPN of the components. The suggested prices were shown together with a rating. The rating represents the number of users that suggested a price for the component and the higher it is, greater the credibility of the price information.
                         
 \subsection{Overview} \label{sec4:analysis_overview}
     % explicar que a gente pegou as coisas e separou por tabelas, tentar nao ser redundate com o que teve no cap3
     % colocar referencia pra tabelas em XXXXXX
     \subsubsection*{Data Insertion into the Database of Components}
-        The database of components was created by extracting information from the database provided by SiSoftware Sandra and it contains information about component's characteristics and benchmarks' results. However, this information was not uniformerly stored as represented by Figure~\ref{fig:database_schema}, but instead as a set of independent relations without a central component repository. The original schema is described in Appendix~\ref{app:sandra_benchmark_table_schema} and it contains the extracted tables provided by SiSoftware SANDRA.
+        The database of components was created by extracting information from the database provided by SiSoftware Sandra and it contains information about components' characteristics and benchmarks' results. However, this information was not uniformerly stored as represented by Figure~\ref{fig:database_schema} in Appendix~\ref{app:database_schema}, but instead as a set of independent relations without a central component repository. The original schema is described in Appendix~\ref{app:sandra_benchmark_table_schema} and it contains the extracted tables provided by SiSoftware SANDRA.
     
-        As SiSoftware Sandra did not provide a centralized component's database, to make the insertion of the new component's database possible a new relation would have to be created with an association of each component with its respective MPN. The method used to that end was explained in section~\ref{sec3:websphinx}.
+        As SiSoftware Sandra did not provide a centralized component's database, to make the creation of a more relevant one possible a new relation would have to be created with an association of each component with its respective MPN. The method used to that end was explained in section~\ref{sec3:websphinx}.
     
         The steps taken to populate the final database are, as follows:
         \begin{itemize}
             \item The Sandra database information was extracted into the relations shown in Appendix~\ref{app:sandra_benchmark_table_schema}.
             \item The component's MPN relation was created and populated with the output of the procedure described in section~\ref{sec3:websphinx}.
             \item Each component in the extracted Sandra database was assigned to a unique MPN and linked.
-            \item The information from the Sandra database was exported to the component database whose schema is in Figure~\ref{fig:database_schema}.
+            \item The information from the Sandra database was exported to the component database whose schema is in Figure~\ref{fig:database_schema} in Appendix~\ref{app:database_schema}.
         \end{itemize}
     
     \subsubsection*{Measurements and Result Analysis}
         The final task was to compare benchmarks executed in a number of machines and compare their results with measurements with the power measurement device. A standard procedure was defined and then applied to a set of computers. The parameters measured and benchmarked are described in the following paragraphs.
+        
+        For a more deep study, the following tables are described in Appendix~\ref{app:measures_toolino}
 
         \paragraph*{Measurements}
             For each computer the tool showed in Section~\ref{sec3:energy_measurement_instrument} was used and a measure of three parameters was made:
@@ -95,7 +97,6 @@
                 \item The power of the computer with monitor on and processor fully stressed while executing a Sandra processor benchmark.
             \end{itemize}
             
-            The measurement results are described in Appendix~\ref{app:measures_toolino}.
             
         \paragraph*{Benchmarking}
             The following Sandra benchmarks were then executed in each computer:
@@ -105,18 +106,18 @@
                 \item Physical disk benchmark, that shows the power consumption of the computer's hard drive.
             \end{itemize}
             
-            The benchmark results are described in Appendix~\ref{app:measures_toolino}.
             
         \paragraph*{Component Specifications}
             The last set of information used in the benchmark result analysis is the specifications (datasheets) provided by the  manufacturers. 
             % dizer de quais componentes temos os dados na proxima linha
-            The specifications of the processor, bla, bla, bla for each computer model can be found in Appendix~\ref{app:measures_toolino}.
+            
                         
             
 \section{Results} \label{sec4:results}
 %TODO falar que aqui a gente vai explicar os resultados de todos os métodos
-%TODO 
-\subsection{Benchmark Results} \label{sec4:benchmark_results}
+    
+
+    \subsection{Benchmark Results} \label{sec4:benchmark_results}
 
         \paragraph*{Notebook monitor power}
         
@@ -143,8 +144,8 @@
             \begin{equation}
                 \begin{split}
                 &\text{ consumption with stressed processor } = \\
-                &\text{ measured consumption with stressed processor and monitor on } \\
-                &-\text{ monitor power consumption }
+                &\text{ measured consumption with stressed processor and monitor on }-\\
+                &\text{ monitor power consumption }
                 \end{split}
                 \label{stressed_withoutmonitor}
             \end{equation}
