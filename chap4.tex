@@ -145,11 +145,12 @@
         \paragraph*{Notebook monitor power}
         
             The power consumed by the notebook monitor was estimated as follows: 
+            
             \begin{equation}
-                \text{ monitor power consumption } = \text{ power measurement with monitor on and idle processor }  - 
-                % linebreak nao funciona!
-                \\
-                \text{ power measurement with monitor off and idle processor }
+                \begin{split}
+                    \text{ monitor power consumption } =& \text{ power measured with monitor on and idle processor } -  \\
+                    & \text{ power measured with monitor off and idle processor }  
+                \end{split}
                 \label{monitor_consumption}
             \end{equation}
             
@@ -162,9 +163,13 @@
         \end{itemize}
         
             It can be said that the computer power consumption is approximately the sum of the power of the PSU, processor, chipset and memory. This would correspond to the measurements made with the monitor powered off. In the idle processor case, the value was directly measured. As the stressed processor measure was only made with the monitor powered on, the estimated monitor power will be subtracted from it as shown in equation~\ref{stressed_withoutmonitor}.
+            
             \begin{equation}
-            %precisa de um linebreak!
-                \text{ consumption with stressed processor } = \text{ measured consumption with stressed processor and monitor on }  - \text{ monitor power consumption }
+                \begin{split}
+                &\text{ consumption with stressed processor } = \\
+                &\text{ measured consumption with stressed processor and monitor on } \\
+                &-\text{ monitor power consumption }
+                \end{split}
                 \label{stressed_withoutmonitor}
             \end{equation}
             
