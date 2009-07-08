@@ -130,7 +130,7 @@
         
     \subsection{Power of the set processor, chipset and  memory} \label{sec4:processor_power}
         
-        Sandra provided the aggregate power of the set processor, chipset and memory through the cache and memory benchmark. Its results were then compared with a combination of the conducted measurements and an estimate of the notebooks PSU power consumption.
+        Sandra provided the aggregate power of the set processor, chipset and memory through the cache and memory benchmark. This will be the base over which the result analysis will be made. Its results were compared with a combination of the conducted measurements and an estimate of the notebooks PSU power consumption, which represents the measured aggregate power of the processor, chipset and memory.
         
         \paragraph*{PSU power consumption}
             
@@ -158,6 +158,20 @@
             
         \begin{itemize}
             \item Hard disk consumption can be assumed to be low, under 2W in idle mode\footnote{\url{http://www.tomshardware.com/charts/2.5-hard-drive-charts/Idle-Power-Consumption,681.html}}
-            \item Nominal processor power provided by the manufacturer specifications.
+            \item While not searching for an access point, the notebook wireless card consumes less than 0,5W\footnote{\url{http://www.notebookreview.com/default.asp?newsID=3597&article=wireless+and+battery+power}}
         \end{itemize}
+        
+            It can be said that the computer power consumption is approximately the sum of the power of the PSU, processor, chipset and memory. This would correspond to the measurements made with the monitor powered off. In the idle processor case, the value was directly measured. As the stressed processor measure was only made with the monitor powered on, the estimated monitor power will be subtracted from it as shown in equation~\ref{stressed_withoutmonitor}.
+            \begin{equation}
+            %precisa de um linebreak!
+                \text{ consumption with stressed processor } = \text{ measured consumption with stressed processor and monitor on }  - \text{ monitor power consumption }
+                \label{stressed_withoutmonitor}
+            \end{equation}
+            
+            Finally, the following comparisons were made:
+
+            \begin{enumerate}
+                \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Idle processor with monitor off measurement - PSU estimated power}
+                \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Stressed processor with monitor on measurement - monitor estimated power - PSU estimated power}
+            \end{enumerate}
 
