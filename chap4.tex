@@ -110,7 +110,7 @@
     \paragraph*{Component Specifications}
         The last set of information used in the benchmark result analysis are the specifications (datasheets) provided by the  manufacturers.
         % comparacao power benchmark sandra e power datasheet componente (nominal)
-        As a way to validate the power consumption data provided by the processor arithmetic benchmark, the power measured by the benchmark was compared with the nominal power described in the processor specification. This comparation may be found in Appendix~\ref{app:measures_toolino}.
+        As a way to validate the power consumption data provided by the processor arithmetic benchmark, the power measured by the benchmark was compared with the nominal power described in the processor specification. This comparison may be found in Appendix~\ref{app:measures_toolino}.
                         
             
 \section{Results} \label{sec4:results}
@@ -119,7 +119,7 @@
     In this section the data obtained with the benchmarks, measurements and component specifications will be confronted in several ways to determine the accuracy of the power consumption information measured by the benchmarks.
     
     \subsection{Processor power} \label{sec4:processor_power}
-        In the first place, a simple analysis regarding the coherence of the data obtained from the processor performance benchmark was made. It consisted in the comparation of two values:
+        In the first place, a simple analysis regarding the coherence of the data obtained from the processor performance benchmark was made. It consisted in the comparison of two values:
         
         \begin{itemize}
             \item Processor power measured by the processor arithmetic performance benchmark.
@@ -142,5 +142,20 @@
                 \label{psu_consumption}
             \end{equation}
 
-        \paragraph*{}
-
+        \paragraph*{Notebook monitor power}
+        
+            The power consumed by the notebook monitor was estimated as follows: 
+            \begin{equation}
+                \text{ monitor power consumption } = \text{ power measurement with monitor on and idle processor } - \text{ power measurement with monitor off and idle processor }
+                \label{monitor_consumption}
+            \end{equation}
+            
+        \paragraph*{Idle processor comparison}
+            Under the hypotheses that: 
+            
+        \begin{itemize}
+            \item Hard disk consumption can be assumed to be low, under 2W in idle mode\footnote{\url{http://www.tomshardware.com/charts/2.5-hard-drive-charts/Idle-Power-Consumption,681.html}}
+            \item Nominal processor power provided by the manufacturer specifications.
+        \end{itemize}
+        
+            
