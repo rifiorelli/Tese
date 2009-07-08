@@ -66,81 +66,57 @@
             This relation stores a set of values provided as the output of the benchmark. It also references both the benchmark and the component.            
 
     \subsubsection*{Relation PRICE}
-        In the ``shopping'' session of Sandra's website, it is possible to retrieve information about the price and also the MPN of the components. The suggested prices were shown together with a rating. The rating represents the number of users that suggested a price for the component and the higher it is, greater the credibility of the price information.
+        Inside the SANDRA's website, in the area of ``shopping'', it is possible to retrieve information about the price and also the MPN of the components. The suggested prices were shown together with a rating. The rating represents the number of users that suggested a price for the component and the higher it is, greater the credibility of the price information.
                         
-\subsection{Data insertion process} \label{sec4:data_insertion}
+\subsection{Overview} \label{sec4:analysis_overview}
     % explicar que a gente pegou as coisas e separou por tabelas, tentar nao ser redundate com o que teve no cap3
     % colocar referencia pra tabelas em XXXXXX
-    The database of components was created by extracting information from the database provided by SiSoftware Sandra and it contains information about component's characteristics and benchmarks' results. However, this information was not uniformerly stored as represented by Figure~\ref{fig:database_schema}, but instead as a set of independent relations without a central component repository. The original schema is described in Appendix~\ref{app:sandra_benchmark_table_schema} and it contains the extracted tables provided by SiSoftware SANDRA.
+    \subsubsection*{Data Insertion into the Database of Components}
+        The database of components was created by extracting information from the database provided by SiSoftware Sandra and it contains information about component's characteristics and benchmarks' results. However, this information was not uniformerly stored as represented by Figure~\ref{fig:database_schema}, but instead as a set of independent relations without a central component repository. The original schema is described in Appendix~\ref{app:sandra_benchmark_table_schema} and it contains the extracted tables provided by SiSoftware SANDRA.
     
-    As SiSoftware Sandra did not provide a centralized component's database, to make the insertion of the new component's database possible a new relation would have to be created with an association of each component with its respective MPN. The method used to that end was explained in section~\ref{sec3:websphinx}.
+        As SiSoftware Sandra did not provide a centralized component's database, to make the insertion of the new component's database possible a new relation would have to be created with an association of each component with its respective MPN. The method used to that end was explained in section~\ref{sec3:websphinx}.
     
-    The steps taken to populate the final database are, as follows:
-    \begin{itemize}
-        \item The Sandra database information was extracted into the relations shown in Appendix~\ref{app:sandra_benchmark_table_schema}.
-        \item The component's MPN relation was created and populated with the output of the procedure described in section~\ref{sec3:websphinx}.
-        \item Each component in the extracted Sandra database was assigned to a unique MPN and linked.
-        \item The information from the Sandra database was exported to the component database whose schema is in Figure~\ref{fig:database_schema}.
-    \end{itemize}
+        The steps taken to populate the final database are, as follows:
+        \begin{itemize}
+            \item The Sandra database information was extracted into the relations shown in Appendix~\ref{app:sandra_benchmark_table_schema}.
+            \item The component's MPN relation was created and populated with the output of the procedure described in section~\ref{sec3:websphinx}.
+            \item Each component in the extracted Sandra database was assigned to a unique MPN and linked.
+            \item The information from the Sandra database was exported to the component database whose schema is in Figure~\ref{fig:database_schema}.
+        \end{itemize}
     
-\subsection{Measurements and Result Analysis} \label{sec4:measurements}    
-    
-    The final task was to compare benchmarks executed in a number of machines and compare their results with measurements with the power measurement device. A standard procedure was defined and then applied to a set of computers. The parameters measured and benchmarked are described in the following paragraphs.
+    \subsubsection*{Measurements and Result Analysis}
+        The final task was to compare benchmarks executed in a number of machines and compare their results with measurements with the power measurement device. A standard procedure was defined and then applied to a set of computers. The parameters measured and benchmarked are described in the following paragraphs.
 
-    \paragraph*{Measurements}
-        For each computer the tool showed in Section~\ref{sec3:energy_measurement_instrument} was used and a measure of three parameters was made:
-        \begin{itemize}
-            \item The power of the computer with monitor powered on in idle mode, i.e. without running any user processes.
-            \item The power of the computer with monitor off also in idle mode.
-            \item The power of the computer with monitor on and processor fully stressed while executing a Sandra processor benchmark.
-        \end{itemize}
+        \paragraph*{Measurements}
+            For each computer the tool showed in Section~\ref{sec3:energy_measurement_instrument} was used and a measure of three parameters was made:
+            \begin{itemize}
+                \item The power of the computer with monitor powered on in idle mode, i.e. without running any user processes.
+                \item The power of the computer with monitor off also in idle mode.
+                \item The power of the computer with monitor on and processor fully stressed while executing a Sandra processor benchmark.
+            \end{itemize}
             
-        The measurement results are described in Appendix~\ref{app:measures_toolino}.
+            The measurement results are described in Appendix~\ref{app:measures_toolino}.
             
-    \paragraph*{Benchmarking}
-        The following Sandra benchmarks were then executed in each computer:
-        \begin{itemize}
-            \item Processor arithmetic performance benchmark, which provided the power consumption of the processor.
-            \item Cache and memory benchmark, which provided the total power consumption of set processor, chipset and memory.
-            \item Physical disk benchmark, that shows the power consumption of the computer's hard drive.
-        \end{itemize}
+        \paragraph*{Benchmarking}
+            The following Sandra benchmarks were then executed in each computer:
+            \begin{itemize}
+                \item Processor arithmetic performance benchmark, which provided the power consumption of the processor.
+                \item Cache and memory benchmark, which provided the total power consumption of set processor, chipset and memory.
+                \item Physical disk benchmark, that shows the power consumption of the computer's hard drive.
+            \end{itemize}
             
-        The benchmark results are described in Appendix~\ref{app:measures_toolino}.
+            The benchmark results are described in Appendix~\ref{app:measures_toolino}.
             
-    \paragraph*{Component Specifications}
-        The last set of information used in the benchmark result analysis are the specifications (datasheets) provided by the  manufacturers.
-        % comparacao power benchmark sandra e power datasheet componente (nominal)
-        As a way to validate the power consumption data provided by the processor arithmetic benchmark, the power measured by the benchmark was compared with the nominal power described in the processor specification. This comparison may be found in Appendix~\ref{app:measures_toolino}.
+        \paragraph*{Component Specifications}
+            The last set of information used in the benchmark result analysis is the specifications (datasheets) provided by the  manufacturers. 
+            % dizer de quais componentes temos os dados na proxima linha
+            The specifications of the processor, bla, bla, bla for each computer model can be found in Appendix~\ref{app:measures_toolino}.
                         
             
 \section{Results} \label{sec4:results}
 %TODO falar que aqui a gente vai explicar os resultados de todos os métodos
 %TODO 
-    In this section the data obtained with the benchmarks, measurements and component specifications will be confronted in several ways to determine the accuracy of the power consumption information measured by the benchmarks.
-    
-    \subsection{Processor power} \label{sec4:processor_power}
-        In the first place, a simple analysis regarding the coherence of the data obtained from the processor performance benchmark was made. It consisted in the comparison of two values:
-        
-        \begin{itemize}
-            \item Processor power measured by the processor arithmetic performance benchmark.
-            \item Nominal processor power provided by the manufacturer specifications.
-        \end{itemize}
-        
-        Both results are listed in --REFERENCIA TABELA--. From it, it can be seen that X benchmark measures are not coherent with the processor specifications as they show a higher power consumption than the nominal processor power.
-        
-    \subsection{Power of the set processor, chipset and  memory} \label{sec4:processor_power}
-        
-        Sandra provided the aggregate power of the set processor, chipset and memory through the cache and memory benchmark. This will be the base over which the result analysis will be made. Its results were compared with a combination of the conducted measurements and an estimate of the notebooks PSU power consumption, which represents the measured aggregate power of the processor, chipset and memory.
-        
-        \paragraph*{PSU power consumption}
-            
-            The power source for the notebooks can usually provide up to 100W, but it hardly does so. Instead, its consumption is measured as a function of the total power consumption of the notebook and PSU and of the PSU efficiency.
-            
-            This function can be stated as:
-            \begin{equation}
-                \text{ PSU power consumption } = (1 - \text{ PSU efficiency }) \cdot \text{ measured consumption }
-                \label{psu_consumption}
-            \end{equation}
+\subsection{Benchmark Results} \label{sec4:benchmark_results}
 
         \paragraph*{Notebook monitor power}
         
@@ -177,6 +153,7 @@
 
             \begin{enumerate}
                 \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Idle processor with monitor off measurement - PSU estimated power}
-                \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Stressed processor with monitor on measurement - monitor estimated power - PSU estimated power}
-            \end{enumerate}
+-               \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Stressed processor with monitor on measurement - monitor estimated power - PSU estimated power}
+-           \end{enumerate}
+
 
