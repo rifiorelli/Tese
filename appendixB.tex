@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Master Thesis - Computer Engineering
+%% Copyright 2009 Ricardo Alexandre Fiorelli, Erick Poletto
+%% This document is distributed by the terms of the license
+%% included in the file LICENCE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendix B
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Comparison Tape Drives}\label{app:comparison_tape_drives}
+    \begin{table}[h!tb]
+        \centering
+        \begin{tabular}{|c|c|c|}
+        \hline
+        {\bf SDLT \&} & {\bf Native Capacity \&} & {\bf Compressed Capacity \&} \tn
+        {\bf DLT Tape Drives} & {\bf Transfer Rate} & {\bf Transfer Rate} \tnhl
+        {\bf DLT-S4} & 800GB at 60MB/s & 1600GB at 320MB/s \tnhl
+        {\bf SDLT 600} & 300GB at 36MB/s & 600GB at 72MB/s \tnhl
+        {\bf SDLT 320} & 160GB at 16MB/s & 320GB at 32MB/s \tnhl
+        {\bf SDLT 220} & 110GB at 11MB/s & 220GB at 22MB/s \tnhl
+        {\bf DLT 8000} & 40GB at 6MB/s & 80GB at 12MB/s \tnhl
+        {\bf DLT V4} & 160GB at 10MB/s & 320GB at 20MB/s \tnhl
+        {\bf DLT1} & 40GB at 3MB/s & 80GB at 12MB/s \tnhl
+        {\bf DLT-VS160} & 80GB at 8MB/s & 160GB at 16MB/s \tnhl
+        {\bf DLT-VS80} & 40GB at 3MB/s & 80GB at 6MB/s \tnhl
+        {\bf DLT 7000} & 35GB at 5MB/s & 70GB at 10MB/s \tnhl
+        {\bf DLT 4000} & 20GB at 1.5MB/s & 40GB at 3MB/s \tnhl
+        {\bf DLT 2000XT} & 15GB at 1.25MB/s & 30GB at 2.5MB/s \tnhl
+        \end{tabular}
+        \captionof{table}{Comparison Between SDLT and DLT Tape Drives Capacities and Transfer Rates}
+        \label{tab:comparison_SDLT_DLT_capacities_transfer_rates}
+    \end{table}
+    
+    \begin{table}[h!tb]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        {\bf Product} & {\bf Capacity, native} & {\bf Average file access} & {\bf Data transfer rate, } \tn
+
+            {\bf } & {\bf  (uncompressed)} & {\bf  time (first file)} & {\bf native (uncompressed)} \tnhl
+                    \multicolumn{ 4}{|c|}{{\bf T-Series}} \tnhl
+        \multicolumn{ 1}{|c|}{T9840A} & \multicolumn{ 1}{|c|}{20 GB} & \multicolumn{ 1}{|c|}{8 sec} & \multicolumn{ 1}{|c|}{10 MB/sec} \tnhl
+        \multicolumn{ 1}{|c|}{T9840B} & \multicolumn{ 1}{|c|}{20 GB} & \multicolumn{ 1}{|c|}{8 sec} & \multicolumn{ 1}{|c|}{19 MB/sec} \tnhl
+        \multicolumn{ 1}{|c|}{T9840C} & \multicolumn{ 1}{|c|}{40 GB} & \multicolumn{ 1}{|c|}{8 sec} & \multicolumn{ 1}{|c|}{30 MB/sec} \tnhl
+        \multicolumn{ 1}{|c|}{T9940A} & \multicolumn{ 1}{|c|}{60 GB} & \multicolumn{ 1}{|c|}{41 sec} & \multicolumn{ 1}{|c|}{10 MB/sec} \tnhl
+        \multicolumn{ 1}{|c|}{T9940B} & \multicolumn{ 1}{|c|}{200 GB} & \multicolumn{ 1}{|c|}{41 sec} & \multicolumn{ 1}{|c|}{30 MB/sec} \tnhl
+                 \multicolumn{ 4}{|c|}{{\bf LTO Ultrium}} \tnhl
+        \multicolumn{ 1}{|c|}{LTO Gen 1} & \multicolumn{ 1}{|c|}{100 GB} & \multicolumn{ 1}{|c|}{86-96 sec} & \multicolumn{ 1}{|c|}{15-16 MB/sec} \tnhl
+        \multicolumn{ 1}{|c|}{LTO Gen 2} & \multicolumn{ 1}{|c|}{200 GB} & \multicolumn{ 1}{|c|}{64-75 sec} & \multicolumn{ 1}{|c|}{32-35 MB/sec} \tnhl
+        \multicolumn{ 1}{|c|}{LTO Gen 3} & \multicolumn{ 1}{|c|}{400 GB} & \multicolumn{ 1}{|c|}{72 sec} & \multicolumn{ 1}{|c|}{80 MB/sec} \tnhl
+                        \multicolumn{ 4}{|c|}{{\bf SDLT}} \tnhl
+        \multicolumn{ 1}{|c|}{SDLT 320} & \multicolumn{ 1}{|c|}{160 GB} & \multicolumn{ 1}{|c|}{82 sec} & \multicolumn{ 1}{|c|}{16 MB/sec} \tnhl
+        \multicolumn{ 1}{|c|}{SDLT 600} & \multicolumn{ 1}{|c|}{300 GB} & \multicolumn{ 1}{|c|}{79 sec} & \multicolumn{ 1}{|c|}{36 MB/sec} \tnhl
+        \end{tabular}  
+        \captionof{table}{Access times for several tape drives}
+        \label{tab:access_times_tape_drives}
+    \end{table}
+    
+    \begin{table}[h!tb]
+        \centering
+        \begin{tabular}{|c|c|c|} \hline
+                                    &                           & {\bf Compressed}      \tn
+        {\bf SDLT \&}               & {\bf Native Capacity \&}  & {\bf Capacity \&}     \tn
+        {\bf DLT Tape Drives}       & {\bf Transfer Rate}       & {\bf Transfer Rate}   \tnhl
+        {\bf LTO-4}                 & 800GB at 120MB/s          & 1.6TB at 240MB/s      \tn
+                                    & (864GB per hour)          &                       \tnhl
+        {\bf HP Ultrium 1760}       & 800GB                     & 1.6TB at 576GB/hr     \tnhl
+        {\bf HP Ultrium 1840}       & 800GB at 120MB/s          & 1.6TB at 240MB/s      \tnhl
+        {\bf HP Ultrium 960}        & 400GB at 80MB/s           & 800GB at 160MB/s      \tnhl
+        {\bf HP Ultrium 460}        & 200GB at 30MB/s           & 400GB at 60MB/s       \tnhl
+        {\bf HP Ultrium 230}        & 100GB at 15MB/s           & 200GB at 30MB/s       \tnhl
+        {\bf IBM LTO-4}             & 800GB at 120MB/s          & 1.6TB at 240MB/s      \tnhl
+        {\bf IBM LTO-3}             & 400GB at 80MB/s           & 800GB at 160MB/s      \tnhl
+        {\bf IBM LTO-2}             & 200GB at 35MB/s           & 400GB at 70MB/s       \tnhl
+        {\bf IBM LTO-1}             & 100GB at 15MB/s           & 200GB at 30MB/s       \tnhl
+        {\bf Quantum LTO3}          & 400GB at 245GB/hr         & 800GB at 490GB/hr     \tnhl
+        {\bf Quantum LTO3 HH}       & 400GB at 68MB/s           & 800GB at 90MB/s       \tnhl
+        {\bf Quantum LTO2}          & 200GB at 123GB/hr         & 400GB at 245GB/hr     \tnhl
+        {\bf Quantum LTO2HH}        & 200GB at 94GB/hr          & 400GB at 144GB/hr     \tnhl
+        {\bf Tandberg Data LTO4 FH} & 800GB at 120MB/s          & 1.6TB at 240MB/s      \tnhl
+        {\bf Tandberg Data LTO3 FH} & 400GB at 80MB/s           & 800GB at 160MB/s      \tnhl
+        {\bf Tandberg Data LTO3 HH} & 400GB at 60MB/s           & 800GB at 120MB/s      \tnhl
+        {\bf Tandberg Data LTO2 HH} & 200GB at 24MB/s           & 400GB at 48MB/s       \tnhl
+        {\bf Tandberg Data LTO1 HH} & 100GB at 16MB/s           & 200GB at 32MB/s       \tnhl
+        {\bf Certance LTO-1} & 100GB at 960MB/min               & 200GB at 1920MB/min   \tnhl
+        \end{tabular}  
+        \captionof{table}{Comparison Between LTO Tape Drives Capacities and Transfer Rates}
+        \label{tab:comparison_LTO_capacities_transfer_rates}
+    \end{table}
+    
+    
