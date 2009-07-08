@@ -17,7 +17,7 @@
 \begin{center}
 	\begin{tabular}{|l|l|} \hline
 	    x       &   x                                           \tnhl
-	    ALU     &   Arithmetic Logic Unit                       \tnhl
+	    ALU     &   Arithmetic Logic Unit
 	    CIO     &   Chief Information Officer                   \tnhl
 	    CPU     &   Central Processing Unit                     \tnhl
 	    DDR     &   Double-Data Rate                            \tnhl
@@ -30,9 +30,9 @@
     	MPN     &   Manufacturer Part Number                    \tnhl
     	OS      &   Operational System                          \tnhl
     	PC      &   Personal Computer                           \tnhl
-    	PDU     &   Power Distribution Unit                     \tnhl
+    	PDU     &                                               \tnhl
     	PSU     &   Power Supply Unit                           \tnhl
-    	RAID    &   Redundant Array of Independent Disks        \tnhl
+    	RAID    &                                               \tnhl
 		ROI     &   Return on Investment                        \tnhl
 		ROM     &   Read-Only Memory                            \tnhl
 		SaaS    &   Software as a Service                       \tnhl
