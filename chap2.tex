@@ -20,7 +20,7 @@
 		
         
         \subsection{Strategies for Applying a Green Solution} \label{sec2:strategies_applying_green_solution}
-            According to NTT Communications\footnote{\url{http://www.ntt.com/business_e/feature/green_ict.html}}, there are two main approaches for applying a green solution.
+            According to NTT Communications\cite{NTT2009}, there are two main approaches for applying a green solution.
             \begin{description}
             	\item[Green of ICT] concentrates on the operation of the ICT equipment and information system. The objective of the method is to reduce the environmental through power savings and recycling.
                 	\begin{description}
@@ -53,8 +53,6 @@
         This category represents the components used in a certain machine configuration. The component's performance and power consumption can be obtained from several sources, such as the manufacturer specifications, benchmarks and also direct measurements in the case of power consumption.
         The following are the dimensions that influence the final power consumption of a machine.
             \paragraph*{Single-core / Multi-core Processors} Processors in general affect the overall power consumption of the computer by means of the workload that is required by it. For example, if the computer is in idle (without any processes running) the energy consumed is less than if the computer stays in full workload, but the idle state does not mean anything to the efficiency, because it is needed a high workload (about 70\%) to have the best workload/power consumption ratio.
-            %Tirei o cache pelo simples fato de que nao afeta na overall consumption
-            %\paragraph*{Cache Memory} %TODO Type and dimension of 
             \paragraph*{RAM Memory} There are several types and dimensions of memories that should be analyzed, for instance the difference in operation in 2.5V in DDR SDRAM, when compared 3.3V in SDRAM significantly reduce the power consumption. When compating DDR and DDR2, The Table~\ref{tab:power_consumption_ram}\nocite{Cooke:2009:Online} compares the difference in power consumption of DDR and DDR2 under various circumstances and it shows that the power consumed by RAM, even on maximum workload (+4.5W), does not have much effect on the overall computer consumption (~220W).
 				\begin{table}[h!tb]
 				\centering \resizebox{\textwidth}{!}{ % Fazendo a tabela caber no espaco da pagina
@@ -81,7 +79,7 @@
                     \label{fig:power_consumption_harddrive}
                 \end{figure}
             \paragraph*{Chassis} Concerning power supply, fans or other PC components not belonging to the main parts, it is necessary to require quality other than price. Heating and cooling are really where the power consumption goes. Most computers only make up a fairly small percentage of your electrical bill. One should never underestimate the efficiency of the power supply, because most low quality ones are only about 45-55\% efficient, whereas it is possible to achieve more than 80\%.
-            \paragraph*{Monitor Type} As shown by Table~\ref{tab:energy_used_monitor}\footnote{\url{http://michaelbluejay.com/electricity/computers.html}}, flat panel liquid crystal display (LCD) monitors power consumption equals to half the power of conventional CRT monitors. LCD monitors also dissipate less heat, which helps to reduce air conditioning costs. Another interesting point is that either LCD or CRT monitors consume the same amount of energy with or without screensavers. As LCD monitors do not consume much energy when turned off, that would be the best solution for idle computers.
+            \paragraph*{Monitor Type} As shown by Table~\ref{tab:energy_used_monitor}\cite{Bluejay2008}, flat panel liquid crystal display (LCD) monitors power consumption equals to half the power of conventional CRT monitors. LCD monitors also dissipate less heat, which helps to reduce air conditioning costs. Another interesting point is that either LCD or CRT monitors consume the same amount of energy with or without screensavers. As LCD monitors do not consume much energy when turned off, that would be the best solution for idle computers.
                 \begin{table}[h!tb]
                     \centering
                     \begin{tabular}{|c|c|}
@@ -104,7 +102,7 @@
                 \end{table}
 
     \subsection{Policies / Tools / Labels} \label{sec2:policies_tools_labels}
-        The amount of saved energy depends also on policies that regard technology acquisition and IT management, which may be enforced by a variety of specialized tools. Examples of policies that regard equipment acquisition are: the acquisition of new computers or components labeled as green by the manufacturer, purchase of computers with multi-core processors and even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example of the latter is to turn off workstations or servers if they are going to be unused for a long time. This kind of measure is particularly efficient as a computer in idle mode uses 20 to 50 times the power of a computer in standby mode\footnote{\url{http://www.cosn.org/Initiatives/GreenComputing/EnergyUse/tabid/4515/Default.aspx}}.
+        The amount of saved energy depends also on policies that regard technology acquisition and IT management, which may be enforced by a variety of specialized tools. Examples of policies that regard equipment acquisition are: the acquisition of new computers or components labeled as green by the manufacturer, purchase of computers with multi-core processors and even to discourage the purchase of specific kinds of hardware such as dual or large monitors and graphic cards. Another kind of policy relates to the management of the machines. One example of the latter is to turn off workstations or servers if they are going to be unused for a long time. This kind of measure is particularly efficient as a computer in idle mode uses 20 to 50 times the power of a computer in standby mode\cite{Kaestner2009}.
         
     \begin{table}[h!tb]
         \centering
@@ -121,7 +119,7 @@
         \label{tab:energy_used_computer}
     \end{table}
 
-        The tools that automate these methods have as their main feature the possibility to let computers in a network in standby mode or even to turn them off after a long period of no utilization. In addition, the shared usage of networked pieces of hardware can be an effective way to achieve energy savings. Networked systems allow several nearby users to share a single printer, which generally generates savings in both equipment cost and energy if compared with each computer having a dedicated printer. Above that, choosing multifunction devices (MFD) that encapsulates in one machine the functionality of many others. In addition to saving space and materials, these multifunctionals save energy if compared to several different machines working in parallel. The Table~\ref{tab:energy_recommendation_efficient_printer}\footnote{\url{http://www1.eere.energy.gov/femp/procurement/eep_printer.html}} describes the power consumption in standby mode that an energy-efficient networked printer should have in relation to the printer type and to the number of pages it prints per minute. 
+        The tools that automate these methods have as their main feature the possibility to let computers in a network in standby mode or even to turn them off after a long period of no utilization. In addition, the shared usage of networked pieces of hardware can be an effective way to achieve energy savings. Networked systems allow several nearby users to share a single printer, which generally generates savings in both equipment cost and energy if compared with each computer having a dedicated printer. Above that, choosing multifunction devices (MFD) that encapsulates in one machine the functionality of many others. In addition to saving space and materials, these multifunctionals save energy if compared to several different machines working in parallel. The Table~\ref{tab:energy_recommendation_efficient_printer}\cite{EERE2009} describes the power consumption in standby mode that an energy-efficient networked printer should have in relation to the printer type and to the number of pages it prints per minute. 
         
         \begin{table}[h!tb]
         \centering
@@ -309,7 +307,7 @@
                 14 x3550 servers & 5.222 kWh & 228,849 & \$6,865.46 \tnhl
                 14 x3650 servers & 6.370 kWh & 279,259 & \$8,374.80  \tnhl
                 \end{tabular}  
-                \captionof{table}{Power consumption for several servers, excluding cooling and redundancy}%XXX colocar referencia
+                \captionof{table}{Power consumption for several servers, excluding cooling and redundancy}
                 \label{tab:power_consumption_several_servers}
             \end{table}
             
