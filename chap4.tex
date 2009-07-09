@@ -108,16 +108,14 @@
             
             
         \paragraph*{Component Specifications}
-            The last set of information used in the benchmark result analysis is the specifications (datasheets) provided by the  manufacturers. 
-            % dizer de quais componentes temos os dados na proxima linha
-            
+            The last set of information used in the benchmark result analysis are the processor specifications (datasheets) provided by the manufacturers.      
                         
             
 \section{Results} \label{sec4:results}
 %TODO falar que aqui a gente vai explicar os resultados de todos os métodos
-    
+This section explains how the obtained data was prepared in order to make the comparisons between the various sources of information and exposes the results together with their analysis.
 
-    \subsection{Benchmark Results} \label{sec4:benchmark_results}
+    \subsection{Data preparation} \label{sec4:data_preparation}
 
         \paragraph*{Notebook monitor power}
         
@@ -157,4 +155,23 @@
                 \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Stressed processor with monitor on measurement - monitor estimated power - PSU estimated power}
             \end{enumerate}
 
-
+    \subsection{Analysis of results} \label{sec4:analysis_results}
+        The results may be divided into two categories: first the confrontation between the processor consumption measurement by the benchmark and the product specification and secondly the confrontation between the cache and memory benchmark and the direct measurements.
+        
+        \paragraph*{Processor power analysis}
+            The results of the processor consumption benchmark are compared with their nominal power in --REFERENCIA consumo_processadores--.
+            
+            --TABELA consumo_processadores--
+            
+            As can be seen, the benchmark results are not coherent for X processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications.
+            
+        \paragraph*{Analysis of the set processor/chipset/memory power consumption}
+            This analysis was conducted with the processor in idle mode, as shown in --REFERENCIA benchIdle-- and with the processor fully stressed, as shown in --REFERENCIA benchStressed.
+            
+            --TABELA benchIdle--
+            --TABELA --benchStressed--
+            
+            The percentual delta was calculated in absolute values, and as its average is blablablabla
+           
+            
+        
