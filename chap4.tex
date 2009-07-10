@@ -20,7 +20,7 @@
 %TODO here it is explained the database, how it was built, the database schema and etc\ldots
 %TODO
 \subsection{Component's Database} \label{sec4:component_database}
-    The component's database will be described in terms of its relations. For each relation its semantic meaning will be explained along with the included data and the source of this data. The database schema is present in Appendix~\ref{app:database schema}.
+    The component's database will be described in terms of its relations. For each relation its semantic meaning will be explained along with the included data and the source of this data. The database schema is present in Appendix~\ref{app:database_schema}.
 
 %TODO colocar referencias a tabela excel de benchmarks e relations. inserir tabelas no apendice a partir do arquivo characteristics-benchmarks
     \subsubsection*{Relations: Classification}
@@ -31,7 +31,7 @@
             This is the first level of classification, it is a general one, because it just states the final usage of the component. As the components used in the database are computer components they will be defined like that in this first level.
 
         \paragraph*{Relation 2CAT}
-            This relation fits the component into one of the main devices of a computer architecture. These are the following: processors, main memory, mass storage device, networking devices, CD/DVD player, mainboard, etc.
+            This relation fits the component into one of the main devices of a computer architecture. These are the following: processors, main memory, mass storage device, networking devices, CD/DVD player, main board, etc.
 
         \paragraph*{Relation 3CAT}
             The component is classified in the last level to provide contextual information about its usage. Processors, for example, are defined either as boxed or directly available in an OEM computer configuration. Memory can be used for servers, workstations or notebooks. Network devices can be LAN cards or networking equipment such as routers. Finally, mass storage devices are separated by technology, which can be hard-disk or flash-based.
@@ -87,7 +87,7 @@
     \subsubsection*{Measurements and Result Analysis}
         The final task was to compare benchmarks executed in a number of machines and compare their results with measurements with the power measurement device. A standard procedure was defined and then applied to a set of computers. The parameters measured and benchmarked are described in the following paragraphs.
         
-        For a more deep study, the following tables are described in Appendix~\ref{app:measures_toolino}
+        For a more deep study, the tables of measures are described in Appendix~\ref{app:measures_toolino}
 
         \paragraph*{Measurements}
             For each computer the tool showed in Section~\ref{sec3:energy_measurement_instrument} was used and a measure of three parameters was made:
@@ -102,7 +102,7 @@
             The following Sandra benchmarks were then executed in each computer:
             \begin{itemize}
                 \item Processor arithmetic performance benchmark, which provided the power consumption of the processor.
-                \item Cache and memory benchmark, which provided the total power consumption of set processor, chipset and memory.
+                \item Cache and memory benchmark, which provided the total power consumption of set processor, chip-set and memory.
                 \item Physical disk benchmark, that shows the power consumption of the computer's hard drive.
             \end{itemize}
             
@@ -126,7 +126,7 @@ This section explains how the obtained data was prepared in order to make the co
                     \text{ monitor power consumption } =& \text{ power measured with monitor on and idle processor } -  \\
                     & \text{ power measured with monitor off and idle processor }  
                 \end{split}
-                \label{monitor_consumption}
+                \label{eq:monitor_consumption}
             \end{equation}
             
         \paragraph*{Idle processor measure}
@@ -139,36 +139,119 @@ This section explains how the obtained data was prepared in order to make the co
         
             It can be said that the computer power consumption is approximately the sum of the power of the PSU, processor, chipset and memory. This would correspond to the measurements made with the monitor powered off. In the idle processor case, the value was directly measured. 
             
-            The --REFERENCIA ResultsIdle-- presents the treated measurements that were later used in the comparison.
+            The Table~\ref{tab:measures_idle} presents the treated measures that were later used in the comparison.
           
-            --TABELA ResultsIdle--
+            %--TABELA ResultsIdle--
+            \begin{table}[htbp]
+            \centering
+            \begin{tabularx}{\textwidth}{|>{\bfseries}l|>{\centering}X|>{\centering}X|>{\centering}X|}
+            \hline
+            \bf{Computer Model} & \bf{Measurement Result: \emph{Idle} With Monitor Off (W)} & \bf{Estimated PSU Power$^a$ (W)} & \bf{Measured Power$^b$ (W)} \tnhl
+            HPdv3500el & 25.19 & 6.30 & 18.89 \tnhl
+            HPdv6580el & 57.14 & 14.29 & 42.86 \tnhl
+            Compaq-nx9420 & 74.65 & 18.66 & 55.99 \tnhl
+            Acer Aspire 6935g & 33.76 & 8.44 & 25.32 \tnhl
+            Acer Aspire 4720z & 39.88 & 9.97 & 29.91 \tnhl
+            Acer Aspire 5930G & 39.56 & 9.89 & 29.67 \tnhl
+            HP dv6000 & 39.12 & 9.78 & 29.34 \tnhl
+            Toshiba & 46.03 & 11.51 & 34.52 \tnhl
+            Fujistu AMILO Pa2548 & 55.40 & 13.85 & 41.55 \tnhl
+            Samsung Q310 & 26.60 & 6.65 & 19.95 \tnhl
+            Acer Aspire 5930G & 32.52 & 8.13 & 24.39 \tnhl
+            HP Pavilion dv6000 & 29.38 & 7.35 & 22.04 \tnhl
+            Sony Vaio SZ650N & 45.67 & 11.42 & 34.25 \tnhl
+            HP Pavilion ze2000 & 31.48 & 7.87 & 23.61 \tnhl
+            Sony Vaio v6nfw11e & 29.57 & 7.39 & 22.18 \tnhl
+            Asus F3 Series & 38.98 & 9.75 & 29.24 \tnhl
+            HP 550 & 33.60 & 8.40 & 25.20 \tnhl
+            \end{tabularx}\linebreak
+            $^a$ at 75\% Efficiency\linebreak
+            $^b$ processor/chipset/memory
+            \caption{Measures with Processor in \emph{idle} state}
+            \label{tab:measures_idle}
+            \end{table}
           
           \paragraph*{Stressed processor measure}
-              As the stressed processor measure was only made with the monitor powered on, the estimated monitor power will be subtracted from it as shown in equation~\ref{stressed_withoutmonitor}.
+              As the stressed processor measure was only made with the monitor powered on, the estimated monitor power will be subtracted from it as shown in equation~\ref{eq:stressed_withoutmonitor}.
             \begin{equation}
                 \begin{split}
                 &\text{ consumption with stressed processor } = \\
                 &\text{ measured consumption with stressed processor and monitor on }-\\
                 &\text{ monitor power consumption }
                 \end{split}
-                \label{stressed_withoutmonitor}
+                \label{eq:stressed_withoutmonitor}
             \end{equation}
             % TODO : colocar referencias
-            The --REFERENCIA ResultsStressed-- presents the treated measurements that were later used in the comparison.
+            The Table~\ref{tab:measures_fully_stressed} presents the treated measures that were later used in the comparison.
             
-            --TABELA ResultsStressed--
+            %--TABELA ResultsStressed--
+            \begin{table}[htbp]
+            \centering
+            \begin{tabularx}{\textwidth}{|>{\bfseries}l|>{\centering}X|>{\centering}X|>{\centering}X|}
+            \hline
+            \bf{Computer Model} & \bf{Measurement result: \emph{Fully Stressed}$^a$ (W)} & \bf{Estimated PSU Power$^b$ (W)} & \bf{Measured power$^c$ (W)} \tnhl
+            HPdv3500el & 32.26 & 8.07 & 24.20 \tnhl
+            HPdv6580el & 80.23 & 20.06 & 60.17 \tnhl
+            Compaq-nx9420 & 75.40 & 18.85 & 56.55 \tnhl
+            Acer Aspire 6935g & 50.48 & 12.62 & 37.86 \tnhl
+            Acer Aspire 4720z & 62.59 & 15.65 & 46.94 \tnhl
+            Acer Aspire 5930G & 57.91 & 14.48 & 43.43 \tnhl
+            HP dv6000 & 54.42 & 13.61 & 40.82 \tnhl
+            Toshiba & 56.96 & 14.24 & 42.72 \tnhl
+            Fujistu AMILO Pa2548 & 82.52 & 20.63 & 61.89 \tnhl
+            Samsung Q310 & 41.55 & 10.39 & 31.16 \tnhl
+            Acer Aspire 5930G & 55.59 & 13.90 & 41.69 \tnhl
+            HP Pavilion dv6000 & 43.52 & 10.88 & 32.64 \tnhl
+            Sony Vaio SZ650N & 74.88 & 18.72 & 56.16 \tnhl
+            HP Pavilion ze2000 & 52.34 & 13.09 & 39.26 \tnhl
+            Sony Vaio v6nfw11e & 38.87 & 9.72 & 29.15 \tnhl
+            Asus F3 Series & 41.68 & 10.42 & 31.26 \tnhl
+            HP 550 & 40.40 & 10.10 & 30.30 \tnhl
+            \end{tabularx}\linebreak
+            $^a$ estimated monitor power
+            $^b$ at 75\% efficiency \linebreak
+            $^c$processor/chipset/memory
+            \caption{Measures with Processor \emph{Fully Stressed}}
+            \label{tab:measures_fully_stressed}
+            \end{table}
 
     \subsection{Analysis of results} \label{sec4:analysis_results}
     %TODO : colocar as tabelas measurements, benchmark sandra e manufacturer specifications no Appendix (appendix ainda esta em portugues - apendice?)
-        The results may be divided into two categories: first the confrontation between the processor consumption measurement by the benchmark and the product specification and secondly the confrontation between the cache and memory benchmark and the direct measurements.
+        The results may be divided into two categories: first the comparison between the measured processor consumption by the benchmark and the product specification and secondly the comparison between the cache and memory benchmark and the direct measures.
         
         \paragraph*{Processor power analysis}
         %TODO : colocar tabela e referencia
-            The results of the processor consumption benchmark are compared with their nominal power in --REFERENCIA ResultsSpecProc--.
+            The results of the processor consumption benchmark are compared with their nominal power in Table~\ref{tab:results_spec_processor}.As can be seen in Table, the benchmark results are not coherent for five processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications.
             
-            --TABELA ResultsSpecProc--
+            %--TABELA ResultsSpecProc--
+            \begin{table}[htbp]
+            \centering
+            \begin{tabularx}{\textwidth}{|>{\bfseries}l|>{\centering}X|>{\centering}X|>{\centering}X|}
+            \hline
+            \bf{Computer Model} & \bf{Benchmark Processor Power (W)} & \bf{Nominal Processor Power (W)} & \bf{Incompatible Results} \tnhl
+            HPdv3500el & 19.69 & 25 & \bf{} \tnhl
+            HPdv6580el & 32.01 & 35 & \bf{} \tnhl
+            Compaq-nx9420 & 26.93 & 31 & \bf{} \tnhl
+            Acer Aspire 6935g & 28.03 & 35 & \bf{} \tnhl
+            Acer Aspire 4720z & 19.78 & 35 & \bf{} \tnhl
+            Acer Aspire 5930G & 25.13 & 25 & \bf{x} \tnhl
+            HP dv6000 & 25 & 34 & \bf{} \tnhl
+            Toshiba & 22.5 & 31 & \bf{} \tnhl
+            Fujistu AMILO Pa2548 & N/A & 31 & \bf{} \tnhl
+            Samsung Q310 & 26.28 & 25 & \bf{x} \tnhl
+            Acer Aspire 5930G & 38.6 & 35 & \bf{x} \tnhl
+            HP Pavilion dv6000 & 12.95 & 35 & \bf{} \tnhl
+            Sony Vaio SZ650N & 28.99 & 35 & \bf{} \tnhl
+            HP Pavilion ze2000 & 14.62 & 35 & \bf{} \tnhl
+            Sony Vaio v6nfw11e & 35.08 & 25 & \bf{x} \tnhl
+            Asus F3 Series & 12.44 & 35 &  \tnhl
+            HP 550 & 29.63 & 27 & \bf{x} \tnhl
+            \end{tabularx}\linebreak
+            $N/A$ Not Returned a Valuable Result
+            \caption{Processor Specifications' Results }
+            \label{tab:results_spec_processor}
+            \end{table}
             
-            As can be seen, the benchmark results are not coherent for 5 processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications.
             
         \paragraph*{Analysis of the set processor/chipset/memory power consumption}
         %TODO : colocar tabelas e referencias
@@ -179,12 +262,64 @@ This section explains how the obtained data was prepared in order to make the co
                 \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Stressed processor with monitor on measurement - monitor estimated power - PSU estimated power}
             \end{enumerate}
         
-            This analysis was conducted with the processor in idle mode, as shown in --REFERENCIA ResultsFinalIdle-- and with the processor fully stressed, as shown in --REFERENCIA ResultsFinalStressed.
+            This analysis was conducted with the processor in idle mode, as shown in Table~\ref{tab:results_final_idle} and with the processor fully stressed, as shown in Table~\ref{tab:results_final_fully_stressed}. The percentage delta was calculated in absolute values taking the measured consumption as the reference, and its average was of 39\% for the idle processor case and of 23\% for the stressed processor case.
             
-            --TABELA ResultsFinalIdle--
-            --TABELA ResultsFinalStressed--
+            %--TABELA ResultsFinalIdle--
+            \begin{table}[htbp]
+            \centering
+            \begin{tabularx}{\textwidth}{|>{\bfseries}l|>{\centering}X|>{\centering}X|>{\centering}X|}
+            \hline
+            \bf{Computer Model} & \bf{Sandra Benchmark: Measurement of Consumption}$^a$ & \bf{Measured Consumption}$^a$ & \bf{Percentage delta over the measured values} \tnhl
+            HPdv3500el & 26.69 & 18.89 & 41\% \tnhl
+            HPdv6580el & 40.06 & 42.86 & 7\% \tnhl
+            Compaq-nx9420 & 36.16 & 55.99 & 35\% \tnhl
+            Acer Aspire 6935g & 35.03 & 25.32 & 38\% \tnhl
+            Acer Aspire 4720z & 34.57 & 29.91 & 16\% \tnhl
+            Acer Aspire 5930G & 32.13 & 29.67 & 8\% \tnhl
+            HP dv6000 & 34.23 & 29.34 & 17\% \tnhl
+            Toshiba & 31.24 & 34.52 & 10\% \tnhl
+            Samsung Q310 & 33.28 & 19.95 & 67\% \tnhl
+            Acer Aspire 5930G & 47.63 & 24.39 & 95\% \tnhl
+            HP Pavilion dv6000 & 31.84 & 22.04 & 44\% \tnhl
+            Sony Vaio SZ650N & 49.68 & 34.25 & 45\% \tnhl
+            HP Pavilion ze2000 & 17.86 & 23.61 & 24\% \tnhl
+            Sony Vaio v6nfw11e & 42.08 & 22.18 & 90\% \tnhl
+            Asus F3 Series & 28.53 & 29.24 & 2\% \tnhl
+            HP 550 & 44.42 & 25.20 & 76\% \tnhl
+             &  & \bf{Average delta:} & \bf{39\%} \tnhl
+            \end{tabularx}\linebreak
+            $^a$ chipset+processor+memory
+            \caption{Results for Processor in \emph{Idle} State}
+            \label{tab:results_final_idle}
+            \end{table}
             
-            The percentual delta was calculated in absolute values taking the measured consumption as the reference, and its average was of 39\% for the idle processor case and of 23\% for the stressed processor case.
-           
-            
+            %--TABELA ResultsFinalStressed--
+            \begin{table}[htbp]
+            \centering
+            \begin{tabularx}{\textwidth}{|>{\bfseries}l|>{\centering}X|>{\centering}X|>{\centering}X|}
+            \hline
+            \bf{Computer Model} & \bf{Sandra Benchmark: measurement of Consumption}$^a$ & \bf{Measured Consumption}$^a$ & \bf{Percentage delta over the measured values} \tnhl
+            HPdv3500el & 26.69 & 24.20 & 10\% \tnhl
+            HPdv6580el & 40.06 & 60.17 & 33\% \tnhl
+            Compaq-nx9420 & 36.16 & 56.55 & 36\% \tnhl
+            Acer Aspire 6935g & 35.03 & 37.86 & 7\% \tnhl
+            Acer Aspire 4720z & 34.57 & 46.94 & 26\% \tnhl
+            Acer Aspire 5930G & 32.13 & 43.43 & 26\% \tnhl
+            HP dv6000 & 34.23 & 40.82 & 16\% \tnhl
+            Toshiba & 31.24 & 42.72 & 27\% \tnhl
+            Samsung Q310 & 33.28 & 31.16 & 7\% \tnhl
+            Acer Aspire 5930G & 47.63 & 41.69 & 14\% \tnhl
+            HP Pavilion dv6000 & 31.84 & 32.64 & 2\% \tnhl
+            Sony Vaio SZ650N & 49.68 & 56.16 & 12\% \tnhl
+            HP Pavilion ze2000 & 17.86 & 39.26 & 55\% \tnhl
+            Sony Vaio v6nfw11e & 42.08 & 29.15 & 44\% \tnhl
+            Asus F3 Series & 28.53 & 31.26 & 9\% \tnhl
+            HP 550 & 44.42 & 30.30 & 47\% \tnhl
+             &  & \bf{Average delta:} & \bf{23\%} \tnhl
+            \end{tabularx}\linebreak
+            $^a$ chipset+processor+memory
+            \caption{Results for Processor \emph{Fully Stressed}}
+            \label{tab:results_final_fully_stressed}
+            \end{table}
         
+            
