@@ -129,7 +129,7 @@ This section explains how the obtained data was prepared in order to make the co
                 \label{monitor_consumption}
             \end{equation}
             
-        \paragraph*{Idle processor comparison}
+        \paragraph*{Idle processor measure}
             Under the hypotheses that: 
             
         \begin{itemize}
@@ -137,8 +137,14 @@ This section explains how the obtained data was prepared in order to make the co
             \item While not searching for an access point, the notebook wireless card consumes less than 0,5W\footnote{\url{http://www.notebookreview.com/default.asp?newsID=3597&article=wireless+and+battery+power}}
         \end{itemize}
         
-            It can be said that the computer power consumption is approximately the sum of the power of the PSU, processor, chipset and memory. This would correspond to the measurements made with the monitor powered off. In the idle processor case, the value was directly measured. As the stressed processor measure was only made with the monitor powered on, the estimated monitor power will be subtracted from it as shown in equation~\ref{stressed_withoutmonitor}.
+            It can be said that the computer power consumption is approximately the sum of the power of the PSU, processor, chipset and memory. This would correspond to the measurements made with the monitor powered off. In the idle processor case, the value was directly measured. 
             
+            The --REFERENCIA ResultsIdle-- presents the treated measurements that were later used in the comparison.
+          
+            --TABELA ResultsIdle--
+          
+          \paragraph*{Stressed processor measure}
+              As the stressed processor measure was only made with the monitor powered on, the estimated monitor power will be subtracted from it as shown in equation~\ref{stressed_withoutmonitor}.
             \begin{equation}
                 \begin{split}
                 &\text{ consumption with stressed processor } = \\
@@ -147,31 +153,38 @@ This section explains how the obtained data was prepared in order to make the co
                 \end{split}
                 \label{stressed_withoutmonitor}
             \end{equation}
+            % TODO : colocar referencias
+            The --REFERENCIA ResultsStressed-- presents the treated measurements that were later used in the comparison.
             
-            Finally, the following comparisons were made:
+            --TABELA ResultsStressed--
 
+    \subsection{Analysis of results} \label{sec4:analysis_results}
+    %TODO : colocar as tabelas measurements, benchmark sandra e manufacturer specifications no Appendix (appendix ainda esta em portugues - apendice?)
+        The results may be divided into two categories: first the confrontation between the processor consumption measurement by the benchmark and the product specification and secondly the confrontation between the cache and memory benchmark and the direct measurements.
+        
+        \paragraph*{Processor power analysis}
+        %TODO : colocar tabela e referencia
+            The results of the processor consumption benchmark are compared with their nominal power in --REFERENCIA ResultsSpecProc--.
+            
+            --TABELA ResultsSpecProc--
+            
+            As can be seen, the benchmark results are not coherent for 5 processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications.
+            
+        \paragraph*{Analysis of the set processor/chipset/memory power consumption}
+        %TODO : colocar tabelas e referencias
+            In this analysis the following comparisons were made:
+            
             \begin{enumerate}
                 \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Idle processor with monitor off measurement - PSU estimated power}
                 \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Stressed processor with monitor on measurement - monitor estimated power - PSU estimated power}
             \end{enumerate}
-
-    \subsection{Analysis of results} \label{sec4:analysis_results}
-        The results may be divided into two categories: first the confrontation between the processor consumption measurement by the benchmark and the product specification and secondly the confrontation between the cache and memory benchmark and the direct measurements.
         
-        \paragraph*{Processor power analysis}
-            The results of the processor consumption benchmark are compared with their nominal power in --REFERENCIA consumo_processadores--.
+            This analysis was conducted with the processor in idle mode, as shown in --REFERENCIA ResultsFinalIdle-- and with the processor fully stressed, as shown in --REFERENCIA ResultsFinalStressed.
             
-            --TABELA consumo_processadores--
+            --TABELA ResultsFinalIdle--
+            --TABELA ResultsFinalStressed--
             
-            As can be seen, the benchmark results are not coherent for X processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications.
-            
-        \paragraph*{Analysis of the set processor/chipset/memory power consumption}
-            This analysis was conducted with the processor in idle mode, as shown in --REFERENCIA benchIdle-- and with the processor fully stressed, as shown in --REFERENCIA benchStressed.
-            
-            --TABELA benchIdle--
-            --TABELA --benchStressed--
-            
-            The percentual delta was calculated in absolute values, and as its average is blablablabla
+            The percentual delta was calculated in absolute values taking the measured consumption as the reference, and its average was of 39\% for the idle processor case and of 23\% for the stressed processor case.
            
             
         
