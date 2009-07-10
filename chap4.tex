@@ -17,18 +17,16 @@
     The objective of this chapter is to describe the designed components' database and evaluate it in comparison with measured data and data obtained from the components' manufacturer. The result of this evaluation will determine the adequacy of power consumption data provided by the database as a way to estimate the power consumption of different machine configurations.
     
 \section{Analysis} \label{sec4:analysis}
-%TODO here it is explained the database, how it was built, the database schema and etc\ldots
-%TODO
+
 \subsection{Component's Database} \label{sec4:component_database}
     The component's database will be described in terms of its relations. For each relation its semantic meaning will be explained along with the included data and the source of this data. The database schema is present in Appendix~\ref{app:database_schema}.
 
-%TODO colocar referencias a tabela excel de benchmarks e relations. inserir tabelas no apendice a partir do arquivo characteristics-benchmarks
     \subsubsection*{Relations: Classification}
-        For a better understanding of the relations between included in the database it was created a set of categories. The four relation's category used are 1CAT, 2CAT, 3CAT and DEVICE. In this hierarchical disposition each component is classified in three levels by the relations 1CAT, 2CAT and 3CAT and then uniquely identified by the DEVICE relation. This classification follows the one present in the website analyzed by the crawler.
+        Four relations were create in order to classify the components in different ways. These relations are 1CAT, 2CAT, 3CAT and DEVICE. In this hierarchical disposition each component is classified in three levels by the relations 1CAT, 2CAT and 3CAT and then uniquely identified by the DEVICE relation. This classification follows the one present in the website analyzed by the crawler.
 
-%XXX Seria legal criar uns buletts com
-        \paragraph*{Relation 1CAT}%XXX nao entendi o que tem que colocar nessa primeira categoria...
-            This is the first level of classification, it is a general one, because it just states the final usage of the component. As the components used in the database are computer components they will be defined like that in this first level.
+
+        \paragraph*{Relation 1CAT}
+            This is the first level of classification and is a general one, because it just states the final usage of the component. As the components used in the database are computer components they will be defined like that in this first level.
 
         \paragraph*{Relation 2CAT}
             This relation fits the component into one of the main devices of a computer architecture. These are the following: processors, main memory, mass storage device, networking devices, CD/DVD player, main board, etc.
@@ -40,8 +38,7 @@
             The last level of these categories is the identification of each component by an unique MPN code. This is the central relation in the database connecting pricing, benchmark and characteristic relations associated to specific components. The MPN information stored here was obtained with the use of the WEBSPHINX crawler over the SiSoftware shopping site. This device relation uses MPN as its key and associates for each component the three previous classifications, the component model/name and the date in which it was inserted in the database.
             
     \subsubsection*{Relations: Characteristics}
-        This set of relations associates each component with its specifications, provided by the manufacturer. As SiSoftware Sandra provides these, it was be preferred source for this kind of data. Other sources such as CPU-Z reports and component datasheets were used in case the information could not be found in Sandra.
-%TODO referencia no apendice         
+        This set of relations associates each component with its specifications, provided by the manufacturer. As SiSoftware Sandra provides these, it was the preferred source for this kind of data. Other sources such as CPU-Z reports and component datasheets were used in case the information could not be found in Sandra.         
 
         \paragraph*{Relation DEVICE\_CHARACTERISTIC}
             This determines the value of the characteristic being described. The value in CHAR\_VALUE can be for example number of cores or clock frequency for a processor, disk rotation or average bandwidth for a hard drive or size and bandwidth for main memory. The attribute CHAR\_ID is linked to the following relation in order to define the type of the characteristic.
@@ -50,11 +47,10 @@
             Each characteristic, other than a value associated in the previous relation, should be described in terms of type and measurement unit. One example may be the clock frequency which is measured in MHz. In this relation the attribute CHAR\_NAME would be ``clock frequency'', the attribute CHAR\_UM would be ``MHz'' and the DESCRIPTION attribute would explain the meaning of the characteristic.
             
         \paragraph*{Relation SOURCE}
-            For each component, the source is the location from which the information was retrieve. For instance, SiSoftware Sandra, the web or other softwares such as CPU-Z.
+            For each component, the source is the location from which the information was retrieved. It may be, for instance, SiSoftware Sandra, the web or other softwares such as CPU-Z.
             
     \subsubsection*{Benchmark Relations}
-        In SANDRA there were two types of benchmarks analyzed: single-value or graph-based. Single-value benchmarks provide one value as output, such as power consumption and average performance. Graph-based benchmarks generate a graph by adjusting one parameter and measuring the value of another one. Examples are clock frequency per workload for a processor and bandwidth per data block size for main memory.
-%TODO referencia no apendice 
+        In SANDRA there were two types of benchmarks analyzed: single-value or graph-based. Single-value benchmarks provide one value as output, such as power consumption and average performance. Graph-based benchmarks generate a graph by adjusting one parameter and measuring the value of another one. Examples are clock frequency per workload for a processor and bandwidth per data block size for main memory. 
 
         \paragraph*{Relation BENCHMARK}
             This is the main benchmark relation. It identifies a single benchmark type by giving it a name, measure unit, description and type (attribute MULTIPLE), which can be 0 for single-value or 1 for graph-based. Depending on the MULTIPLE attribute, the benchmark will be either referenced by the DEVICE\_BENCHMARK or the BENCHMARK\_POINT relations.
@@ -74,7 +70,7 @@
     \subsubsection*{Data Insertion into the Database of Components}
         The database of components was created by extracting information from the database provided by SiSoftware Sandra and it contains information about components' characteristics and benchmarks' results. However, this information was not uniformerly stored as represented by Figure~\ref{fig:database_schema} in Appendix~\ref{app:database_schema}, but instead as a set of independent relations without a central component repository. The original schema is described in Appendix~\ref{app:sandra_benchmark_table_schema} and it contains the extracted tables provided by SiSoftware SANDRA.
     
-        As SiSoftware Sandra did not provide a centralized component's database, to make the creation of a more relevant one possible a new relation would have to be created with an association of each component with its respective MPN. The method used to that end was explained in section~\ref{sec3:websphinx}.
+        As SiSoftware Sandra did not provide a centralized component's database, a new relation would have to be created with an association of each component with its respective MPN in order to uniquely identify each component. The method used to that end was explained in section~\ref{sec3:websphinx}.
     
         The steps taken to populate the final database are, as follows:
         \begin{itemize}
@@ -87,7 +83,7 @@
     \subsubsection*{Measurements and Result Analysis}
         The final task was to compare benchmarks executed in a number of machines and compare their results with measurements with the power measurement device. A standard procedure was defined and then applied to a set of computers. The parameters measured and benchmarked are described in the following paragraphs.
         
-        For a more deep study, the tables of measures are described in Appendix~\ref{app:measures_toolino}
+        For a deeper study, the measures themselves are in Appendix~\ref{app:measures_toolino}.
 
         \paragraph*{Measurements}
             For each computer the tool showed in Section~\ref{sec3:energy_measurement_instrument} was used and a measure of three parameters was made:
@@ -102,7 +98,7 @@
             The following Sandra benchmarks were then executed in each computer:
             \begin{itemize}
                 \item Processor arithmetic performance benchmark, which provided the power consumption of the processor.
-                \item Cache and memory benchmark, which provided the total power consumption of set processor, chip-set and memory.
+                \item Cache and memory benchmark, which provided the total power consumption of the set processor, chipset and memory.
                 \item Physical disk benchmark, that shows the power consumption of the computer's hard drive.
             \end{itemize}
             
@@ -112,7 +108,6 @@
                         
             
 \section{Results} \label{sec4:results}
-%TODO falar que aqui a gente vai explicar os resultados de todos os métodos
 This section explains how the obtained data was prepared in order to make the comparisons between the various sources of information and exposes the results together with their analysis.
 
     \subsection{Data preparation} \label{sec4:data_preparation}
@@ -181,7 +176,7 @@ This section explains how the obtained data was prepared in order to make the co
                 \end{split}
                 \label{eq:stressed_withoutmonitor}
             \end{equation}
-            % TODO : colocar referencias
+
             The Table~\ref{tab:measures_fully_stressed} presents the treated measures that were later used in the comparison.
             
             %--TABELA ResultsStressed--
@@ -216,34 +211,34 @@ This section explains how the obtained data was prepared in order to make the co
             \end{table}
 
     \subsection{Analysis of results} \label{sec4:analysis_results}
-    %TODO : colocar as tabelas measurements, benchmark sandra e manufacturer specifications no Appendix (appendix ainda esta em portugues - apendice?)
+
         The results may be divided into two categories: first the comparison between the measured processor consumption by the benchmark and the product specification and secondly the comparison between the cache and memory benchmark and the direct measures.
         
         \paragraph*{Processor power analysis}
-            The results of the processor consumption benchmark are compared with their nominal power in Table~\ref{tab:results_spec_processor}. As can be seen in Table, the benchmark results are not coherent for five processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications. This implies that the measures, are inside the standard deviation of the measures provided by the calculations on the following sections of the study. The only value that is the ``point outside the curve'' is the -0.4, which can be explained by suggesting that, in the moment of the measure, the computer was running an hidden process that can be done the measures being so high. Also, it is important to remember the amount of energy spent by the PSU was approximated by 75\%.
+            The results of the processor consumption benchmark are compared with their nominal power in Table~\ref{tab:results_spec_processor}. As can be seen in it, the benchmark results are not coherent for five processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications.
             
             %--TABELA ResultsSpecProc--
             \begin{table}[htbp]
             \centering
             \begin{tabularx}{0.9\textwidth}{|>{\bfseries}l|>{\centering}X|>{\centering}X|>{\centering}X|}
             \hline
-            \bf{Computer model} & \bf{Benchmark processor power (W)} & \bf{Specification nominal processor power (W)} & \bf{Percentage of Difference} \tnhl
-            HPdv3500el & 19.69 & 25 & 0.21  \tnhl
-            HPdv6580el & 32.01 & 35 & 0.09  \tnhl
-            Compaq-nx9420 & 26.93 & 31 & 0.13  \tnhl
-            Acer Aspire 6935g & 28.03 & 35 & 0.2  \tnhl
-            Acer Aspire 4720z & 19.78 & 35 & 0.43  \tnhl
-            Acer Aspire 5930G & 25.13 & 25 & -0.01 \tnhl
-            HP dv6000 & 25 & 34 & 0.26  \tnhl
-            Toshiba & 22.5 & 31 & 0.27  \tnhl
-            Samsung Q310 & 26.28 & 25 & -0.05 \tnhl
-            Acer Aspire 5930G & 38.6 & 35 & -0.1 \tnhl
-            HP Pavilion dv6000 & 12.95 & 35 & 0.63  \tnhl
-            Sony Vaio SZ650N & 28.99 & 35 & 0.17  \tnhl
-            HP Pavilion ze2000 & 14.62 & 35 & 0.58  \tnhl
-            Sony Vaio v6nfw11e & 35.08 & 25 & -0.4  \tnhl
-            Asus F3 Series & 12.44 & 35 & 0.64   \tnhl
-            HP 550 & 29.63 & 27 & -0.1  \tnhl
+            \bf{Computer model} & \bf{Benchmark processor power (W)} & \bf{Specification nominal processor power (W)} \tnhl
+            HPdv3500el & 19.69 & 25  \tnhl
+            HPdv6580el & 32.01 & 35  \tnhl
+            Compaq-nx9420 & 26.93 & 31  \tnhl
+            Acer Aspire 6935g & 28.03 & 35  \tnhl
+            Acer Aspire 4720z & 19.78 & 35  \tnhl
+            Acer Aspire 5930G & 25.13 & 25 \tnhl
+            HP dv6000 & 25 & 34  \tnhl
+            Toshiba & 22.5 & 31  \tnhl
+            Samsung Q310 & 26.28 & 25 \tnhl
+            Acer Aspire 5930G & 38.6 & 35 \tnhl
+            HP Pavilion dv6000 & 12.95 & 35  \tnhl
+            Sony Vaio SZ650N & 28.99 & 35  \tnhl
+            HP Pavilion ze2000 & 14.62 & 35  \tnhl
+            Sony Vaio v6nfw11e & 35.08 & 25  \tnhl
+            Asus F3 Series & 12.44 & 35   \tnhl
+            HP 550 & 29.63 & 27  \tnhl
             \end{tabularx}
             \caption{Processor Specifications' Results}
             \label{tab:results_spec_processor}
@@ -251,7 +246,7 @@ This section explains how the obtained data was prepared in order to make the co
             
             
         \paragraph*{Analysis of the set processor/chipset/memory power consumption}
-        %TODO : colocar tabelas e referencias
+
             In this analysis the following comparisons were made:
             
             \begin{enumerate}
