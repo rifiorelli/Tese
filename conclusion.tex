@@ -39,12 +39,11 @@
     
     The use of \emph{green ict} applied to data centers can be a very useful strategy in different scenarios. The database of components resulted from this thesis work can be very effective for what it is proposed to be: offering a way to compare the energy consumption of the computer components in one single place. Retrieving information about how much components spend in terms of power consumption will help the development of the green project in the \emph{Assessment} phase by comparing components already existent in the market with the ones present in the data center. That is important firstly because the analysis and research of power consumption of critical spots can be made with ease. The database can also provide assessment when renewing or expanding the data center by permitting the choice of the most adequate and power-efficient machine configurations.
     
-    %XXX Adicionar a conclusao dos resultados da analise dos components
+    In the test conducted with a series of notebooks, the results of the power consumption data analysis shows that the power consumption estimated by the Sandra benchmarks is little different by the power consumed during the measures by hardware. These incompatible results presented in Table~\ref{tab:results_spec_processor} are a result of this difference. They are a reflect of the prior aproximation of the power of the PSU and not taking into account the power of the some components that spend little power, such as memory, wireless card with no network search et al as well as in no sense they are a bad result. So, in order to retrieve a more significant value, the measures should be taken from more computers. Therefore, it is possible to say that the negative measures on the table do not reflect that the measures are inaccurate. On the contrary, they reflect the fact that the measures with the hardware device made with the hardware device takes into account all of the components of the computer and the benchmarking software takes into account only the specific component. And, by stating that, it is possible to say they are inside the standard deviation of the measure, for this amount of computers analyzed.
     
-    %Another great functionality of the result is that it relates the best case scenario for the ratio performance/power and it adds the price as the third variable for a better component choice.
-    In the test conducted with a series of notebooks, the results of the power consumption data analysis proved that the power consumption estimated by the Sandra benchmarks is inaccurate. Although its estimates were incompatible with respect to the direct measurements, the usefulness of the component database should be no lesser. It provides a great number of other useful information, mainly regarding component performance benchmarks and price which are essential when analyzing datacenter equipment.
+    Although the software estimates were diverse with respect to the direct measurements, the usefulness of the component database should be no lesser. It provides a great number of other useful information, mainly regarding component performance benchmarks and price which are essential when analyzing datacenter equipment. 
     
-    In this way, for the component database to provide support for a green ICT methodology a new source of power-related data should be found. This could be a systematic measurement of components with an adequate aggregation level or a function of the nominal power found in component specifications.
+    In this way, the database of components is a great tool that can provide support to the \emph{Assessment} phase of the green ict initiative with ease.
     
     \pagebreak
     \section{Perspectives and Future Developments}
@@ -52,7 +51,8 @@
         As part of the initial phase of the development of a green methodology, there are some possible functionalities and information that could still be added. These are as follows:
     \begin{itemize}
 	    \item This first version of the component's database is not automatically updated, so it could be made a back-end robot which would crawl for new components as they are released in the market and automatically populate the database;
-	    \item As stated before, the use of a new source of power-related information was suggested. This information should then be inserted in the component database as to make efficiency (performance/power) comparison between components.
+	    \item As stated before, the measures should be performed into a higher number of computers. This information should then be inserted in the component database as to make efficiency (performance/power) comparison between components;
+	    \item In order to draw a more relevant comparison to the measures taken, it should be made with a more expanded set of situations than the provided by this thesis;
 	    \item To create a front-end software for a interactive and effective way of comparing the components.
     \end{itemize}
 

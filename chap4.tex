@@ -220,35 +220,32 @@ This section explains how the obtained data was prepared in order to make the co
         The results may be divided into two categories: first the comparison between the measured processor consumption by the benchmark and the product specification and secondly the comparison between the cache and memory benchmark and the direct measures.
         
         \paragraph*{Processor power analysis}
-        %TODO : colocar tabela e referencia
-            The results of the processor consumption benchmark are compared with their nominal power in Table~\ref{tab:results_spec_processor}.As can be seen in Table, the benchmark results are not coherent for five processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications.
+            The results of the processor consumption benchmark are compared with their nominal power in Table~\ref{tab:results_spec_processor}. As can be seen in Table, the benchmark results are not coherent for five processors, where the measured/estimated processor power is higher than the nominal power determined by their specifications. This implies that the measures, are inside the standard deviation of the measures provided by the calculations on the following sections of the study. The only value that is the ``point outside the curve'' is the -0.4, which can be explained by suggesting that, in the moment of the measure, the computer was running an hidden process that can be done the measures being so high. Also, it is important to remember the amount of energy spent by the PSU was approximated by 75\%.
             
             %--TABELA ResultsSpecProc--
             \begin{table}[htbp]
             \centering
-            \begin{tabularx}{\textwidth}{|>{\bfseries}l|>{\centering}X|>{\centering}X|>{\centering}X|}
+            \begin{tabularx}{0.9\textwidth}{|>{\bfseries}l|>{\centering}X|>{\centering}X|>{\centering}X|}
             \hline
-            \bf{Computer Model} & \bf{Benchmark Processor Power (W)} & \bf{Nominal Processor Power (W)} & \bf{Incompatible Results} \tnhl
-            HPdv3500el & 19.69 & 25 & \bf{} \tnhl
-            HPdv6580el & 32.01 & 35 & \bf{} \tnhl
-            Compaq-nx9420 & 26.93 & 31 & \bf{} \tnhl
-            Acer Aspire 6935g & 28.03 & 35 & \bf{} \tnhl
-            Acer Aspire 4720z & 19.78 & 35 & \bf{} \tnhl
-            Acer Aspire 5930G & 25.13 & 25 & \bf{x} \tnhl
-            HP dv6000 & 25 & 34 & \bf{} \tnhl
-            Toshiba & 22.5 & 31 & \bf{} \tnhl
-            Fujistu AMILO Pa2548 & N/A & 31 & \bf{} \tnhl
-            Samsung Q310 & 26.28 & 25 & \bf{x} \tnhl
-            Acer Aspire 5930G & 38.6 & 35 & \bf{x} \tnhl
-            HP Pavilion dv6000 & 12.95 & 35 & \bf{} \tnhl
-            Sony Vaio SZ650N & 28.99 & 35 & \bf{} \tnhl
-            HP Pavilion ze2000 & 14.62 & 35 & \bf{} \tnhl
-            Sony Vaio v6nfw11e & 35.08 & 25 & \bf{x} \tnhl
-            Asus F3 Series & 12.44 & 35 &  \tnhl
-            HP 550 & 29.63 & 27 & \bf{x} \tnhl
-            \end{tabularx}\linebreak
-            $N/A$ Not Returned a Valuable Result
-            \caption{Processor Specifications' Results }
+            \bf{Computer model} & \bf{Benchmark processor power (W)} & \bf{Specification nominal processor power (W)} & \bf{Percentage of Difference} \tnhl
+            HPdv3500el & 19.69 & 25 & 0.21  \tnhl
+            HPdv6580el & 32.01 & 35 & 0.09  \tnhl
+            Compaq-nx9420 & 26.93 & 31 & 0.13  \tnhl
+            Acer Aspire 6935g & 28.03 & 35 & 0.2  \tnhl
+            Acer Aspire 4720z & 19.78 & 35 & 0.43  \tnhl
+            Acer Aspire 5930G & 25.13 & 25 & -0.01 \tnhl
+            HP dv6000 & 25 & 34 & 0.26  \tnhl
+            Toshiba & 22.5 & 31 & 0.27  \tnhl
+            Samsung Q310 & 26.28 & 25 & -0.05 \tnhl
+            Acer Aspire 5930G & 38.6 & 35 & -0.1 \tnhl
+            HP Pavilion dv6000 & 12.95 & 35 & 0.63  \tnhl
+            Sony Vaio SZ650N & 28.99 & 35 & 0.17  \tnhl
+            HP Pavilion ze2000 & 14.62 & 35 & 0.58  \tnhl
+            Sony Vaio v6nfw11e & 35.08 & 25 & -0.4  \tnhl
+            Asus F3 Series & 12.44 & 35 & 0.64   \tnhl
+            HP 550 & 29.63 & 27 & -0.1  \tnhl
+            \end{tabularx}
+            \caption{Processor Specifications' Results}
             \label{tab:results_spec_processor}
             \end{table}
             
@@ -258,8 +255,8 @@ This section explains how the obtained data was prepared in order to make the co
             In this analysis the following comparisons were made:
             
             \begin{enumerate}
-                \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Idle processor with monitor off measurement - PSU estimated power}
-                \item \textbf{Sandra Cache and Memory Benchmark} \emph{versus} \textbf{Stressed processor with monitor on measurement - monitor estimated power - PSU estimated power}
+                \item \bf{Sandra Cache and Memory Benchmark} \emph{versus} \bf{Idle processor with monitor off measurement - PSU estimated power}
+                \item \bf{Sandra Cache and Memory Benchmark} \emph{versus} \bf{Stressed processor with monitor on measurement - monitor estimated power - PSU estimated power}
             \end{enumerate}
         
             This analysis was conducted with the processor in idle mode, as shown in Table~\ref{tab:results_final_idle} and with the processor fully stressed, as shown in Table~\ref{tab:results_final_fully_stressed}. The percentage delta was calculated in absolute values taking the measured consumption as the reference, and its average was of 39\% for the idle processor case and of 23\% for the stressed processor case.
