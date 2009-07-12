@@ -38,7 +38,7 @@
             The last level of these categories is the identification of each component by an unique MPN code. This is the central relation in the database connecting pricing, benchmark and characteristic relations associated to specific components. The MPN information stored here was obtained with the use of the WEBSPHINX crawler over the SiSoftware shopping site. This device relation uses MPN as its key and associates for each component the three previous classifications, the component model/name and the date in which it was inserted in the database.
             
     \subsubsection*{Relations: Characteristics}
-        This set of relations associates each component with its specifications, provided by the manufacturer. As SiSoftware Sandra provides these, it was the preferred source for this kind of data. Other sources such as CPU-Z reports and component datasheets were used in case the information could not be found in Sandra.         
+        This set of relations associates each component with its specifications, provided by the manufacturer. As SiSoftware Sandra provides these, it was the preferred source for this kind of data. Other sources such as CPU-Z reports and component data sheets were used in case the information could not be found in Sandra.         
 
         \paragraph*{Relation DEVICE\_CHARACTERISTIC}
             This determines the value of the characteristic being described. The value in CHAR\_VALUE can be for example number of cores or clock frequency for a processor, disk rotation or average bandwidth for a hard drive or size and bandwidth for main memory. The attribute CHAR\_ID is linked to the following relation in order to define the type of the characteristic.
@@ -65,10 +65,8 @@
         Inside the SANDRA's website, in the ``shopping'' area, it is possible to retrieve information about the price and also the MPN of the components. The suggested prices were shown together with a rating. The rating represents the number of users that suggested a price for the component and the higher it is, greater the credibility of the price information.
                         
 \subsection{Overview} \label{sec4:analysis_overview}
-    % explicar que a gente pegou as coisas e separou por tabelas, tentar nao ser redundate com o que teve no cap3
-    % colocar referencia pra tabelas em XXXXXX
     \subsubsection*{Data Insertion into the Database of Components}
-        The database of components was created by extracting information from the database provided by SiSoftware Sandra and it contains information about components' characteristics and benchmarks' results. However, this information was not uniformerly stored as represented by Figure~\ref{fig:database_schema} in Appendix~\ref{app:database_schema}, but instead as a set of independent relations without a central component repository. The original schema is described in Appendix~\ref{app:sandra_benchmark_table_schema} and it contains the extracted tables provided by SiSoftware SANDRA.
+        The database of components was created by extracting information from the database provided by SiSoftware Sandra and it contains information about components' characteristics and benchmarks' results. However, this information was not uniformly stored as represented by Figure~\ref{fig:database_schema} in Appendix~\ref{app:database_schema}, but instead as a set of independent relations without a central component repository. The original schema is described in Appendix~\ref{app:sandra_benchmark_table_schema} and it contains the extracted tables provided by SiSoftware SANDRA.
     
         As SiSoftware Sandra did not provide a centralized component's database, a new relation would have to be created with an association of each component with its respective MPN in order to uniquely identify each component. The method used to that end was explained in section~\ref{sec3:websphinx}.
     
@@ -98,13 +96,13 @@
             The following Sandra benchmarks were then executed in each computer:
             \begin{itemize}
                 \item Processor arithmetic performance benchmark, which provided the power consumption of the processor.
-                \item Cache and memory benchmark, which provided the total power consumption of the set processor, chipset and memory.
+                \item Cache and memory benchmark, which provided the total power consumption of the set processor, chip-set and memory.
                 \item Physical disk benchmark, that shows the power consumption of the computer's hard drive.
             \end{itemize}
             
             
         \paragraph*{Component Specifications}
-            The last set of information used in the benchmark result analysis are the processor specifications (datasheets) provided by the manufacturers.      
+            The last set of information used in the benchmark result analysis are the processor specifications (data sheets) provided by the manufacturers.      
                         
             
 \section{Results} \label{sec4:results}
@@ -132,7 +130,7 @@ This section explains how the obtained data was prepared in order to make the co
             \item While not searching for an access point, the notebook wireless card consumes less than 0,5W\footnote{\url{http://www.notebookreview.com/default.asp?newsID=3597&article=wireless+and+battery+power}}
         \end{itemize}
         
-            It can be said that the computer power consumption is approximately the sum of the power of the PSU, processor, chipset and memory. This would correspond to the measurements made with the monitor powered off. In the idle processor case, the value was directly measured. 
+            It can be said that the computer power consumption is approximately the sum of the power of the PSU, processor, chip-set and memory. This would correspond to the measurements made with the monitor powered off. In the idle processor case, the value was directly measured. 
             
             The Table~\ref{tab:measures_idle} presents the treated measures that were later used in the comparison.
           
@@ -162,7 +160,7 @@ This section explains how the obtained data was prepared in order to make the co
             \end{tabularx}\linebreak
             $^a$ at 75\% Efficiency\linebreak
             $^b$ processor/chipset/memory
-            \caption{Measures with Processor in \emph{idle} state}
+            \caption{Measures with Processor in \emph{idle} State}
             \label{tab:measures_idle}
             \end{table}
           
@@ -315,29 +313,26 @@ This section explains how the obtained data was prepared in order to make the co
             \label{tab:results_final_fully_stressed}
             \end{table}
             
-        \subsection{Discussion of results} \label{sec4:discussion_results}
-            Here a discussion will be made over the results obtained from the two analysis described in section~\ref{sec4:analysis_results}.
+        \subsection{Discussion of Results} \label{sec4:discussion_results}
+            In this section a discussion concerning the results found in section~\ref{sec4:analysis_results} is carried out in order to better understand the results of the measurements and the their explanation and assumptions.
             
-            \paragraph*{Processor power analysis}
-                It can be noted that for five results the processor measured power is higher than its nominal power. Among these five results, the measured value exceeds the nominal by 1\% in the best case and by 40\% in the worst one.
+            \paragraph*{Processor Power Analysis}
+                It can be noted that for five results the processor measured power is higher than its nominal power. It is a critical part, because even with the assumptions previously made for memory and wireless card, the results are still higher, it means that if measured the actual real values it would be even higher. Moreover, among these five results, the measured value exceeds the nominal by 1\% in the best case and by 40\% in the worst one.
                 
                 This experience demonstrated that the Sandra processor benchmark provides unreliable processor power consumption data for some processors, as these measures are sometimes higher than the maximum processor power described in the component specification.
                 
-            \paragraph*{Analysis of the set processor/chipset/memory power consumption}
-                The other analysis was made for the Sandra Cache/Memory benchmark, which provides an estimate of the power consumed by the set processor/chipset/memory.
-                
+            \paragraph*{Processor/Chipset/Memory Power Consumption Analysis}
+                The other analysis was carried out for the Sandra Cache/Memory benchmark, which provides an estimate of the power consumed by the set processor/chipset/memory.
                 In this case, the approximated monitor and PSU consumption were subtracted from the direct measurements so that the resulting value would be the processor/chipset/memory consumption.
                 
-                In the idle processor test, the average percentual difference between the benchmark and measurement results was on average of 39\%. For the stressed processor test, this value was of 23\%.
-                
-                In a first observation, the difference between these two values suggests that the Sandra benchmark measures the power in full workload conditions rather than in idle mode.
-                
-                It can be also noted that the difference between both values is high. The main contributions for the observed error are the following:
+                For the idle processor test, the average percentage difference between the benchmark and measurement results was on average of 39\%. For the stressed processor test, this value was of 23\%.                 
+                In a first observation, the difference between these two values suggests that the Sandra benchmark measures the power in full workload conditions rather than in idle mode, this is because, while the benchmark is running, the processor is not in real idle mode, even though it is measuring that value.
+                Therefore, it can be also noted that the difference between both values is high. The main contributions for the observed error are the following:
                 
                 \begin{itemize}
-                    \item The inherent error of the Sandra benchmark is an important factor, although not the only one.
-                    \item The comparisons involved estimates of both monitor and PSU power. If the power of these components were available, either through direct measurements or manufacturer specification, the analysis would render more accurate results.
-                    \item The hypotheses described in section~\ref{sec4:data_preparation} regarded as negligible the power consumption of components such as hard drives and wireless card. As the consumption of these components depend on their level of operation, the hypotheses could not be valid depending on the circumstances.
+                    \item The inherent error of the Sandra benchmark is an important factor, although not the only one;
+                    \item The comparisons involved estimates of both monitor and PSU power. If the power of these components were available, either through direct measurements or manufacturer specification, the analysis would render more accurate results;
+                    \item The hypotheses described in section~\ref{sec4:data_preparation} regarded as negligible the power consumption of components such as hard drives and wireless card. As the consumption of these components depend on their level of operation, the hypotheses could not be valid depending on the circumstances;
                     \item The value measured with the measurement tool varies in time. Even though for a certain level of operation (for example, idle or full workload) the measured value was stable, their variation can be considered a source of error.
                 \end{itemize}
             
