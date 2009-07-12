@@ -314,5 +314,30 @@ This section explains how the obtained data was prepared in order to make the co
             \caption{Results for Processor \emph{Fully Stressed}}
             \label{tab:results_final_fully_stressed}
             \end{table}
-        
+            
+        \subsection{Discussion of results} \label{sec4:discussion_results}
+            Here a discussion will be made over the results obtained from the two analysis described in section~\ref{sec4:analysis_results}.
+            
+            \paragraph*{Processor power analysis}
+                It can be noted that for five results the processor measured power is higher than its nominal power. Among these five results, the measured value exceeds the nominal by 1\% in the best case and by 40\% in the worst one.
+                
+                This experience demonstrated that the Sandra processor benchmark provides unreliable processor power consumption data for some processors, as these measures are sometimes higher than the maximum processor power described in the component specification.
+                
+            \paragraph*{Analysis of the set processor/chipset/memory power consumption}
+                The other analysis was made for the Sandra Cache/Memory benchmark, which provides an estimate of the power consumed by the set processor/chipset/memory.
+                
+                In this case, the approximated monitor and PSU consumption were subtracted from the direct measurements so that the resulting value would be the processor/chipset/memory consumption.
+                
+                In the idle processor test, the average percentual difference between the benchmark and measurement results was on average of 39\%. For the stressed processor test, this value was of 23\%.
+                
+                In a first observation, the difference between these two values suggests that the Sandra benchmark measures the power in full workload conditions rather than in idle mode.
+                
+                It can be also seen that the observed difference is high. The main contributions for the observed error are the following:
+                
+                \begin{itemize}
+                    \item The inherent error of the Sandra benchmark is an important factor, although not the only one;
+                    \item The comparisons involved estimates of both monitor and PSU power. If the power of these components were available, either through direct measurements or specification, the analysis would render more accurate results.
+                    \item The hypotheses described in section~\ref{sec4:data_preparation} regarded as negligible the power consumption of components such as hard drives and wireless card. As the consumption of these components depend on their level of operation, the hypotheses could not be valid.
+                    \item The value measured with the measurement tool varies in time. Even though for a certain operation level (for example, idle or full workload) the measured value was stable, their variation can be considered a source of error.
+                \end{itemize}
             
